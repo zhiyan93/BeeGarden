@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+class Planting : NSObject {
+    var name: String
+    var time: Date
+    var counting: Int
+    
+    init(name:String, time: Date, counting: Int) {
+        self.name = name
+        self.time = time
+        self.counting = counting
+    }
+}
+

@@ -30,7 +30,7 @@ protocol DatabaseListener: AnyObject {
 protocol DatabaseProtocol: AnyObject {
   //  var defaultList: SightEntity {get}
     
-    func addObserve(name: String, desc: String, image:String,lat: Double,lon: Double, weather: String, time : Date) -> ObserveEntity
+    func addObserve(name: String, desc: String, image:UIImage ,lat: Double,lon: Double, weather: String, time : Date) -> ObserveEntity
     //func addTeam(teamName: String) -> Team
    // func addHeroToTeam(hero: SuperHero, team: Team) -> Bool
     func deleteObserve(observe: ObserveEntity)

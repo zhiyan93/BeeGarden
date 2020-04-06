@@ -10,18 +10,11 @@
 		265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6A2436E7300036F0F5 /* AppDelegate.swift */; };
 		265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */; };
 		265B1F742436E7300036F0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F722436E7300036F0F5 /* Main.storyboard */; };
-		265B1F772436E7300036F0F5 /* BeeGarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F752436E7300036F0F5 /* BeeGarden.xcdatamodeld */; };
 		265B1F792436E7340036F0F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F782436E7340036F0F5 /* Assets.xcassets */; };
 		265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F7A2436E7340036F0F5 /* LaunchScreen.storyboard */; };
 		265B1F872436E7340036F0F5 /* BeeGardenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F862436E7340036F0F5 /* BeeGardenTests.swift */; };
 		265B1F922436E7340036F0F5 /* BeeGardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F912436E7340036F0F5 /* BeeGardenUITests.swift */; };
 		2662205824383BCD0072CF83 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2662205624383BCD0072CF83 /* Model.xcdatamodeld */; };
-		26622091243842160072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26622089243842160072CF83 /* PlantRecordEntity+CoreDataClass.swift */; };
-		26622092243842160072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662208A243842160072CF83 /* PlantRecordEntity+CoreDataProperties.swift */; };
-		26622095243842160072CF83 /* BeeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662208D243842160072CF83 /* BeeEntity+CoreDataClass.swift */; };
-		26622096243842160072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662208E243842160072CF83 /* BeeEntity+CoreDataProperties.swift */; };
-		26622097243842160072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662208F243842160072CF83 /* FlowerEntity+CoreDataClass.swift */; };
-		26622098243842160072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26622090243842160072CF83 /* FlowerEntity+CoreDataProperties.swift */; };
 		2662209B243842BC0072CF83 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662209A243842BC0072CF83 /* Bee.swift */; };
 		2662209C243842BC0072CF83 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662209A243842BC0072CF83 /* Bee.swift */; };
 		2662209D243842BC0072CF83 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662209A243842BC0072CF83 /* Bee.swift */; };
@@ -34,12 +27,6 @@
 		266220A7243843260072CF83 /* Observe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220A6243843260072CF83 /* Observe.swift */; };
 		266220A8243843260072CF83 /* Observe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220A6243843260072CF83 /* Observe.swift */; };
 		266220A9243843260072CF83 /* Observe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220A6243843260072CF83 /* Observe.swift */; };
-		266220AC24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220AA24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift */; };
-		266220AD24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220AA24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift */; };
-		266220AE24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220AA24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift */; };
-		266220AF24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220AB24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
-		266220B024388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220AB24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
-		266220B124388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220AB24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		266220B4243891820072CF83 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220B3243891820072CF83 /* CoreDataController.swift */; };
 		266220B5243891830072CF83 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220B3243891820072CF83 /* CoreDataController.swift */; };
 		266220B6243891830072CF83 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220B3243891820072CF83 /* CoreDataController.swift */; };
@@ -49,6 +36,39 @@
 		266220BC243891E40072CF83 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220BB243891E40072CF83 /* MulticastDelegate.swift */; };
 		266220BD243891E40072CF83 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220BB243891E40072CF83 /* MulticastDelegate.swift */; };
 		266220BE243891E40072CF83 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220BB243891E40072CF83 /* MulticastDelegate.swift */; };
+		266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220BF2439D7E60072CF83 /* GalleryTableVC.swift */; };
+		266220C12439D7E60072CF83 /* GalleryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220BF2439D7E60072CF83 /* GalleryTableVC.swift */; };
+		266220C22439D7E60072CF83 /* GalleryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220BF2439D7E60072CF83 /* GalleryTableVC.swift */; };
+		266220C82439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220C72439E2DE0072CF83 /* GalleryTableViewCell.swift */; };
+		266220C92439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220C72439E2DE0072CF83 /* GalleryTableViewCell.swift */; };
+		266220CA2439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220C72439E2DE0072CF83 /* GalleryTableViewCell.swift */; };
+		266220CC2439FE450072CF83 /* AddObserveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220CB2439FE450072CF83 /* AddObserveVC.swift */; };
+		266220CD2439FE450072CF83 /* AddObserveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220CB2439FE450072CF83 /* AddObserveVC.swift */; };
+		266220CE2439FE450072CF83 /* AddObserveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220CB2439FE450072CF83 /* AddObserveVC.swift */; };
+		266220F7243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220EF243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift */; };
+		266220F8243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220EF243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift */; };
+		266220F9243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220EF243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift */; };
+		266220FA243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F0243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift */; };
+		266220FB243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F0243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift */; };
+		266220FC243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F0243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift */; };
+		266220FD243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F1243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift */; };
+		266220FE243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F1243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift */; };
+		266220FF243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F1243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift */; };
+		26622100243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F2243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift */; };
+		26622101243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F2243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift */; };
+		26622102243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F2243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift */; };
+		26622103243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F3243B1A690072CF83 /* BeeEntity+CoreDataClass.swift */; };
+		26622104243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F3243B1A690072CF83 /* BeeEntity+CoreDataClass.swift */; };
+		26622105243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F3243B1A690072CF83 /* BeeEntity+CoreDataClass.swift */; };
+		26622106243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */; };
+		26622107243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */; };
+		26622108243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */; };
+		26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */; };
+		2662210A243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */; };
+		2662210B243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */; };
+		2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
+		2662210D243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
+		2662210E243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +93,6 @@
 		265B1F6A2436E7300036F0F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		265B1F732436E7300036F0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		265B1F762436E7300036F0F5 /* BeeGarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeeGarden.xcdatamodel; sourceTree = "<group>"; };
 		265B1F782436E7340036F0F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		265B1F7B2436E7340036F0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		265B1F7D2436E7340036F0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,21 +103,24 @@
 		265B1F912436E7340036F0F5 /* BeeGardenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeGardenUITests.swift; sourceTree = "<group>"; };
 		265B1F932436E7340036F0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2662205724383BCD0072CF83 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		26622089243842160072CF83 /* PlantRecordEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantRecordEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		2662208A243842160072CF83 /* PlantRecordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantRecordEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		2662208D243842160072CF83 /* BeeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		2662208E243842160072CF83 /* BeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		2662208F243842160072CF83 /* FlowerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowerEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		26622090243842160072CF83 /* FlowerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowerEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		2662209A243842BC0072CF83 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		2662209E243842E20072CF83 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		266220A2243843080072CF83 /* Planting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planting.swift; sourceTree = "<group>"; };
 		266220A6243843260072CF83 /* Observe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observe.swift; sourceTree = "<group>"; };
-		266220AA24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		266220AB24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		266220B3243891820072CF83 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		266220B7243891C10072CF83 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		266220BB243891E40072CF83 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		266220BF2439D7E60072CF83 /* GalleryTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableVC.swift; sourceTree = "<group>"; };
+		266220C72439E2DE0072CF83 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
+		266220CB2439FE450072CF83 /* AddObserveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObserveVC.swift; sourceTree = "<group>"; };
+		266220EF243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		266220F0243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		266220F1243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantRecordEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		266220F2243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantRecordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		266220F3243B1A690072CF83 /* BeeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +180,9 @@
 				265B1F782436E7340036F0F5 /* Assets.xcassets */,
 				265B1F7A2436E7340036F0F5 /* LaunchScreen.storyboard */,
 				265B1F7D2436E7340036F0F5 /* Info.plist */,
-				265B1F752436E7300036F0F5 /* BeeGarden.xcdatamodeld */,
+				266220BF2439D7E60072CF83 /* GalleryTableVC.swift */,
+				266220C72439E2DE0072CF83 /* GalleryTableViewCell.swift */,
+				266220CB2439FE450072CF83 /* AddObserveVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -184,14 +208,14 @@
 		2662205524383B620072CF83 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				266220AA24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift */,
-				266220AB24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift */,
-				26622089243842160072CF83 /* PlantRecordEntity+CoreDataClass.swift */,
-				2662208A243842160072CF83 /* PlantRecordEntity+CoreDataProperties.swift */,
-				2662208D243842160072CF83 /* BeeEntity+CoreDataClass.swift */,
-				2662208E243842160072CF83 /* BeeEntity+CoreDataProperties.swift */,
-				2662208F243842160072CF83 /* FlowerEntity+CoreDataClass.swift */,
-				26622090243842160072CF83 /* FlowerEntity+CoreDataProperties.swift */,
+				266220EF243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift */,
+				266220F0243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift */,
+				266220F1243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift */,
+				266220F2243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift */,
+				266220F3243B1A690072CF83 /* BeeEntity+CoreDataClass.swift */,
+				266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */,
+				266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */,
+				266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */,
 				2662205624383BCD0072CF83 /* Model.xcdatamodeld */,
 			);
 			path = DataModel;
@@ -349,25 +373,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				265B1F772436E7300036F0F5 /* BeeGarden.xcdatamodeld in Sources */,
-				26622091243842160072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
 				266220BC243891E40072CF83 /* MulticastDelegate.swift in Sources */,
-				26622097243842160072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */,
 				266220B8243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
 				266220A7243843260072CF83 /* Observe.swift in Sources */,
-				266220AF24388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
-				266220AC24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
-				26622092243842160072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
+				266220CC2439FE450072CF83 /* AddObserveVC.swift in Sources */,
+				266220F7243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */,
+				26622103243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
+				266220C82439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
+				26622100243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
+				26622106243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
+				266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
 				2662209F243842E20072CF83 /* Flower.swift in Sources */,
+				2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				266220FA243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
 				266220A3243843080072CF83 /* Planting.swift in Sources */,
+				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 				265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */,
 				265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */,
-				26622095243842160072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				2662209B243842BC0072CF83 /* Bee.swift in Sources */,
-				26622096243842160072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				266220B4243891820072CF83 /* CoreDataController.swift in Sources */,
-				26622098243842160072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
 				2662205824383BCD0072CF83 /* Model.xcdatamodeld in Sources */,
+				266220FD243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,16 +401,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266220C92439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
+				26622101243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
+				266220FE243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
 				266220A8243843260072CF83 /* Observe.swift in Sources */,
 				2662209C243842BC0072CF83 /* Bee.swift in Sources */,
+				2662210D243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				26622104243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				266220B5243891830072CF83 /* CoreDataController.swift in Sources */,
 				265B1F872436E7340036F0F5 /* BeeGardenTests.swift in Sources */,
 				266220A4243843080072CF83 /* Planting.swift in Sources */,
-				266220B024388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				266220C12439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
+				266220FB243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
+				266220CD2439FE450072CF83 /* AddObserveVC.swift in Sources */,
+				26622107243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				266220A0243842E20072CF83 /* Flower.swift in Sources */,
 				266220BD243891E40072CF83 /* MulticastDelegate.swift in Sources */,
-				266220AD24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
+				266220F8243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */,
 				266220B9243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
+				2662210A243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,16 +427,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266220CA2439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
+				26622102243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
+				266220FF243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
 				266220A9243843260072CF83 /* Observe.swift in Sources */,
 				2662209D243842BC0072CF83 /* Bee.swift in Sources */,
+				2662210E243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				26622105243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				266220B6243891830072CF83 /* CoreDataController.swift in Sources */,
 				265B1F922436E7340036F0F5 /* BeeGardenUITests.swift in Sources */,
 				266220A5243843080072CF83 /* Planting.swift in Sources */,
-				266220B124388EFC0072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				266220C22439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
+				266220FC243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
+				266220CE2439FE450072CF83 /* AddObserveVC.swift in Sources */,
+				26622108243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				266220A1243842E20072CF83 /* Flower.swift in Sources */,
 				266220BE243891E40072CF83 /* MulticastDelegate.swift in Sources */,
-				266220AE24388EFC0072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
+				266220F9243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */,
 				266220BA243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
+				2662210B243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,16 +760,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		265B1F752436E7300036F0F5 /* BeeGarden.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				265B1F762436E7300036F0F5 /* BeeGarden.xcdatamodel */,
-			);
-			currentVersion = 265B1F762436E7300036F0F5 /* BeeGarden.xcdatamodel */;
-			path = BeeGarden.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		2662205624383BCD0072CF83 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

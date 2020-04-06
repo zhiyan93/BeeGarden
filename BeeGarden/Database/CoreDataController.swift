@@ -12,13 +12,6 @@ import CoreData
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
    
     
-   
-    
-    
-    
-    
-    
-    
     let DEFAULT_BEE_NAME = "Unnamed Bee"
     var listeners = MulticastDelegate<DatabaseListener>()
     
@@ -56,12 +49,12 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         }
     }
     
-    func addObserve(name: String, desc: String, image: String, lat: Double , lon: Double,weather:String, time: Date) -> ObserveEntity {
+    func addObserve(name: String, desc: String, image: UIImage, lat: Double , lon: Double,weather:String, time: Date) -> ObserveEntity {
         let observe = NSEntityDescription.insertNewObject(forEntityName: "ObserveEntity", into:
             persistantContainer.viewContext) as! ObserveEntity
         observe.name = name
         observe.desc = desc
-        observe.image = image
+        observe.image = image.jpegData(compressionQuality: 1.0)
         observe.latitude = lat
         observe.longitude = lon
         observe.weather = weather
@@ -135,10 +128,10 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     
     func createDefaultEntries() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let someDateTime = formatter.date(from: "2019/10/08 22:31:00")!
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let someDateTime = formatter.date(from: "2019-10-08 22:31:00")!
         //let _ = addSuperHero(name: "Bruce Wayne", abilities: "Is Rich")
-        let _ = addObserve(name: "Honey Bee", desc: "keeped by farmer", image: "honey_bee", lat: -37.1, lon: 144.5, weather: "sunny", time: someDateTime)
+        let _ = addObserve(name: "Honey Bee", desc: "keeped by farmer", image: #imageLiteral(resourceName: "honey_bee"), lat: -37.1, lon: 144.5, weather: "sunny", time: someDateTime)
         
       
     }

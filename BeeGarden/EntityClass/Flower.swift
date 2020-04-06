@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+class Flower: NSObject {
+    var name: String
+    var desc: String
+    var image : UIImage
+    
+    init(name: String,desc: String,image: UIImage) {
+        self.name = name
+        self.desc = desc
+        self.image = image
+    }
+}

@@ -10,9 +10,14 @@ import UIKit
 
 class GalleryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var observeImage : UIImageView!
+    @IBOutlet weak var observeName : UILabel!
+    @IBOutlet weak var observeTime : UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        observeName.adjustsFontForContentSizeCategory = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
