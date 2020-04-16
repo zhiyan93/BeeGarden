@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (5.1.0)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - lottie-ios (3.1.6)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - SwiftyJSON (5.0.0)
+  - TinyConstraints (4.0.1)
+  - UIGradient (1.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - lottie-ios
+  - NVActivityIndicatorView
+  - SwiftyJSON
+  - TinyConstraints
+  - UIGradient
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - lottie-ios
+    - NVActivityIndicatorView
+    - SwiftyJSON
+    - TinyConstraints
+    - UIGradient
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+  UIGradient: 2364e9ebac232686db220713b4d42a68222fffb2
+
+PODFILE CHECKSUM: 511086838849276afd35ee3289486a2a93ad677a
+
+COCOAPODS: 1.9.1

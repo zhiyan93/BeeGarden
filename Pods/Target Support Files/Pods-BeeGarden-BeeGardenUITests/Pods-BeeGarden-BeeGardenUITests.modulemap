@@ -1,0 +1,6 @@
+framework module Pods_BeeGarden_BeeGardenUITests {
+  umbrella header "Pods-BeeGarden-BeeGardenUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

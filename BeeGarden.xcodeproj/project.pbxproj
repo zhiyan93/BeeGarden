@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260844FA24420EBF00F59166 /* SpotEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260844F824420EBF00F59166 /* SpotEntity+CoreDataClass.swift */; };
+		260844FB24420EBF00F59166 /* SpotEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260844F924420EBF00F59166 /* SpotEntity+CoreDataProperties.swift */; };
+		260844FD24421FD900F59166 /* SpotDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260844FC24421FD900F59166 /* SpotDetailVC.swift */; };
 		265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6A2436E7300036F0F5 /* AppDelegate.swift */; };
 		265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */; };
 		265B1F742436E7300036F0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F722436E7300036F0F5 /* Main.storyboard */; };
@@ -14,7 +17,6 @@
 		265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F7A2436E7340036F0F5 /* LaunchScreen.storyboard */; };
 		265B1F872436E7340036F0F5 /* BeeGardenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F862436E7340036F0F5 /* BeeGardenTests.swift */; };
 		265B1F922436E7340036F0F5 /* BeeGardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F912436E7340036F0F5 /* BeeGardenUITests.swift */; };
-		2662205824383BCD0072CF83 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2662205624383BCD0072CF83 /* Model.xcdatamodeld */; };
 		2662209B243842BC0072CF83 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662209A243842BC0072CF83 /* Bee.swift */; };
 		2662209C243842BC0072CF83 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662209A243842BC0072CF83 /* Bee.swift */; };
 		2662209D243842BC0072CF83 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662209A243842BC0072CF83 /* Bee.swift */; };
@@ -69,6 +71,36 @@
 		2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		2662210D243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		2662210E243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
+		26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
+		26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
+		26B00625243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
+		26B00627243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */; };
+		26B00628243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */; };
+		26B00629243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */; };
+		26B0062B2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */; };
+		26B0062C2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */; };
+		26B0062D2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */; };
+		26B006302440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062E2440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift */; };
+		26B006312440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062E2440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift */; };
+		26B006322440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062E2440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift */; };
+		26B006332440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062F2440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift */; };
+		26B006342440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062F2440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift */; };
+		26B006352440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0062F2440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift */; };
+		26B006372440542200BA9187 /* HomeKnowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B006362440542200BA9187 /* HomeKnowVC.swift */; };
+		26B006382440542200BA9187 /* HomeKnowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B006362440542200BA9187 /* HomeKnowVC.swift */; };
+		26B006392440542200BA9187 /* HomeKnowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B006362440542200BA9187 /* HomeKnowVC.swift */; };
+		26B0063B2440814800BA9187 /* HomeKnowDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0063A2440814800BA9187 /* HomeKnowDetailVC.swift */; };
+		26B0067E2440B8F400BA9187 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0067D2440B8F400BA9187 /* HomeViewController.swift */; };
+		26B0068024417D7000BA9187 /* NearbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B0067F24417D7000BA9187 /* NearbyVC.swift */; };
+		26B006832442040C00BA9187 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26B006812442040C00BA9187 /* Model.xcdatamodeld */; };
+		26C812682444ACB100FC4994 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C812672444ACB100FC4994 /* LaunchScreenVC.swift */; };
+		26C8126A2444AD9000FC4994 /* bee-fiying.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C812692444AD9000FC4994 /* bee-fiying.json */; };
+		26C812AE2444D8C800FC4994 /* book-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C812AD2444D8C800FC4994 /* book-animation.json */; };
+		26C812B024460A1900FC4994 /* PlantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C812AF24460A1900FC4994 /* PlantVC.swift */; };
+		26C812EE2448A9F200FC4994 /* MelbourneCBD.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */; };
+		8BB2D5FD2C3029ECA74A7795 /* Pods_BeeGardenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D1BF85A93589929C7052F /* Pods_BeeGardenTests.framework */; };
+		9E8A2AFE0644832EBE11AB7C /* Pods_BeeGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D9A6FC258A9EDBD75D7BE8 /* Pods_BeeGarden.framework */; };
+		BE8F31426D48E01B9DE2E92E /* Pods_BeeGarden_BeeGardenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C5B00565AB402B02AEE770 /* Pods_BeeGarden_BeeGardenUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +121,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03C1C24CC55619D0BD418C11 /* Pods-BeeGardenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGardenTests.debug.xcconfig"; path = "Target Support Files/Pods-BeeGardenTests/Pods-BeeGardenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		260844F824420EBF00F59166 /* SpotEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		260844F924420EBF00F59166 /* SpotEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		260844FC24421FD900F59166 /* SpotDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpotDetailVC.swift; path = Database/SpotDetailVC.swift; sourceTree = "<group>"; };
 		265B1F672436E7300036F0F5 /* BeeGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265B1F6A2436E7300036F0F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +138,6 @@
 		265B1F8D2436E7340036F0F5 /* BeeGardenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeGardenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		265B1F912436E7340036F0F5 /* BeeGardenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeGardenUITests.swift; sourceTree = "<group>"; };
 		265B1F932436E7340036F0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2662205724383BCD0072CF83 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2662209A243842BC0072CF83 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		2662209E243842E20072CF83 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		266220A2243843080072CF83 /* Planting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planting.swift; sourceTree = "<group>"; };
@@ -121,6 +156,29 @@
 		266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		26B00622243E1D8D00BA9187 /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
+		26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeeDetailVC.swift; sourceTree = "<group>"; };
+		26B0062E2440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KnowledgeEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		26B0062F2440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KnowledgeEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		26B006362440542200BA9187 /* HomeKnowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKnowVC.swift; sourceTree = "<group>"; };
+		26B0063A2440814800BA9187 /* HomeKnowDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKnowDetailVC.swift; sourceTree = "<group>"; };
+		26B0067D2440B8F400BA9187 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		26B0067F24417D7000BA9187 /* NearbyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyVC.swift; sourceTree = "<group>"; };
+		26B006822442040C00BA9187 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		26C812672444ACB100FC4994 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		26C812692444AD9000FC4994 /* bee-fiying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bee-fiying.json"; sourceTree = "<group>"; };
+		26C812AD2444D8C800FC4994 /* book-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "book-animation.json"; sourceTree = "<group>"; };
+		26C812AF24460A1900FC4994 /* PlantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantVC.swift; sourceTree = "<group>"; };
+		26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = MelbourneCBD.gpx; sourceTree = SOURCE_ROOT; };
+		6A6E8BD43463A68CBCCB636D /* Pods-BeeGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden.release.xcconfig"; path = "Target Support Files/Pods-BeeGarden/Pods-BeeGarden.release.xcconfig"; sourceTree = "<group>"; };
+		74D9A6FC258A9EDBD75D7BE8 /* Pods_BeeGarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeGarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		760806CAABDE2A9C5F121834 /* Pods-BeeGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden.debug.xcconfig"; path = "Target Support Files/Pods-BeeGarden/Pods-BeeGarden.debug.xcconfig"; sourceTree = "<group>"; };
+		9F2D1BF85A93589929C7052F /* Pods_BeeGardenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeGardenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC8458BCEE0FBF18C29255C /* Pods-BeeGarden-BeeGardenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden-BeeGardenUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeeGarden-BeeGardenUITests/Pods-BeeGarden-BeeGardenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBC8E12E4965236F52DD2686 /* Pods-BeeGardenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGardenTests.release.xcconfig"; path = "Target Support Files/Pods-BeeGardenTests/Pods-BeeGardenTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD1BFBAA737187BC2CFF4C18 /* Pods-BeeGarden-BeeGardenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden-BeeGardenUITests.release.xcconfig"; path = "Target Support Files/Pods-BeeGarden-BeeGardenUITests/Pods-BeeGarden-BeeGardenUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E4C5B00565AB402B02AEE770 /* Pods_BeeGarden_BeeGardenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeGarden_BeeGardenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E8A2AFE0644832EBE11AB7C /* Pods_BeeGarden.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB2D5FD2C3029ECA74A7795 /* Pods_BeeGardenTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,12 +202,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8F31426D48E01B9DE2E92E /* Pods_BeeGarden_BeeGardenUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DA5C99478C757FCE5B66AFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74D9A6FC258A9EDBD75D7BE8 /* Pods_BeeGarden.framework */,
+				E4C5B00565AB402B02AEE770 /* Pods_BeeGarden_BeeGardenUITests.framework */,
+				9F2D1BF85A93589929C7052F /* Pods_BeeGardenTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		265B1F5E2436E7300036F0F5 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +226,8 @@
 				265B1F852436E7340036F0F5 /* BeeGardenTests */,
 				265B1F902436E7340036F0F5 /* BeeGardenUITests */,
 				265B1F682436E7300036F0F5 /* Products */,
+				472A1D3C1497656CAF22B268 /* Pods */,
+				1DA5C99478C757FCE5B66AFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +244,9 @@
 		265B1F692436E7300036F0F5 /* BeeGarden */ = {
 			isa = PBXGroup;
 			children = (
+				26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */,
+				26C812662444AA8800FC4994 /* Animation */,
+				260844FC24421FD900F59166 /* SpotDetailVC.swift */,
 				266220B2243891390072CF83 /* Database */,
 				26622099243842680072CF83 /* EntityClass */,
 				2662205524383B620072CF83 /* DataModel */,
@@ -183,6 +259,15 @@
 				266220BF2439D7E60072CF83 /* GalleryTableVC.swift */,
 				266220C72439E2DE0072CF83 /* GalleryTableViewCell.swift */,
 				266220CB2439FE450072CF83 /* AddObserveVC.swift */,
+				26B00622243E1D8D00BA9187 /* HomeTabVC.swift */,
+				26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */,
+				26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */,
+				26B006362440542200BA9187 /* HomeKnowVC.swift */,
+				26B0063A2440814800BA9187 /* HomeKnowDetailVC.swift */,
+				26B0067D2440B8F400BA9187 /* HomeViewController.swift */,
+				26B0067F24417D7000BA9187 /* NearbyVC.swift */,
+				26C812672444ACB100FC4994 /* LaunchScreenVC.swift */,
+				26C812AF24460A1900FC4994 /* PlantVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -208,6 +293,10 @@
 		2662205524383B620072CF83 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				260844F824420EBF00F59166 /* SpotEntity+CoreDataClass.swift */,
+				260844F924420EBF00F59166 /* SpotEntity+CoreDataProperties.swift */,
+				26B0062E2440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift */,
+				26B0062F2440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift */,
 				266220EF243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift */,
 				266220F0243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift */,
 				266220F1243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift */,
@@ -216,7 +305,7 @@
 				266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */,
 				266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */,
 				266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */,
-				2662205624383BCD0072CF83 /* Model.xcdatamodeld */,
+				26B006812442040C00BA9187 /* Model.xcdatamodeld */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -242,6 +331,28 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		26C812662444AA8800FC4994 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				26C812AD2444D8C800FC4994 /* book-animation.json */,
+				26C812692444AD9000FC4994 /* bee-fiying.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		472A1D3C1497656CAF22B268 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				760806CAABDE2A9C5F121834 /* Pods-BeeGarden.debug.xcconfig */,
+				6A6E8BD43463A68CBCCB636D /* Pods-BeeGarden.release.xcconfig */,
+				BDC8458BCEE0FBF18C29255C /* Pods-BeeGarden-BeeGardenUITests.debug.xcconfig */,
+				CD1BFBAA737187BC2CFF4C18 /* Pods-BeeGarden-BeeGardenUITests.release.xcconfig */,
+				03C1C24CC55619D0BD418C11 /* Pods-BeeGardenTests.debug.xcconfig */,
+				CBC8E12E4965236F52DD2686 /* Pods-BeeGardenTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,9 +360,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 265B1F962436E7340036F0F5 /* Build configuration list for PBXNativeTarget "BeeGarden" */;
 			buildPhases = (
+				3F249E02074A68BC5F1810B2 /* [CP] Check Pods Manifest.lock */,
 				265B1F632436E7300036F0F5 /* Sources */,
 				265B1F642436E7300036F0F5 /* Frameworks */,
 				265B1F652436E7300036F0F5 /* Resources */,
+				4C121D4DE8BCCE80AB01BE08 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +379,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 265B1F992436E7340036F0F5 /* Build configuration list for PBXNativeTarget "BeeGardenTests" */;
 			buildPhases = (
+				1B2A3686F57E9240A2305569 /* [CP] Check Pods Manifest.lock */,
 				265B1F7E2436E7340036F0F5 /* Sources */,
 				265B1F7F2436E7340036F0F5 /* Frameworks */,
 				265B1F802436E7340036F0F5 /* Resources */,
@@ -284,9 +398,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 265B1F9C2436E7340036F0F5 /* Build configuration list for PBXNativeTarget "BeeGardenUITests" */;
 			buildPhases = (
+				E1FBE731992DD42995F7D1A8 /* [CP] Check Pods Manifest.lock */,
 				265B1F892436E7340036F0F5 /* Sources */,
 				265B1F8A2436E7340036F0F5 /* Frameworks */,
 				265B1F8B2436E7340036F0F5 /* Resources */,
+				399363DAED86EBA8D5075F98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,7 +463,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */,
+				26C812EE2448A9F200FC4994 /* MelbourneCBD.gpx in Resources */,
 				265B1F792436E7340036F0F5 /* Assets.xcassets in Resources */,
+				26C812AE2444D8C800FC4994 /* book-animation.json in Resources */,
+				26C8126A2444AD9000FC4994 /* bee-fiying.json in Resources */,
 				265B1F742436E7300036F0F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,31 +487,148 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B2A3686F57E9240A2305569 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeeGardenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		399363DAED86EBA8D5075F98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeeGarden-BeeGardenUITests/Pods-BeeGarden-BeeGardenUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeeGarden-BeeGardenUITests/Pods-BeeGarden-BeeGardenUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeeGarden-BeeGardenUITests/Pods-BeeGarden-BeeGardenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F249E02074A68BC5F1810B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeeGarden-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C121D4DE8BCCE80AB01BE08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeeGarden/Pods-BeeGarden-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeeGarden/Pods-BeeGarden-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeeGarden/Pods-BeeGarden-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1FBE731992DD42995F7D1A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeeGarden-BeeGardenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		265B1F632436E7300036F0F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				266220BC243891E40072CF83 /* MulticastDelegate.swift in Sources */,
+				26B006372440542200BA9187 /* HomeKnowVC.swift in Sources */,
 				266220B8243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
 				266220A7243843260072CF83 /* Observe.swift in Sources */,
 				266220CC2439FE450072CF83 /* AddObserveVC.swift in Sources */,
+				26B0063B2440814800BA9187 /* HomeKnowDetailVC.swift in Sources */,
 				266220F7243B1A690072CF83 /* FlowerEntity+CoreDataClass.swift in Sources */,
 				26622103243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				266220C82439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
+				260844FD24421FD900F59166 /* SpotDetailVC.swift in Sources */,
 				26622100243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
 				26622106243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
+				26B0062B2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
+				26C812B024460A1900FC4994 /* PlantVC.swift in Sources */,
 				2662209F243842E20072CF83 /* Flower.swift in Sources */,
 				2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
 				266220FA243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
 				266220A3243843080072CF83 /* Planting.swift in Sources */,
+				26B006832442040C00BA9187 /* Model.xcdatamodeld in Sources */,
+				26C812682444ACB100FC4994 /* LaunchScreenVC.swift in Sources */,
 				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 				265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */,
+				26B0067E2440B8F400BA9187 /* HomeViewController.swift in Sources */,
+				26B006332440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */,
 				265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */,
 				2662209B243842BC0072CF83 /* Bee.swift in Sources */,
+				26B0068024417D7000BA9187 /* NearbyVC.swift in Sources */,
+				260844FA24420EBF00F59166 /* SpotEntity+CoreDataClass.swift in Sources */,
+				26B00627243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */,
 				266220B4243891820072CF83 /* CoreDataController.swift in Sources */,
-				2662205824383BCD0072CF83 /* Model.xcdatamodeld in Sources */,
+				260844FB24420EBF00F59166 /* SpotEntity+CoreDataProperties.swift in Sources */,
+				26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */,
+				26B006302440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */,
 				266220FD243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,18 +638,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				266220C92439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
+				26B006382440542200BA9187 /* HomeKnowVC.swift in Sources */,
 				26622101243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
 				266220FE243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
+				26B006342440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */,
+				26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */,
 				266220A8243843260072CF83 /* Observe.swift in Sources */,
 				2662209C243842BC0072CF83 /* Bee.swift in Sources */,
 				2662210D243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				26B006312440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */,
 				26622104243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				266220B5243891830072CF83 /* CoreDataController.swift in Sources */,
+				26B0062C2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				265B1F872436E7340036F0F5 /* BeeGardenTests.swift in Sources */,
 				266220A4243843080072CF83 /* Planting.swift in Sources */,
 				266220C12439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
 				266220FB243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
 				266220CD2439FE450072CF83 /* AddObserveVC.swift in Sources */,
+				26B00628243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */,
 				26622107243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				266220A0243842E20072CF83 /* Flower.swift in Sources */,
 				266220BD243891E40072CF83 /* MulticastDelegate.swift in Sources */,
@@ -428,18 +670,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				266220CA2439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
+				26B006392440542200BA9187 /* HomeKnowVC.swift in Sources */,
 				26622102243B1A690072CF83 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
 				266220FF243B1A690072CF83 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
+				26B006352440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */,
+				26B00625243E1D8D00BA9187 /* HomeTabVC.swift in Sources */,
 				266220A9243843260072CF83 /* Observe.swift in Sources */,
 				2662209D243842BC0072CF83 /* Bee.swift in Sources */,
 				2662210E243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				26B006322440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */,
 				26622105243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				266220B6243891830072CF83 /* CoreDataController.swift in Sources */,
+				26B0062D2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				265B1F922436E7340036F0F5 /* BeeGardenUITests.swift in Sources */,
 				266220A5243843080072CF83 /* Planting.swift in Sources */,
 				266220C22439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
 				266220FC243B1A690072CF83 /* FlowerEntity+CoreDataProperties.swift in Sources */,
 				266220CE2439FE450072CF83 /* AddObserveVC.swift in Sources */,
+				26B00629243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */,
 				26622108243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				266220A1243842E20072CF83 /* Flower.swift in Sources */,
 				266220BE243891E40072CF83 /* MulticastDelegate.swift in Sources */,
@@ -600,6 +848,7 @@
 		};
 		265B1F972436E7340036F0F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 760806CAABDE2A9C5F121834 /* Pods-BeeGarden.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,6 +867,7 @@
 		};
 		265B1F982436E7340036F0F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A6E8BD43463A68CBCCB636D /* Pods-BeeGarden.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -636,6 +886,7 @@
 		};
 		265B1F9A2436E7340036F0F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03C1C24CC55619D0BD418C11 /* Pods-BeeGardenTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -658,6 +909,7 @@
 		};
 		265B1F9B2436E7340036F0F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBC8E12E4965236F52DD2686 /* Pods-BeeGardenTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -680,6 +932,7 @@
 		};
 		265B1F9D2436E7340036F0F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC8458BCEE0FBF18C29255C /* Pods-BeeGarden-BeeGardenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -700,6 +953,7 @@
 		};
 		265B1F9E2436E7340036F0F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD1BFBAA737187BC2CFF4C18 /* Pods-BeeGarden-BeeGardenUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -760,12 +1014,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2662205624383BCD0072CF83 /* Model.xcdatamodeld */ = {
+		26B006812442040C00BA9187 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2662205724383BCD0072CF83 /* Model.xcdatamodel */,
+				26B006822442040C00BA9187 /* Model.xcdatamodel */,
 			);
-			currentVersion = 2662205724383BCD0072CF83 /* Model.xcdatamodel */;
+			currentVersion = 26B006822442040C00BA9187 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

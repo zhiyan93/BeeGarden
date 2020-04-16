@@ -13,7 +13,20 @@ protocol FocusObserveDelegate {
     func foucusObserve(observe: ObserveEntity)
 }
 
-class GalleryTableVC: UITableViewController,UISearchResultsUpdating,DatabaseListener {
+class GalleryTableVC: UITableViewController,UISearchResultsUpdating, DatabaseListener {
+    func onSpotListChange(change: DatabaseChange, spotsDB: [SpotEntity]) {
+        
+    }
+    
+    func onKnowledgeListChange(change: DatabaseChange, knowsDB: [KnowledgeEntity]) {
+        
+    }
+    
+    func onBeeListChange(change: DatabaseChange, beesDB: [BeeEntity]) {
+    
+    }
+    
+    
 
     var focusObserveDelegate : FocusObserveDelegate?
     let SECTION_OBSERVE = 0

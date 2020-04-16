@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
     var databaseController : DatabaseProtocol?     // coredata
-
+    //var persistantContainer: NSPersistentContainer?
     
     var locationManager: CLLocationManager!
     var notificationCenter: UNUserNotificationCenter!
@@ -24,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         databaseController = CoreDataController()   //  coredata
+        
+//        persistantContainer = NSPersistentContainer(name: "Model")
+//               persistantContainer?.loadPersistentStores() { (description, error) in
+//                   if let error = error {
+//                       fatalError("Failed to load Core Data stack: \(error)")
+//                   }
+//               }
+        
                
                self.locationManager = CLLocationManager()
                self.locationManager!.delegate = self
@@ -49,9 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                }
                //modified from lecture resource
                let uiNavbarProxy = UINavigationBar.appearance()
-               uiNavbarProxy.barTintColor = UIColor(displayP3Red: 0.27, green: 0.3, blue: 0.4, alpha: 1)
+        uiNavbarProxy.barTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
                uiNavbarProxy.tintColor = UIColor.white
                uiNavbarProxy.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        let uiTabbarProxy = UITabBar.appearance()
+        uiTabbarProxy.barTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
+        uiTabbarProxy.tintColor = UIColor.white
+      // uiTabbarProxy.isTranslucent = false
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "American Typewriter", size: 15)!], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "American Typewriter", size: 20)!], for: .selected)
         return true
     }
 
