@@ -63,10 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         let uiTabbarProxy = UITabBar.appearance()
         uiTabbarProxy.barTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
-        uiTabbarProxy.tintColor = UIColor.white
+        uiTabbarProxy.tintColor = UIColor.black
       // uiTabbarProxy.isTranslucent = false
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "American Typewriter", size: 15)!], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "American Typewriter", size: 20)!], for: .selected)
+        
+        //page control color for tutorial pages
+        let pageControl = UIPageControl.appearance()
+        pageControl.currentPageIndicatorTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 1.0)
+        pageControl.pageIndicatorTintColor = .lightGray
+        
         return true
     }
 
@@ -177,7 +181,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                }
            })
        }
-
+    
+    
 }
 extension AppDelegate: CLLocationManagerDelegate {
     // called when user Exits a monitored region
@@ -192,7 +197,7 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {
             // Do what you want if this information
-            self.handleEvent(forRegion: region,entry: true)
+            self.handleEvent(forRegion: region,entry: false)
         }
     }
 }
@@ -214,4 +219,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // ...
     }
 }
+
+
+
+
 

@@ -13,7 +13,6 @@
 		265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6A2436E7300036F0F5 /* AppDelegate.swift */; };
 		265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */; };
 		265B1F742436E7300036F0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F722436E7300036F0F5 /* Main.storyboard */; };
-		265B1F792436E7340036F0F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F782436E7340036F0F5 /* Assets.xcassets */; };
 		265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F7A2436E7340036F0F5 /* LaunchScreen.storyboard */; };
 		265B1F872436E7340036F0F5 /* BeeGardenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F862436E7340036F0F5 /* BeeGardenTests.swift */; };
 		265B1F922436E7340036F0F5 /* BeeGardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F912436E7340036F0F5 /* BeeGardenUITests.swift */; };
@@ -71,6 +70,10 @@
 		2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		2662210D243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		2662210E243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
+		267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAADD2449F34D00A7F973 /* TabBarVC.swift */; };
+		267CAAE02449F90900A7F973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267CAADF2449F90900A7F973 /* Assets.xcassets */; };
+		267CAB22244A1EE800A7F973 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAB21244A1EE800A7F973 /* PageVC.swift */; };
+		267CAB24244A1F1300A7F973 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAB23244A1F1300A7F973 /* TutorialVC.swift */; };
 		26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00625243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
@@ -129,7 +132,6 @@
 		265B1F6A2436E7300036F0F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		265B1F732436E7300036F0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		265B1F782436E7340036F0F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		265B1F7B2436E7340036F0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		265B1F7D2436E7340036F0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		265B1F822436E7340036F0F5 /* BeeGardenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeGardenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,10 @@
 		266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		267CAADD2449F34D00A7F973 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		267CAADF2449F90900A7F973 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		267CAB21244A1EE800A7F973 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		267CAB23244A1F1300A7F973 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		26B00622243E1D8D00BA9187 /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
 		26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeeDetailVC.swift; sourceTree = "<group>"; };
@@ -170,7 +176,7 @@
 		26C812692444AD9000FC4994 /* bee-fiying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bee-fiying.json"; sourceTree = "<group>"; };
 		26C812AD2444D8C800FC4994 /* book-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "book-animation.json"; sourceTree = "<group>"; };
 		26C812AF24460A1900FC4994 /* PlantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantVC.swift; sourceTree = "<group>"; };
-		26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = MelbourneCBD.gpx; sourceTree = SOURCE_ROOT; };
+		26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MelbourneCBD.gpx; sourceTree = SOURCE_ROOT; };
 		6A6E8BD43463A68CBCCB636D /* Pods-BeeGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden.release.xcconfig"; path = "Target Support Files/Pods-BeeGarden/Pods-BeeGarden.release.xcconfig"; sourceTree = "<group>"; };
 		74D9A6FC258A9EDBD75D7BE8 /* Pods_BeeGarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeGarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		760806CAABDE2A9C5F121834 /* Pods-BeeGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden.debug.xcconfig"; path = "Target Support Files/Pods-BeeGarden/Pods-BeeGarden.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +250,7 @@
 		265B1F692436E7300036F0F5 /* BeeGarden */ = {
 			isa = PBXGroup;
 			children = (
+				267CAADF2449F90900A7F973 /* Assets.xcassets */,
 				26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */,
 				26C812662444AA8800FC4994 /* Animation */,
 				260844FC24421FD900F59166 /* SpotDetailVC.swift */,
@@ -253,7 +260,6 @@
 				265B1F6A2436E7300036F0F5 /* AppDelegate.swift */,
 				265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */,
 				265B1F722436E7300036F0F5 /* Main.storyboard */,
-				265B1F782436E7340036F0F5 /* Assets.xcassets */,
 				265B1F7A2436E7340036F0F5 /* LaunchScreen.storyboard */,
 				265B1F7D2436E7340036F0F5 /* Info.plist */,
 				266220BF2439D7E60072CF83 /* GalleryTableVC.swift */,
@@ -268,6 +274,9 @@
 				26B0067F24417D7000BA9187 /* NearbyVC.swift */,
 				26C812672444ACB100FC4994 /* LaunchScreenVC.swift */,
 				26C812AF24460A1900FC4994 /* PlantVC.swift */,
+				267CAADD2449F34D00A7F973 /* TabBarVC.swift */,
+				267CAB21244A1EE800A7F973 /* PageVC.swift */,
+				267CAB23244A1F1300A7F973 /* TutorialVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -464,9 +473,9 @@
 			files = (
 				265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */,
 				26C812EE2448A9F200FC4994 /* MelbourneCBD.gpx in Resources */,
-				265B1F792436E7340036F0F5 /* Assets.xcassets in Resources */,
 				26C812AE2444D8C800FC4994 /* book-animation.json in Resources */,
 				26C8126A2444AD9000FC4994 /* bee-fiying.json in Resources */,
+				267CAAE02449F90900A7F973 /* Assets.xcassets in Resources */,
 				265B1F742436E7300036F0F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267CAB24244A1F1300A7F973 /* TutorialVC.swift in Sources */,
 				266220BC243891E40072CF83 /* MulticastDelegate.swift in Sources */,
 				26B006372440542200BA9187 /* HomeKnowVC.swift in Sources */,
 				266220B8243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
@@ -617,6 +627,7 @@
 				26B006832442040C00BA9187 /* Model.xcdatamodeld in Sources */,
 				26C812682444ACB100FC4994 /* LaunchScreenVC.swift in Sources */,
 				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
+				267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */,
 				265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */,
 				26B0067E2440B8F400BA9187 /* HomeViewController.swift in Sources */,
 				26B006332440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */,
@@ -626,6 +637,7 @@
 				260844FA24420EBF00F59166 /* SpotEntity+CoreDataClass.swift in Sources */,
 				26B00627243E1FEF00BA9187 /* PagingCollectionViewLayout.swift in Sources */,
 				266220B4243891820072CF83 /* CoreDataController.swift in Sources */,
+				267CAB22244A1EE800A7F973 /* PageVC.swift in Sources */,
 				260844FB24420EBF00F59166 /* SpotEntity+CoreDataProperties.swift in Sources */,
 				26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */,
 				26B006302440505000BA9187 /* KnowledgeEntity+CoreDataClass.swift in Sources */,
