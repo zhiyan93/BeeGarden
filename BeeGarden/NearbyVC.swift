@@ -11,11 +11,20 @@ import MapKit
 import CoreData
 
 class NearbyVC: UIViewController ,DatabaseListener {
+    func onFlowerListChange(change: DatabaseChange, flowersDB: [FlowerEntity]) {
+        
+    }
+    
+    func onRecordListChange(change: DatabaseChange, recordsDB: [PlantRecordEntity]) {
+        
+    }
+    
     var listenerType = ListenerType.spot
      var spots : [SpotEntity] = []
     var spotsName :[String] = []
      var selectedSpot : SpotEntity?
     
+    @IBOutlet weak var segmentCtl: UISegmentedControl!
     weak var databaseController : DatabaseProtocol?
     
     func onObserveListChange(change: DatabaseChange, observesDB: [ObserveEntity]) {
@@ -58,6 +67,23 @@ class NearbyVC: UIViewController ,DatabaseListener {
         configureLocationServices()
     }
     
+    @IBAction func segmentAct(_ sender: UISegmentedControl) {
+        switch self.segmentCtl.selectedSegmentIndex {
+        case 0: print("segment 0")
+        case 1: print("segment 1")
+        case 2: print("segment 2")
+        case 3: print("segment 3")
+        case 4: print("segment 4")
+        default:
+            print("segment default")
+        }
+        self.mapView.removeAnnotations(mapView.annotations)
+        for s in spots{
+                   addSpotAnnotation(spot: s)
+               }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
         databaseController?.addListener(listener: self)
@@ -72,6 +98,9 @@ class NearbyVC: UIViewController ,DatabaseListener {
            databaseController?.removeListener(listener: self)
        }
     
+    private func filterAnnotations(category: Int){
+        
+    }
     private func configureLocationServices() {
            locationManager.delegate = self
            let status = CLLocationManager.authorizationStatus()
@@ -139,17 +168,46 @@ class NearbyVC: UIViewController ,DatabaseListener {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
 
-        let identifier = "Annotation"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        let identifier = annotation.title
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: (identifier ?? "defalut")!)
 
+        let spotOrder = spotsName.firstIndex(of:annotation.title!!) ?? 0
+        
+        var iconName: String = ""
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier!)
+            switch spots[spotOrder].category {
+            case 1 : iconName = "teamwork128p"
+            case 2 : iconName = "museum128p"
+            case 3 : iconName = "hive128p"
+            case 4 : iconName = "plants128p"
+            default:
+                iconName = "teamwork128p"
+            }
+            annotationView?.image = UIImage(named: iconName)
             annotationView!.canShowCallout = true
         } else {
             annotationView!.annotation = annotation
         }
-      
-        configureRightView(annotationView: annotationView!,tagNum: spotsName.firstIndex(of:annotation.title!!) ?? 0 )
+        annotationView!.isHidden = true
+        if self.segmentCtl.selectedSegmentIndex == 0 {
+            annotationView?.isHidden = false
+        }
+        if self.segmentCtl.selectedSegmentIndex == 1, spots[spotOrder].category == 1{
+            annotationView?.isHidden = false
+        }
+        if self.segmentCtl.selectedSegmentIndex == 2, spots[spotOrder].category == 2{
+            annotationView?.isHidden = false
+        }
+        if self.segmentCtl.selectedSegmentIndex == 3, spots[spotOrder].category == 3{
+                   annotationView?.isHidden = false
+               }
+        if self.segmentCtl.selectedSegmentIndex == 4, spots[spotOrder].category == 4{
+                annotationView?.isHidden = false
+                      }
+     
+        configureRightView(annotationView: annotationView!,tagNum: spotOrder )
+        configureDetailView(annotationView: annotationView!, image: UIImage(data: spots[spotOrder].image! as Data)!)
         
 
         return annotationView
@@ -178,6 +236,21 @@ class NearbyVC: UIViewController ,DatabaseListener {
         rightButton.tag = tagNum
         annotationView.rightCalloutAccessoryView = rightButton
     }
+    
+    private func configureDetailView(annotationView: MKAnnotationView, image : UIImage) {
+            
+            let detailView = UIImageView( image: image)
+            
+    //        let descView = UITextView.init()
+    //        descView.text = "sfjsklfjdslfjdlsfkjdslfjdkls"
+    //        detailView.addSubview(descView)
+           
+            let views = ["snapshotView": detailView]
+            detailView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[snapshotView(250)]", options: [], metrics: nil, views: views))
+            detailView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[snapshotView(170)]", options: [], metrics: nil, views: views))
+        
+            annotationView.detailCalloutAccessoryView = detailView
+        }
     
 
     /*

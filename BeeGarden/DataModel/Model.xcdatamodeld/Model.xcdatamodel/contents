@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BeeEntity" representedClassName="BeeEntity" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="FlowerEntity" representedClassName="FlowerEntity" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="gclimate" optional="YES" attributeType="String"/>
+        <attribute name="gmonth" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nectar" optional="YES" attributeType="String"/>
+        <attribute name="pollen" optional="YES" attributeType="String"/>
     </entity>
     <entity name="KnowledgeEntity" representedClassName="KnowledgeEntity" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -29,6 +34,7 @@
         <attribute name="counting" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SpotEntity" representedClassName="SpotEntity" syncable="YES">
         <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -44,10 +50,10 @@
     </entity>
     <elements>
         <element name="BeeEntity" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="FlowerEntity" positionX="-54" positionY="18" width="128" height="88"/>
+        <element name="FlowerEntity" positionX="-54" positionY="18" width="128" height="163"/>
         <element name="KnowledgeEntity" positionX="-36" positionY="63" width="128" height="103"/>
         <element name="ObserveEntity" positionX="-18" positionY="36" width="128" height="148"/>
-        <element name="PlantRecordEntity" positionX="-36" positionY="27" width="128" height="88"/>
+        <element name="PlantRecordEntity" positionX="-36" positionY="27" width="128" height="103"/>
         <element name="SpotEntity" positionX="-9" positionY="90" width="128" height="193"/>
     </elements>
 </model>

@@ -11,6 +11,14 @@ import CoreData
 import UIGradient
 
 class HomeKnowVC: UIViewController,DatabaseListener {
+    func onFlowerListChange(change: DatabaseChange, flowersDB: [FlowerEntity]) {
+        
+    }
+    
+    func onRecordListChange(change: DatabaseChange, recordsDB: [PlantRecordEntity]) {
+        
+    }
+    
     func onSpotListChange(change: DatabaseChange, spotsDB: [SpotEntity]) {
         
     }

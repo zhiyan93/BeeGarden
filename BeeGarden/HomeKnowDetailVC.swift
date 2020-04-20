@@ -33,7 +33,7 @@ class HomeKnowDetailVC: UIViewController {
              // databaseController?.addListener(listener: self)
              
               changeValue()
-       }
+       } 
     
     func changeValue()  {
         //let homeScreen = storyboard?.instantiateViewController(withIdentifier: "homeScreen") as! HomeViewController

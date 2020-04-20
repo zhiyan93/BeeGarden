@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o0Y-Wz-Al0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -25,7 +25,7 @@
         <!--Tab BarVC-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="TabBarVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -87,13 +87,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KoH-EW-tDs">
+                                <rect key="frame" x="8" y="73" width="398" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Tpw-ke-LPY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Clubs"/>
+                                    <segment title="Museums"/>
+                                    <segment title="Farms"/>
+                                    <segment title="Gardening"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="1" green="0.65479530529999996" blue="0.093164814740000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentAct:" destination="K8b-oh-JPM" eventType="valueChanged" id="lPi-5F-8sW"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FPr-qO-WFm" firstAttribute="trailing" secondItem="KoH-EW-tDs" secondAttribute="trailing" constant="8" id="8cR-3J-GRR"/>
+                            <constraint firstItem="KoH-EW-tDs" firstAttribute="leading" secondItem="FPr-qO-WFm" secondAttribute="leading" constant="8" id="Mjx-RC-HQK"/>
+                            <constraint firstItem="KoH-EW-tDs" firstAttribute="top" secondItem="FPr-qO-WFm" secondAttribute="top" constant="29" id="xws-rT-pWe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FPr-qO-WFm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nearby" id="ETO-PF-3qb"/>
                     <connections>
                         <outlet property="mapView" destination="v7W-Wt-PvQ" id="TmH-HV-h6L"/>
+                        <outlet property="segmentCtl" destination="KoH-EW-tDs" id="TU0-8o-cQY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3n-MR-LeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -743,6 +766,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcB-Fa-cjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.6956521739132" y="-495.53571428571428"/>
+        </scene>
+        <!--NavTab-->
+        <scene sceneID="Xpj-i7-sCS">
+            <objects>
+                <viewController title="NavTab" id="o0Y-Wz-Al0" customClass="NavTabVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fXY-II-oFN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znU-pa-wYW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiO-UE-fYt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants in my Garden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-S6-063">
+                                                <rect key="frame" x="16" y="100" width="157.5" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="QSC-co-BGu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-77-WDx">
+                                                <rect key="frame" x="16" y="133" width="174" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="ekF-OB-KOf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aen-vB-daq">
+                                                <rect key="frame" x="287" y="129" width="111" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="111" id="6fB-o6-1kJ"/>
+                                                    <constraint firstAttribute="height" constant="36" id="szu-RV-5Xb"/>
+                                                </constraints>
+                                                <state key="normal" title="Add plants"/>
+                                                <connections>
+                                                    <action selector="addPlantBtn:" destination="o0Y-Wz-Al0" eventType="touchUpInside" id="ixG-ap-tbu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="2yh-S6-063" firstAttribute="top" secondItem="BiO-UE-fYt" secondAttribute="top" constant="100" id="Dm4-1q-jCr"/>
+                                            <constraint firstItem="aen-vB-daq" firstAttribute="top" secondItem="2yh-S6-063" secondAttribute="bottom" constant="8" id="Dr8-do-8R3"/>
+                                            <constraint firstItem="6G0-77-WDx" firstAttribute="leading" secondItem="BiO-UE-fYt" secondAttribute="leading" constant="16" id="Q4L-1W-yxA"/>
+                                            <constraint firstItem="2yh-S6-063" firstAttribute="leading" secondItem="BiO-UE-fYt" secondAttribute="leading" constant="16" id="R1X-M6-Cgv"/>
+                                            <constraint firstItem="aen-vB-daq" firstAttribute="leading" secondItem="6G0-77-WDx" secondAttribute="trailing" constant="97" id="Tnm-o9-3kb"/>
+                                            <constraint firstItem="6G0-77-WDx" firstAttribute="top" secondItem="2yh-S6-063" secondAttribute="bottom" constant="12" id="Wib-V4-Cfk"/>
+                                            <constraint firstAttribute="trailing" secondItem="aen-vB-daq" secondAttribute="trailing" constant="16" id="p3i-U5-DhO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BiO-UE-fYt" firstAttribute="height" secondItem="znU-pa-wYW" secondAttribute="height" id="2hl-aM-bcS"/>
+                                    <constraint firstAttribute="bottom" secondItem="BiO-UE-fYt" secondAttribute="bottom" id="Ec4-qu-cnb"/>
+                                    <constraint firstItem="BiO-UE-fYt" firstAttribute="leading" secondItem="znU-pa-wYW" secondAttribute="leading" id="TC0-zy-621"/>
+                                    <constraint firstAttribute="trailing" secondItem="BiO-UE-fYt" secondAttribute="trailing" id="XTK-Gp-cez"/>
+                                    <constraint firstItem="BiO-UE-fYt" firstAttribute="top" secondItem="znU-pa-wYW" secondAttribute="top" id="hnl-DP-Rpe"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="znU-pa-wYW" firstAttribute="top" secondItem="mb9-cp-QCO" secondAttribute="top" id="EWL-6b-eod"/>
+                            <constraint firstItem="znU-pa-wYW" firstAttribute="trailing" secondItem="mb9-cp-QCO" secondAttribute="trailing" id="EcT-uZ-ETk"/>
+                            <constraint firstItem="znU-pa-wYW" firstAttribute="bottom" secondItem="mb9-cp-QCO" secondAttribute="bottom" id="WAh-1k-56T"/>
+                            <constraint firstItem="znU-pa-wYW" firstAttribute="width" secondItem="fXY-II-oFN" secondAttribute="width" id="Znq-yF-MO2"/>
+                            <constraint firstItem="znU-pa-wYW" firstAttribute="leading" secondItem="mb9-cp-QCO" secondAttribute="leading" id="mqW-3Y-WFK"/>
+                            <constraint firstItem="BiO-UE-fYt" firstAttribute="width" secondItem="fXY-II-oFN" secondAttribute="width" id="rDT-cN-nnu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mb9-cp-QCO"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="PlantCount" destination="6G0-77-WDx" id="UCq-fN-mHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OY4-Iy-cqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828.985507246377" y="-1235.4910714285713"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="PKf-gZ-VtA">
