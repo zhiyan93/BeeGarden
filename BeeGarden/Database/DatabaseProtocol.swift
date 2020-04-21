@@ -21,6 +21,7 @@ enum ListenerType {
     case flower
     case knowledge
     case spot
+    case all
 }
 
 protocol DatabaseListener: AnyObject {

@@ -205,6 +205,15 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             listener.onRecordListChange(change: .update, recordsDB: fetchAllRecord())
         }
         
+        
+        //
+        
+        if listener.listenerType == ListenerType.all {
+            listener.onObserveListChange(change: .update, observesDB: fetchAllBeeObserve())
+            listener.onSpotListChange(change: .update, spotsDB: fetchAllSpot())
+            listener.onFlowerListChange(change: .update, flowersDB: fetchAllFlower())
+        }
+        
     }
     
     

@@ -67,6 +67,10 @@
 		267CAB33244DCCFF00A7F973 /* PlantRecordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAB2F244DCCFF00A7F973 /* PlantRecordEntity+CoreDataClass.swift */; };
 		267CAB34244DCCFF00A7F973 /* PlantRecordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAB30244DCCFF00A7F973 /* PlantRecordEntity+CoreDataProperties.swift */; };
 		267CAB36244DFB7400A7F973 /* NavTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAB35244DFB7400A7F973 /* NavTabVC.swift */; };
+		267CAB38244EF45600A7F973 /* gardening.json in Resources */ = {isa = PBXBuildFile; fileRef = 267CAB37244EF45600A7F973 /* gardening.json */; };
+		267CAB3A244EF6FF00A7F973 /* travelers.json in Resources */ = {isa = PBXBuildFile; fileRef = 267CAB39244EF6FF00A7F973 /* travelers.json */; };
+		267CAB3C244F164000A7F973 /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 267CAB3B244F164000A7F973 /* camera.json */; };
+		267CAB3E244F1C6E00A7F973 /* travel-camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 267CAB3D244F1C6E00A7F973 /* travel-camera.json */; };
 		26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00625243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
@@ -156,6 +160,10 @@
 		267CAB2F244DCCFF00A7F973 /* PlantRecordEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantRecordEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		267CAB30244DCCFF00A7F973 /* PlantRecordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantRecordEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		267CAB35244DFB7400A7F973 /* NavTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabVC.swift; sourceTree = "<group>"; };
+		267CAB37244EF45600A7F973 /* gardening.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gardening.json; sourceTree = "<group>"; };
+		267CAB39244EF6FF00A7F973 /* travelers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = travelers.json; sourceTree = "<group>"; };
+		267CAB3B244F164000A7F973 /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
+		267CAB3D244F1C6E00A7F973 /* travel-camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "travel-camera.json"; sourceTree = "<group>"; };
 		26B00622243E1D8D00BA9187 /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
 		26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeeDetailVC.swift; sourceTree = "<group>"; };
@@ -339,6 +347,10 @@
 			isa = PBXGroup;
 			children = (
 				26C812AD2444D8C800FC4994 /* book-animation.json */,
+				267CAB37244EF45600A7F973 /* gardening.json */,
+				267CAB3B244F164000A7F973 /* camera.json */,
+				267CAB39244EF6FF00A7F973 /* travelers.json */,
+				267CAB3D244F1C6E00A7F973 /* travel-camera.json */,
 				26C812692444AD9000FC4994 /* bee-fiying.json */,
 			);
 			path = Animation;
@@ -468,9 +480,13 @@
 			files = (
 				265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */,
 				26C812EE2448A9F200FC4994 /* MelbourneCBD.gpx in Resources */,
+				267CAB3E244F1C6E00A7F973 /* travel-camera.json in Resources */,
 				26C812AE2444D8C800FC4994 /* book-animation.json in Resources */,
+				267CAB38244EF45600A7F973 /* gardening.json in Resources */,
 				26C8126A2444AD9000FC4994 /* bee-fiying.json in Resources */,
 				267CAAE02449F90900A7F973 /* Assets.xcassets in Resources */,
+				267CAB3A244EF6FF00A7F973 /* travelers.json in Resources */,
+				267CAB3C244F164000A7F973 /* camera.json in Resources */,
 				265B1F742436E7300036F0F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
