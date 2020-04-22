@@ -1,5 +1,5 @@
 //
-//  FlowerEntity+CoreDataClass.swift
+//  GardenEntity+CoreDataClass.swift
 //  BeeGarden
 //
 //  Created by steven liu on 23/4/20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(FlowerEntity)
-public class FlowerEntity: NSManagedObject {
+@objc(GardenEntity)
+public class GardenEntity: NSManagedObject {
 
 }

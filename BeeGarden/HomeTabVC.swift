@@ -11,6 +11,10 @@ import CoreData
 
 
 class HomeTabVC: UIViewController, DatabaseListener {
+    func onGardenChange(change: DatabaseChange, gardenPlants: [FlowerEntity]) {
+        
+    }
+    
     func onFlowerListChange(change: DatabaseChange, flowersDB: [FlowerEntity]) {
         
     }

@@ -2,7 +2,7 @@
 //  FlowerEntity+CoreDataProperties.swift
 //  BeeGarden
 //
-//  Created by steven liu on 20/4/20.
+//  Created by steven liu on 23/4/20.
 //  Copyright © 2020 steven liu. All rights reserved.
 //
 //
@@ -25,5 +25,23 @@ extension FlowerEntity {
     @NSManaged public var gclimate: String?
     @NSManaged public var pollen: String?
     @NSManaged public var nectar: String?
+    @NSManaged public var gardens: NSSet?
+
+}
+
+// MARK: Generated accessors for gardens
+extension FlowerEntity {
+
+    @objc(addGardensObject:)
+    @NSManaged public func addToGardens(_ value: GardenEntity)
+
+    @objc(removeGardensObject:)
+    @NSManaged public func removeFromGardens(_ value: GardenEntity)
+
+    @objc(addGardens:)
+    @NSManaged public func addToGardens(_ values: NSSet)
+
+    @objc(removeGardens:)
+    @NSManaged public func removeFromGardens(_ values: NSSet)
 
 }

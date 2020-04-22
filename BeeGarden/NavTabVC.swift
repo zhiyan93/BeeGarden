@@ -9,7 +9,11 @@
 import UIKit
 import Lottie
 
-class NavTabVC: UIViewController,DatabaseListener {
+class NavTabVC: UIViewController,DatabaseListener  {
+    func onGardenChange(change: DatabaseChange, gardenPlants: [FlowerEntity]) {
+        flowers = gardenPlants
+    }
+    
     var listenerType = ListenerType.all
 
     
@@ -30,7 +34,7 @@ class NavTabVC: UIViewController,DatabaseListener {
     }
     
     func onFlowerListChange(change: DatabaseChange, flowersDB: [FlowerEntity]) {
-        flowers = flowersDB
+        //flowers = flowersDB
     }
     
     func onRecordListChange(change: DatabaseChange, recordsDB: [PlantRecordEntity]) {

@@ -42,6 +42,22 @@
             </objects>
             <point key="canvasLocation" x="876.81159420289862" y="-105.13392857142857"/>
         </scene>
+        <!--GardenVC-->
+        <scene sceneID="uTg-DA-JAH">
+            <objects>
+                <viewController id="aZU-ud-HYI" customClass="GardenVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u04-e1-hSf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EMV-ht-Z85"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5a8-UU-gMA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGk-Il-txH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2904" y="189"/>
+        </scene>
         <!--gardentab-->
         <scene sceneID="aw0-LZ-b3K">
             <objects>
@@ -51,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJp-F8-LuL" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="151" width="374" height="97"/>
+                                <rect key="frame" x="20" y="107" width="374" height="97"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="PaQ-md-TYz"/>
@@ -73,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQe-mh-QjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2969.5652173913045" y="188.83928571428569"/>
+            <point key="canvasLocation" x="3893" y="193"/>
         </scene>
         <!--nearbytab-->
         <scene sceneID="lkH-uu-UQM">
@@ -342,7 +358,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="iZY-89-GPr" kind="relationship" relationship="rootViewController" id="7cr-Eh-7Dx"/>
+                        <segue destination="aZU-ud-HYI" kind="relationship" relationship="rootViewController" id="DLz-mw-D2J"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ozo-dO-I0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

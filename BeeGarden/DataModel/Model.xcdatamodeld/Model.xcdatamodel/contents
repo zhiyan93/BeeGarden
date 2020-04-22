@@ -14,6 +14,11 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="nectar" optional="YES" attributeType="String"/>
         <attribute name="pollen" optional="YES" attributeType="String"/>
+        <relationship name="gardens" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GardenEntity" inverseName="plants" inverseEntity="GardenEntity"/>
+    </entity>
+    <entity name="GardenEntity" representedClassName="GardenEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="plants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FlowerEntity" inverseName="gardens" inverseEntity="FlowerEntity"/>
     </entity>
     <entity name="KnowledgeEntity" representedClassName="KnowledgeEntity" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -50,10 +55,11 @@
     </entity>
     <elements>
         <element name="BeeEntity" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="FlowerEntity" positionX="-54" positionY="18" width="128" height="163"/>
+        <element name="FlowerEntity" positionX="-54" positionY="18" width="128" height="178"/>
         <element name="KnowledgeEntity" positionX="-36" positionY="63" width="128" height="103"/>
         <element name="ObserveEntity" positionX="-18" positionY="36" width="128" height="148"/>
         <element name="PlantRecordEntity" positionX="-36" positionY="27" width="128" height="103"/>
         <element name="SpotEntity" positionX="-9" positionY="90" width="128" height="193"/>
+        <element name="GardenEntity" positionX="-36" positionY="108" width="128" height="73"/>
     </elements>
 </model>

@@ -13,7 +13,11 @@ protocol FocusObserveDelegate {
     func foucusObserve(observe: ObserveEntity)
 }
 
-class GalleryTableVC: UITableViewController,UISearchResultsUpdating, DatabaseListener {
+class GalleryTableVC: UITableViewController,UISearchResultsUpdating, DatabaseListener  {
+    func onGardenChange(change: DatabaseChange, gardenPlants: [FlowerEntity]) {
+        
+    }
+    
     func onFlowerListChange(change: DatabaseChange, flowersDB: [FlowerEntity]) {
         
     }

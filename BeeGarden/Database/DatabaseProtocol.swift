@@ -21,6 +21,7 @@ enum ListenerType {
     case flower
     case knowledge
     case spot
+    case garden
     case all
 }
 
@@ -33,9 +34,12 @@ protocol DatabaseListener: AnyObject {
     func onSpotListChange(change: DatabaseChange,spotsDB:[SpotEntity])
     func onFlowerListChange(change:DatabaseChange,flowersDB:[FlowerEntity])
     func onRecordListChange(change:DatabaseChange,recordsDB:[PlantRecordEntity])
+    
+    func onGardenChange(change:DatabaseChange,gardenPlants:[FlowerEntity])
 }
 protocol DatabaseProtocol: AnyObject {
   //  var defaultList: SightEntity {get}
+    var defaultGarden: GardenEntity{get}
     
     func addObserve(name: String, desc: String, image:UIImage ,lat: Double,lon: Double, weather: String, time : Date) -> ObserveEntity
     //func addTeam(teamName: String) -> Team
@@ -60,4 +64,8 @@ protocol DatabaseProtocol: AnyObject {
     
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
+    
+    func addPlantToGarden(plant:FlowerEntity,garden: GardenEntity) -> Bool
+    func removePlantFromGarden(plant:FlowerEntity,garden:GardenEntity)
+    func addGarden(gardenName:String) -> GardenEntity
 }

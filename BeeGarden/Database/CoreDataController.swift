@@ -10,9 +10,11 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate  {
+   
+    
        
     
-    let DEFAULT_BEE_NAME = "Unnamed Bee"
+    let DEFAULT_GARDEN = "my garden"
     var listeners = MulticastDelegate<DatabaseListener>()
     
     var persistantContainer: NSPersistentContainer
@@ -24,6 +26,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     var allBeesFetchedResultsController: NSFetchedResultsController<BeeEntity>?
     var allKnowsFetchedResultsController: NSFetchedResultsController<KnowledgeEntity>?
   var allSpotsFetchedResultsController: NSFetchedResultsController<SpotEntity>?
+    
+    var gardenPlantsFetchedResultsController : NSFetchedResultsController<FlowerEntity>?
     //var teamHeroesFetchedResultsController: NSFetchedResultsController<SuperHero>?
     override init() {
         persistantContainer = NSPersistentContainer(name: "Model")
@@ -176,6 +180,30 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         saveContext()
     }
     
+   //
+    
+    func addGarden(gardenName: String) -> GardenEntity {
+           let garden = NSEntityDescription.insertNewObject(forEntityName: "GardenEntity", into: persistantContainer.viewContext) as! GardenEntity
+        
+        garden.name = gardenName
+        saveContext()
+        return garden
+       }
+       
+       
+       func addPlantToGarden(plant: FlowerEntity, garden: GardenEntity) -> Bool {
+           guard let plantlist = garden.plants, plantlist.contains(plant) == false else {
+           return false }
+        garden.addToPlants(plant)
+        saveContext()
+        return true
+       }
+       
+       func removePlantFromGarden(plant: FlowerEntity, garden: GardenEntity) {
+        garden.removeFromPlants(plant)
+        saveContext()
+       }
+    
     
    
     func addListener(listener: DatabaseListener) {
@@ -205,6 +233,11 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             listener.onRecordListChange(change: .update, recordsDB: fetchAllRecord())
         }
         
+        if listener.listenerType == ListenerType.garden  {
+            listener.onGardenChange(change: .update, gardenPlants: fetchGardenPlants())
+            listener.onFlowerListChange(change: .update, flowersDB: fetchAllFlower())
+               }
+        
         
         //
         
@@ -212,6 +245,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             listener.onObserveListChange(change: .update, observesDB: fetchAllBeeObserve())
             listener.onSpotListChange(change: .update, spotsDB: fetchAllSpot())
             listener.onFlowerListChange(change: .update, flowersDB: fetchAllFlower())
+            listener.onGardenChange(change: .update, gardenPlants: fetchGardenPlants())
+            
         }
         
     }
@@ -366,6 +401,30 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
              return records
          }
     
+    func fetchGardenPlants() -> [FlowerEntity] { 
+if gardenPlantsFetchedResultsController == nil {
+let fetchRequest: NSFetchRequest<FlowerEntity> = FlowerEntity.fetchRequest()
+let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+fetchRequest.sortDescriptors = [nameSortDescriptor]
+let predicate = NSPredicate(format: "ANY gardens.name == %@", DEFAULT_GARDEN)
+fetchRequest.predicate = predicate
+  gardenPlantsFetchedResultsController = NSFetchedResultsController<FlowerEntity>(fetchRequest: fetchRequest, managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+gardenPlantsFetchedResultsController?.delegate = self
+do {
+try gardenPlantsFetchedResultsController?.performFetch()
+} catch {
+print("Fetch Request failed: \(error)")
+}
+}
+var plants = [FlowerEntity]()
+if gardenPlantsFetchedResultsController?.fetchedObjects != nil {
+plants = (gardenPlantsFetchedResultsController?.fetchedObjects)!
+}
+return plants
+}
+    
+    
+    
     
     func controllerDidChangeContent(_ controller:
         NSFetchedResultsController<NSFetchRequestResult>) {
@@ -416,7 +475,36 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
                                  }
                              }
         
+        if controller == gardenPlantsFetchedResultsController {
+            listeners.invoke{ (listener) in
+                if listener.listenerType == ListenerType.garden {
+                    listener.onGardenChange(change: .update, gardenPlants: fetchGardenPlants())
+                }
+        }
+        
     }
+    }
+        
+        
+lazy var defaultGarden: GardenEntity = {
+var gardens = [GardenEntity]()
+let request: NSFetchRequest<GardenEntity> = GardenEntity.fetchRequest()
+let predicate = NSPredicate(format: "name = %@", DEFAULT_GARDEN)
+request.predicate = predicate
+do {
+try gardens = persistantContainer.viewContext.fetch(GardenEntity.fetchRequest()) as! [GardenEntity]
+} catch {
+print("Fetch Request failed: \(error)")
+}
+if gardens.count == 0 {
+return addGarden(gardenName: DEFAULT_GARDEN)
+}
+else {
+return gardens.first!
+}
+}()
+    
+    
     
   // var defaultList: SightEntity
     
