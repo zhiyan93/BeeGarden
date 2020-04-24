@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 import UserNotifications
+import GlidingCollection
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -71,7 +72,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         pageControl.currentPageIndicatorTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 1.0)
         pageControl.pageIndicatorTintColor = .lightGray
         
+        
+        setupGlidingCollection()
         return true
+    }
+    
+    private func setupGlidingCollection() {
+      var config = GlidingConfig.shared
+      config.buttonsFont = UIFont.boldSystemFont(ofSize: 22)
+      config.inactiveButtonsColor = config.activeButtonColor
+      GlidingConfig.shared = config
     }
 
     // MARK: UISceneSession Lifecycle
@@ -219,6 +229,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // ...
     }
 }
+
+
 
 
 

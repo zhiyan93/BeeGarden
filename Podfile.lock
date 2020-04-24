@@ -3,6 +3,8 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
+  - FloatingPanel (1.7.4)
+  - GlidingCollection (2.1.0)
   - lottie-ios (3.1.6)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
@@ -14,6 +16,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Charts
+  - FloatingPanel
+  - GlidingCollection
   - lottie-ios
   - NVActivityIndicatorView
   - SwiftyJSON
@@ -24,6 +28,8 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Charts
+    - FloatingPanel
+    - GlidingCollection
     - lottie-ios
     - NVActivityIndicatorView
     - SwiftyJSON
@@ -33,12 +39,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
+  GlidingCollection: a15dbd9ec1775c781453bc36e6104d0c9dec20fb
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
   UIGradient: 2364e9ebac232686db220713b4d42a68222fffb2
 
-PODFILE CHECKSUM: 511086838849276afd35ee3289486a2a93ad677a
+PODFILE CHECKSUM: 59847820af596c8545262a63e927180bc9dfc7e1
 
 COCOAPODS: 1.9.1

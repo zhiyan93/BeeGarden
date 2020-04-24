@@ -14,6 +14,8 @@ target 'BeeGarden' do
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'
   pod 'Charts'
+  pod 'GlidingCollection'
+  pod 'FloatingPanel'
   
   target 'BeeGardenTests' do
     inherit! :search_paths

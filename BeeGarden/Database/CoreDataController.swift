@@ -550,8 +550,14 @@ return gardens.first!
     
     func createDefaultFlowers(){
         let _ = addFlower(name: "Lavender", desc: "Lavender-It is grown in cool-climate zones and mainly known for its fragrance. These lasting herbs attract the bees greatly and they grow in a widespread format. It is well known to stand still in droughts, requires complete sun to grow properly and does not like shade. Also, the soil should be sandy to rough and should be well drained. These can be planted in a pot, container or ground. Lavenders attract honeybees, blue banded native bees, bumble bees and solitary bees.", image: #imageLiteral(resourceName: "lavender"), gmonth: "12,1,2", gclimate: "Cool", pollen: "high", nectar: "high", category: "herb")
+        
+         let _ = addFlower(name: "Lemon balm", desc: "Lemon balm- These herbs are known for their citrus fragrance and they can take a shape in a pot as well. They deliver a beautiful pastel yellowish colour. These plants are used in making of tea with lemon flavour. They need scheduled cuttings for appropriate growth. Commonly attracted to honeybees. This plant can withstand drought and requires sun to grow with allowable conditions of a bit of shade. Lemon balm attracts native bee species.", image: #imageLiteral(resourceName: "lemons-on-tree"), gmonth: "12,1,2,3,4", gclimate: "Cool", pollen: "low", nectar: "high", category: "herb")
+        
+         let _ = addFlower(name: "Grevillea montis-cole", desc: "Grevillea- These are rapidly increasing shrubs which has a partial vertical shape. The leaves are very beautifully shaped with zig-zag leaves structure. They support the growth of clustered red flowers. They should be reproduced by slicing from the bottom or planting the seedlings. They majorly attract honeybees. Grevillea requires maximum sun with a rainfall of around 750mm and a well-drained soil.Grevillea attracts teddy bear bee and blue banded native bees.", image: #imageLiteral(resourceName: "Grevillea-flower"), gmonth: "10,11,12,1,2,3,4,5", gclimate: "Cool", pollen: "low", nectar: "low", category: "shrub")
+        
+        let _ = addFlower(name: "Portugal laurel", desc: "Portugal Laurel- This plant will have green leaves throughout the year which will have a lustrous texture across them supporting creamy coloured spike type flowers which has a pleasing fragrance. The fruit produced from it cannot be eaten. The growing climatic conditions needed for this plant are maximum sun or partial shade along with less rainfall, can withstand drought and extreme windy conditions. This plant can be left uncut to grow as a huge bush like structure.These plants highly attracts honeybees and native bee species.", image: #imageLiteral(resourceName: "laurel-tree"), gmonth: "10,11,12", gclimate: "Cool", pollen: "low", nectar: "high", category: "tree")
     }
-    
+   
     func createDefaultRecords(){
         let formatter = DateFormatter()
                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
