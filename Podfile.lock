@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.1.0)
+  - CalendarHeatmap (0.1.3)
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CalendarHeatmap
   - Charts
   - FloatingPanel
   - GlidingCollection
@@ -27,6 +29,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CalendarHeatmap
     - Charts
     - FloatingPanel
     - GlidingCollection
@@ -38,6 +41,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  CalendarHeatmap: 91034b0eead341a8a8d29b4a460b8b3a176fa36c
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
   GlidingCollection: a15dbd9ec1775c781453bc36e6104d0c9dec20fb
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
   UIGradient: 2364e9ebac232686db220713b4d42a68222fffb2
 
-PODFILE CHECKSUM: 59847820af596c8545262a63e927180bc9dfc7e1
+PODFILE CHECKSUM: 97e5d0c6a67e060ba2236753798242870d78ab53
 
 COCOAPODS: 1.9.1

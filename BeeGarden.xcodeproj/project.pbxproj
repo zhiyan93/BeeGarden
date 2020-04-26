@@ -11,6 +11,9 @@
 		260844FB24420EBF00F59166 /* SpotEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260844F924420EBF00F59166 /* SpotEntity+CoreDataProperties.swift */; };
 		260844FD24421FD900F59166 /* SpotDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260844FC24421FD900F59166 /* SpotDetailVC.swift */; };
 		263361922453349D0014CD92 /* PlantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263361912453349D0014CD92 /* PlantDetailVC.swift */; };
+		2633619424541E5F0014CD92 /* GardenPlantHSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633619324541E5F0014CD92 /* GardenPlantHSVC.swift */; };
+		263361D224549E740014CD92 /* RecordHeatMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263361D124549E740014CD92 /* RecordHeatMapVC.swift */; };
+		263361D52454B1F00014CD92 /* addRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263361D42454B1F00014CD92 /* addRecordVC.swift */; };
 		265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6A2436E7300036F0F5 /* AppDelegate.swift */; };
 		265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */; };
 		265B1F742436E7300036F0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F722436E7300036F0F5 /* Main.storyboard */; };
@@ -133,6 +136,9 @@
 		260844F924420EBF00F59166 /* SpotEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpotEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		260844FC24421FD900F59166 /* SpotDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpotDetailVC.swift; path = Database/SpotDetailVC.swift; sourceTree = "<group>"; };
 		263361912453349D0014CD92 /* PlantDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailVC.swift; sourceTree = "<group>"; };
+		2633619324541E5F0014CD92 /* GardenPlantHSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantHSVC.swift; sourceTree = "<group>"; };
+		263361D124549E740014CD92 /* RecordHeatMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHeatMapVC.swift; sourceTree = "<group>"; };
+		263361D42454B1F00014CD92 /* addRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRecordVC.swift; sourceTree = "<group>"; };
 		265B1F672436E7300036F0F5 /* BeeGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265B1F6A2436E7300036F0F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +304,9 @@
 				267CAB432450962B00A7F973 /* GardenVC.swift */,
 				267CACC62451BC9700A7F973 /* PlantListVC.swift */,
 				263361912453349D0014CD92 /* PlantDetailVC.swift */,
+				2633619324541E5F0014CD92 /* GardenPlantHSVC.swift */,
+				263361D124549E740014CD92 /* RecordHeatMapVC.swift */,
+				263361D42454B1F00014CD92 /* addRecordVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -658,6 +667,7 @@
 				266220CC2439FE450072CF83 /* AddObserveVC.swift in Sources */,
 				26B0063B2440814800BA9187 /* HomeKnowDetailVC.swift in Sources */,
 				267CAB4C24509AF100A7F973 /* FlowerEntity+CoreDataProperties.swift in Sources */,
+				263361D52454B1F00014CD92 /* addRecordVC.swift in Sources */,
 				26622103243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
 				266220C82439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
 				260844FD24421FD900F59166 /* SpotDetailVC.swift in Sources */,
@@ -676,11 +686,13 @@
 				267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */,
 				265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */,
 				26B0067E2440B8F400BA9187 /* HomeViewController.swift in Sources */,
+				263361D224549E740014CD92 /* RecordHeatMapVC.swift in Sources */,
 				26B006332440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */,
 				267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */,
 				265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */,
 				2662209B243842BC0072CF83 /* Bee.swift in Sources */,
 				26B0068024417D7000BA9187 /* NearbyVC.swift in Sources */,
+				2633619424541E5F0014CD92 /* GardenPlantHSVC.swift in Sources */,
 				267CACC72451BC9700A7F973 /* PlantListVC.swift in Sources */,
 				267CAB36244DFB7400A7F973 /* NavTabVC.swift in Sources */,
 				260844FA24420EBF00F59166 /* SpotEntity+CoreDataClass.swift in Sources */,

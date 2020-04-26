@@ -49,28 +49,111 @@
                     <view key="view" contentMode="scaleToFill" id="u04-e1-hSf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtS-T3-frZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8s0-6V-j5n" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-i9-Lfz">
+                                                <rect key="frame" x="8" y="58" width="398" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="Jqz-pj-OGL"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="3KM-Qu-n35" kind="embed" id="QQw-o5-q3N"/>
+                                                </connections>
+                                            </containerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants in my Garden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-rm-jG7">
+                                                <rect key="frame" x="16" y="29" width="382" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="T10-gs-ysQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xy3-tz-vNZ">
+                                                <rect key="frame" x="8" y="333" width="398" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="230" id="7zO-hq-hP4"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="AFL-jL-wYX" kind="embed" id="yof-9J-diW"/>
+                                                </connections>
+                                            </containerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my Gardening  Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-9h-aY8">
+                                                <rect key="frame" x="16" y="304" width="382" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="oHR-GS-UIJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="NbG-rm-jG7" firstAttribute="leading" secondItem="8s0-6V-j5n" secondAttribute="leading" constant="16" id="5DH-aY-IId"/>
+                                            <constraint firstItem="Xy3-tz-vNZ" firstAttribute="leading" secondItem="8s0-6V-j5n" secondAttribute="leading" constant="8" id="64m-8z-QEe"/>
+                                            <constraint firstItem="NbG-rm-jG7" firstAttribute="top" secondItem="8s0-6V-j5n" secondAttribute="top" constant="29" id="8x5-j0-SBU"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xy3-tz-vNZ" secondAttribute="trailing" constant="8" id="Axk-lu-l3Y"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xy3-tz-vNZ" secondAttribute="bottom" constant="245" id="Cts-74-cs5"/>
+                                            <constraint firstItem="Xy3-tz-vNZ" firstAttribute="top" secondItem="5eN-9h-aY8" secondAttribute="bottom" constant="5" id="L2Z-sQ-Si6"/>
+                                            <constraint firstItem="5eN-9h-aY8" firstAttribute="top" secondItem="DMy-i9-Lfz" secondAttribute="bottom" constant="46" id="LKT-cU-s5D"/>
+                                            <constraint firstItem="DMy-i9-Lfz" firstAttribute="leading" secondItem="8s0-6V-j5n" secondAttribute="leading" constant="8" id="Ria-o0-FZA"/>
+                                            <constraint firstAttribute="trailing" secondItem="DMy-i9-Lfz" secondAttribute="trailing" constant="8" id="S1e-JD-2rZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="NbG-rm-jG7" secondAttribute="trailing" constant="16" id="T3A-1v-7Ud"/>
+                                            <constraint firstItem="DMy-i9-Lfz" firstAttribute="top" secondItem="NbG-rm-jG7" secondAttribute="bottom" constant="5" id="jmv-7v-XIq"/>
+                                            <constraint firstItem="5eN-9h-aY8" firstAttribute="leading" secondItem="8s0-6V-j5n" secondAttribute="leading" constant="16" id="oc4-Bd-UZY"/>
+                                            <constraint firstAttribute="trailing" secondItem="5eN-9h-aY8" secondAttribute="trailing" constant="16" id="ujt-1M-fMs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8s0-6V-j5n" secondAttribute="bottom" id="GX7-jE-nnj"/>
+                                    <constraint firstItem="8s0-6V-j5n" firstAttribute="height" secondItem="NtS-T3-frZ" secondAttribute="height" priority="250" id="PE1-OG-faP"/>
+                                    <constraint firstItem="8s0-6V-j5n" firstAttribute="top" secondItem="NtS-T3-frZ" secondAttribute="top" id="SIy-K7-FxE"/>
+                                    <constraint firstItem="8s0-6V-j5n" firstAttribute="width" secondItem="NtS-T3-frZ" secondAttribute="width" id="Yu3-EQ-gql"/>
+                                    <constraint firstItem="8s0-6V-j5n" firstAttribute="leading" secondItem="NtS-T3-frZ" secondAttribute="leading" id="w3o-HY-Skn"/>
+                                    <constraint firstAttribute="trailing" secondItem="8s0-6V-j5n" secondAttribute="trailing" id="wF9-qT-w0A"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NtS-T3-frZ" firstAttribute="trailing" secondItem="EMV-ht-Z85" secondAttribute="trailing" id="YcG-Sz-fL9"/>
+                            <constraint firstItem="NtS-T3-frZ" firstAttribute="top" secondItem="EMV-ht-Z85" secondAttribute="top" id="Ygp-IE-k1a"/>
+                            <constraint firstAttribute="bottom" secondItem="NtS-T3-frZ" secondAttribute="bottom" id="cvt-Vj-D8t"/>
+                            <constraint firstItem="NtS-T3-frZ" firstAttribute="leading" secondItem="EMV-ht-Z85" secondAttribute="leading" id="dmG-Cz-kfp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EMV-ht-Z85"/>
                     </view>
                     <navigationItem key="navigationItem" id="5a8-UU-gMA"/>
+                    <connections>
+                        <outlet property="contentView" destination="8s0-6V-j5n" id="i1N-i2-1tr"/>
+                        <outlet property="gardenView" destination="u04-e1-hSf" id="R7F-XN-gdD"/>
+                        <outlet property="plantContainer" destination="DMy-i9-Lfz" id="veP-Gh-vCF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGk-Il-txH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904" y="189"/>
+            <point key="canvasLocation" x="2814.4927536231885" y="190.17857142857142"/>
         </scene>
         <!--Plant ListVC-->
         <scene sceneID="QSV-gT-dIU">
             <objects>
-                <viewController id="99R-Me-Zbo" customClass="PlantListVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="plantListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="99R-Me-Zbo" customClass="PlantListVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GB6-lN-bd3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-Ld-a11">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sou-YW-PK3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-6w-TQk" customClass="GlidingCollection" customModule="GlidingCollection">
                                                 <rect key="frame" x="0.0" y="83" width="414" height="501"/>
@@ -118,7 +201,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwS-ON-lCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3843.4782608695655" y="188.83928571428569"/>
+            <point key="canvasLocation" x="4303" y="190"/>
+        </scene>
+        <!--Add RecordVC-->
+        <scene sceneID="uSG-LZ-exB">
+            <objects>
+                <viewController storyboardIdentifier="addRecordView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DKL-IK-1nK" customClass="addRecordVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PS8-rv-Sqf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="NnU-ny-ws7"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EPg-gp-mwU" appends="YES" id="Yfu-IA-Ymg"/>
+                        </connections>
+                    </view>
+                    <size key="freeformSize" width="414" height="500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90h-QQ-n75" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="EPg-gp-mwU">
+                    <connections>
+                        <action selector="panGesture:" destination="DKL-IK-1nK" id="Wg7-ZB-4cE"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="5052" y="181"/>
         </scene>
         <!--Plant DetailVC-->
         <scene sceneID="xf6-MH-pIr">
@@ -363,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9R-iI-lLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4607.2463768115949" y="188.83928571428569"/>
+            <point key="canvasLocation" x="5733" y="190"/>
         </scene>
         <!--gardentab-->
         <scene sceneID="aw0-LZ-b3K">
@@ -396,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQe-mh-QjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5343" y="189"/>
+            <point key="canvasLocation" x="6572" y="190"/>
         </scene>
         <!--nearbytab-->
         <scene sceneID="lkH-uu-UQM">
@@ -665,7 +773,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="99R-Me-Zbo" kind="relationship" relationship="rootViewController" id="rbY-ay-Nzs"/>
+                        <segue destination="aZU-ud-HYI" kind="relationship" relationship="rootViewController" id="1nq-ZM-kXh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ozo-dO-I0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1119,19 +1227,6 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plants in my Garden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-S6-063">
-                                                        <rect key="frame" x="21" y="181" width="157.5" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-77-WDx">
-                                                        <rect key="frame" x="186" y="175" width="80" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aen-vB-daq">
                                                         <rect key="frame" x="247" y="52" width="75" height="86"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1145,6 +1240,20 @@
                                                             <action selector="addPlantBtn:" destination="o0Y-Wz-Al0" eventType="touchUpInside" id="ixG-ap-tbu"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="La" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idB-zp-bmd">
+                                                        <rect key="frame" x="8" y="176" width="32" height="38"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plants in my Garden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-S6-063">
+                                                        <rect key="frame" x="34" y="185" width="153" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1155,13 +1264,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-ne-jbe" userLabel="observeView">
                                                 <rect key="frame" x="25" y="444" width="364" height="222"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="my Bee Observations: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-hU-sc8">
-                                                        <rect key="frame" x="30" y="171" width="172" height="38"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Observe the bees in my garden and share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14P-JR-CF3">
                                                         <rect key="frame" x="8" y="9" width="269" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1174,12 +1276,6 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asK-cj-ZVG">
-                                                        <rect key="frame" x="210" y="173" width="67" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-fP-ddP">
                                                         <rect key="frame" x="252" y="68" width="75" height="86"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1190,6 +1286,20 @@
                                                             <action selector="addObserveBtn:" destination="o0Y-Wz-Al0" eventType="touchUpInside" id="611-v8-og9"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="La" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-43-KLe">
+                                                        <rect key="frame" x="8" y="171" width="30" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bee Observations " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-hU-sc8">
+                                                        <rect key="frame" x="35" y="175" width="172" height="38"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1205,19 +1315,6 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="neayby helpful spots: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-jc-JTS">
-                                                        <rect key="frame" x="27" y="176" width="167.5" height="38"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vID-ns-fa6">
-                                                        <rect key="frame" x="200" y="180" width="67" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn more in nearby places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcv-6u-oKP">
                                                         <rect key="frame" x="8" y="7" width="205" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1235,6 +1332,20 @@
                                                             <action selector="showSpotsBtn:" destination="o0Y-Wz-Al0" eventType="touchUpInside" id="KP0-kZ-U2n"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="La" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwt-bw-6Gd">
+                                                        <rect key="frame" x="8" y="176" width="30" height="38"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="neayby helpful spots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-jc-JTS">
+                                                        <rect key="frame" x="41" y="176" width="167.5" height="38"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1260,32 +1371,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pS-57-q13">
-                                                        <rect key="frame" x="229" y="0.0" width="32" height="34"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="34" id="59d-0g-cH5"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJn-Vr-Obc">
-                                                        <rect key="frame" x="276" y="3" width="38" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="iPA-LT-3ny"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.65479530529999996" blue="0.093164814740000004" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Wkl-QK-6GH" firstAttribute="leading" secondItem="Jaa-Lx-L86" secondAttribute="leading" id="EtS-Wn-v23"/>
-                                                    <constraint firstItem="wJn-Vr-Obc" firstAttribute="top" secondItem="Jaa-Lx-L86" secondAttribute="top" constant="3" id="KUt-s3-qmL"/>
-                                                    <constraint firstItem="8pS-57-q13" firstAttribute="top" secondItem="Jaa-Lx-L86" secondAttribute="top" id="ft1-YA-xLD"/>
                                                     <constraint firstAttribute="height" constant="36" id="gZU-LD-ZMg"/>
-                                                    <constraint firstItem="8pS-57-q13" firstAttribute="leading" secondItem="Jaa-Lx-L86" secondAttribute="leading" constant="229" id="wKP-D9-QhD"/>
-                                                    <constraint firstItem="wJn-Vr-Obc" firstAttribute="leading" secondItem="8pS-57-q13" secondAttribute="trailing" constant="15" id="yBn-EH-v00"/>
                                                     <constraint firstItem="Wkl-QK-6GH" firstAttribute="top" secondItem="Jaa-Lx-L86" secondAttribute="top" constant="3" id="zkm-W5-g4R"/>
                                                 </constraints>
                                             </view>
@@ -1333,20 +1423,20 @@
                     <navigationItem key="navigationItem" id="chZ-jr-4mJ"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="PlantCount" destination="6G0-77-WDx" id="UCq-fN-mHx"/>
+                        <outlet property="PlantCount" destination="idB-zp-bmd" id="AzE-Mc-3QW"/>
                         <outlet property="avatarView" destination="YFj-Bs-1OJ" id="yta-Z6-SbF"/>
-                        <outlet property="daysTV" destination="8pS-57-q13" id="DZq-rT-g05"/>
+                        <outlet property="daysTV" destination="Wkl-QK-6GH" id="YnL-7w-gEx"/>
                         <outlet property="nearbyBtn" destination="rrV-cT-iTC" id="YAf-DS-4p2"/>
                         <outlet property="nearbySection" destination="67c-Wc-KiY" id="HGa-Op-8oa"/>
                         <outlet property="observeAniView" destination="OjW-cz-UJT" id="uzS-mR-dDc"/>
                         <outlet property="observeBtn" destination="2bh-fP-ddP" id="Guo-g7-5TB"/>
-                        <outlet property="observeCount" destination="asK-cj-ZVG" id="0gB-WP-XWc"/>
+                        <outlet property="observeCount" destination="qzM-43-KLe" id="iFI-FZ-nDH"/>
                         <outlet property="observeSection" destination="dbW-ne-jbe" id="RRy-1V-D6d"/>
                         <outlet property="plantAniView" destination="7r8-hQ-STv" id="ePR-sW-Z9f"/>
                         <outlet property="plantBtn" destination="aen-vB-daq" id="6fG-uX-p4M"/>
                         <outlet property="plantSection" destination="IMu-g8-sAj" id="m8y-ta-4Re"/>
                         <outlet property="spotAniView" destination="sOd-x2-Jte" id="5IW-sp-5SS"/>
-                        <outlet property="spotCount" destination="vID-ns-fa6" id="KPi-GX-PAz"/>
+                        <outlet property="spotCount" destination="Qwt-bw-6Gd" id="tWS-oz-gYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OY4-Iy-cqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1679,6 +1769,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGO-xc-MTe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3550.7246376811595" y="-351.22767857142856"/>
+        </scene>
+        <!--Garden PlantHSVC-->
+        <scene sceneID="Q7q-L4-IR2">
+            <objects>
+                <viewController storyboardIdentifier="gardenPlantHSView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3KM-Qu-n35" customClass="GardenPlantHSVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4KR-WQ-sZq">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETr-e0-pd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3551" y="40"/>
+        </scene>
+        <!--Record Heat MapVC-->
+        <scene sceneID="G7S-Yb-uBK">
+            <objects>
+                <viewController id="AFL-jL-wYX" customClass="RecordHeatMapVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vUR-lq-pKE">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="230"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4a-oS-T0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3551" y="272"/>
         </scene>
     </scenes>
     <resources>

@@ -47,19 +47,24 @@ class NavTabVC: UIViewController,DatabaseListener  {
    var spots = [SpotEntity]()
     
     @IBOutlet weak var avatarView: UIImageView!
-    @IBOutlet weak var daysTV: UITextField!
+   
+   
+    @IBOutlet weak var daysTV: UILabel!
     
     
     @IBOutlet weak var plantAniView: UIView!
-    @IBOutlet weak var PlantCount: UITextField!
+  
+    @IBOutlet weak var PlantCount: UILabel!
     @IBOutlet weak var plantBtn: UIButton!
     
     @IBOutlet weak var observeAniView: UIView!
-    @IBOutlet weak var observeCount: UITextField!
+  
+    @IBOutlet weak var observeCount: UILabel!
     @IBOutlet weak var observeBtn: UIButton!
     
     @IBOutlet weak var spotAniView: UIView!
-    @IBOutlet weak var spotCount: UITextField!
+   
+    @IBOutlet weak var spotCount: UILabel!
     @IBOutlet weak var nearbyBtn: UIButton!
     
     
@@ -176,12 +181,12 @@ class NavTabVC: UIViewController,DatabaseListener  {
         // Show the intro collectionView
         if sday == nil {
             UserDefaults.standard.set(Date(), forKey: "startDay")
-            self.daysTV.text = "0"
+            self.daysTV.text = "Contribute to native bees for 0 days"
         }
         else{
             let daysDiff = Calendar.current.dateComponents([.day], from: sday ?? Date(), to: Date()).day!
             print(daysDiff)
-            self.daysTV.text = String(daysDiff)
+            self.daysTV.text = "Contribute to native bees for \(String(daysDiff)) days"
            self.daysTV.reloadInputViews()
         }
     }

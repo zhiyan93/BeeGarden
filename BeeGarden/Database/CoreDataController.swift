@@ -561,7 +561,19 @@ return gardens.first!
     func createDefaultRecords(){
         let formatter = DateFormatter()
                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-               let someDateTime = formatter.date(from: "2020-01-01 22:31:00")!
+               let someDateTime = formatter.date(from: "2020-02-20 22:31:00")!
         let _ = addRecord(name: "watering1", type: "watering", time: someDateTime, counting: 2)
+        
+        let someDateTime2 = formatter.date(from: "2020-03-10 22:31:00")!
+        let _ = addRecord(name: "watering2", type: "watering", time: someDateTime2, counting: 5)
+        
+        let someDateTime3 = formatter.date(from: "2020-03-30 22:31:00")!
+        let _ = addRecord(name: "watering3", type: "watering", time: someDateTime3, counting: 3)
+        
+        let someDateTime4 = formatter.date(from: "2020-04-02 22:31:00")!
+               let _ = addRecord(name: "watering4", type: "watering", time: someDateTime4, counting: 2)
+        
+        let someDateTime5 = formatter.date(from: "2020-04-20 22:31:00")!
+                      let _ = addRecord(name: "watering5", type: "watering", time: someDateTime5, counting: 5)
     }
 }

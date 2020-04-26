@@ -43,6 +43,13 @@ class GardenVC: UIViewController ,DatabaseListener{
     var gardenPlants = [FlowerEntity]()
     var plants = [FlowerEntity]()
     
+    @IBOutlet weak var plantContainer: UIView!
+    
+     @IBOutlet var gardenView: UIView!
+    
+    @IBOutlet weak var contentView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,8 +57,11 @@ class GardenVC: UIViewController ,DatabaseListener{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                databaseController = appDelegate.databaseController   //coredata
         
-       
+        plantContainer.layer.cornerRadius = 10
+        gardenView.backgroundColor = .systemOrange
+        contentView.backgroundColor = .systemOrange
     }
+   
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,12 +76,12 @@ class GardenVC: UIViewController ,DatabaseListener{
           }
        
        
-       override func viewWillDisappear(_ animated: Bool) {
-                 super.viewWillDisappear(animated)
-                 databaseController?.removeListener(listener: self)
-           
-          
-             }
+     override func viewWillDisappear(_ animated: Bool) {
+                    super.viewWillDisappear(animated)
+                    databaseController?.removeListener(listener: self)
+              
+             
+                }
 
     /*
     // MARK: - Navigation

@@ -8,7 +8,38 @@
 
 import UIKit
 
-class PlantDetailVC: UIViewController {
+class PlantDetailVC: UIViewController,DatabaseListener {
+    var listenerType =  ListenerType.garden
+     weak var databaseController : DatabaseProtocol?
+    
+    func onObserveListChange(change: DatabaseChange, observesDB: [ObserveEntity]) {
+        
+    }
+    
+    func onBeeListChange(change: DatabaseChange, beesDB: [BeeEntity]) {
+        
+    }
+    
+    func onKnowledgeListChange(change: DatabaseChange, knowsDB: [KnowledgeEntity]) {
+        
+    }
+    
+    func onSpotListChange(change: DatabaseChange, spotsDB: [SpotEntity]) {
+        
+    }
+    
+    func onFlowerListChange(change: DatabaseChange, flowersDB: [FlowerEntity]) {
+        
+    }
+    
+    func onRecordListChange(change: DatabaseChange, recordsDB: [PlantRecordEntity]) {
+        
+    }
+    
+    func onGardenChange(change: DatabaseChange, gardenPlants: [FlowerEntity]) {
+        self.gPlants = gardenPlants
+    }
+    
 
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -31,21 +62,45 @@ class PlantDetailVC: UIViewController {
     
     var selectedPlant: FlowerEntity?
     let climateColors :[UIColor] = [.systemOrange ,.systemOrange,.systemOrange,.systemOrange]
+     var gPlants = [FlowerEntity]()
+    
+    var showNotAdd : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController   //coredata
         changeValue()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+         databaseController?.addListener(listener: self)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+                       super.viewWillDisappear(animated)
+                       databaseController?.removeListener(listener: self)
+                 
+                
+                   }
     
     
     
     @IBAction func plantBtnAct(_ sender: Any) {
+        let res =  databaseController?.addPlantToGarden(plant:  selectedPlant!, garden: databaseController!.defaultGarden)
+        print("add plant to garden \(res ?? false)")
+//         let gardenView = storyboard?.instantiateViewController(withIdentifier: "gardenPlantHSView") as! GardenPlantHSVC
+     
+        NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
+//        let indexPath = IndexPath(item: 0, section: 0)
+        
+        
+        dismiss(animated: true )
     }
+    
+    
     
     private func changeValue(){
         self.nameLabel.text = selectedPlant?.name
@@ -103,6 +158,10 @@ class PlantDetailVC: UIViewController {
         
         
         self.plantBtn.layer.cornerRadius = 10
+        if showNotAdd == true {
+            plantBtn.isEnabled = false
+            plantBtn.isHidden = true
+        }
        // self.plantBtn.backgroundColor = .systemOrange
         
     }
