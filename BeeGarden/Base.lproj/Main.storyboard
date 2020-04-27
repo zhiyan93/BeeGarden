@@ -83,7 +83,7 @@
                                                     <segue destination="AFL-jL-wYX" kind="embed" id="yof-9J-diW"/>
                                                 </connections>
                                             </containerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my Gardening  Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-9h-aY8">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my Gardening  Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-9h-aY8">
                                                 <rect key="frame" x="16" y="304" width="382" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="oHR-GS-UIJ"/>
