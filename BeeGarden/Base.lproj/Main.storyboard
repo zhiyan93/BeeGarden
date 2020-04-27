@@ -74,7 +74,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xy3-tz-vNZ">
+                                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xy3-tz-vNZ">
                                                 <rect key="frame" x="8" y="333" width="398" height="230"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="230" id="7zO-hq-hP4"/>
