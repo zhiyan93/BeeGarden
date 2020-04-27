@@ -568,6 +568,40 @@ return gardens.first!
         let _ = addSpot(name: "Scotsburn Nurseries Pty Ltd", desc: "Established in 1930, Scotsburn Nurseries supplies Melbourne and Victoria's best independent retail nurseries. They are proud of their long-standing reputation as a producer of quality flowers, vegetables and herbs.!", openhour: "8.00am–5.00pm for weekdays; Saturday-Closed,Sunday-Closed", place: "300 Perry Rd, Keysborough VIC 3173", category: 4, latitude: -38.026877, longitude: 145.181108, email: "(03) 9798 7066", website: "http://www.scotsburn.biz/", image:UIImage(named:"Scotsburn Nurseries Pty Ltd")!)
 
         
+        // farms
+        let _ = addSpot(name: "Kelvin Trading Pty Ltd", desc: "They specialise as an import organisation and stock all the materials and equipment for an apiarist, further information can be found on the website!", openhour: "Wednesday & Friday : 10.00 am - 4:00pm", place: "4/12-14 Miles St, Mulgrave VIC 3170", category: 3, latitude: -37.923120, longitude: 145.150620, email: "0405 123 098", website: "http://www.kelvintrading.com.au/", image:UIImage(named:"Kelvin Trading Pty Ltd")!)
+
+        let _ = addSpot(name: "The Practical Beekeeper", desc: "They are registered beekeepers and also work towards assembling swarms,efficient in managing beehives and have their personalised educational materials, for more information please visit their website !", openhour: "Weekdays : 10.00 am - 5:00pm; Weekends: Closed", place: "2 Wingrove St, Alphington VIC 3078", category: 3, latitude: -37.777530, longitude: 145.032280, email: "0418 863 884", website: "http://thepracticalbeekeeper.com.au/", image:UIImage(named:"The Practical Beekeeper")!)
+
+        let _ = addSpot(name: "Archibald honey", desc: "Please visit the website for more information!", openhour: "Tuesday, Wednesday, Thursday : 9.00 am - 3:00pm; Monday, Friday, Saturday, Sunday: Closed", place: "369 Spring Rd, Dingley Village VIC 3172", category: 3, latitude: -37.984890, longitude: 1145.141890, email: "+64 395511860", website: "http://www.archibaldhoney.com.au/", image:UIImage(named:"Archibald honey")!)
+
+        let _ = addSpot(name: "Amazing Bees", desc: "This is a great knowledgeable website to learn about bees and its behaviours, they do not have a bee farm or a honey farm for visits but one can go and learn about bees from their website !", openhour: "appointment only", place: "25 Democrat Dr, The Basin VIC 3154", category: 3, latitude: -37.852880, longitude: 145.304170, email: "0414 558 400", website: "https://amazingbees.com.au/", image:UIImage(named:"Amazing Bees")!)
+
+//        let _ = addSpot(name: "Pure Peninsula Honey", desc: "They stock products which suits everybody’s needs and consists of farms, honey products and other services such as pollination and wasp removal,please visit the website for more information!", openhour: "Weekdays & Weekends- 9.00am- 3.00pm", place: " 871 Derril Rd, Moorooduc VIC 3933", category: 3, latitude: -38.239690, longitude: 145.106730, email: "(03) 5978 8413", website: "purepeninsulahoney.com.au", image:UIImage(named:"Pure Peninsula Honey")!)
+
+
+
+
+        let _ = addSpot(name: "Ben's Bees", desc: "A bee farm which applies many service of bees,such as selling bee hive and bee removal, please visit the website for more information.", openhour: "7am to 8pm everyday", place: "15 Marilyn Ct, Blackburn North VIC 3130", category: 3, latitude: -37.805990, longitude: 145.167810, email: "0437 077 792", website: "https://www.bensbees.com.au/", image:UIImage(named:"Ben_s Bees")!)
+
+
+        let _ = addSpot(name: "Bee Rescue Melbourne", desc: "Focus on bee hive removal & rescue, and provide raw local honey,please visit the website for more information.", openhour: "7am to 7pm everyday", place: "30 Gosfidld Rd, Hursbridge,VIC 3099", category: 3, latitude: -37.632520, longitude: 145.213690, email: "0408 336 363", website: "https://beerescue.com.au/", image:UIImage(named:"Bee Rescue Melbourne")!)
+
+
+        let _ = addSpot(name: "Heathmont Honey", desc: "This bee farm is located in the eastern suburbs of Melbourne. Beekeeping is one of the most ancient craft for them,please visit the website for more information", openhour: "12pm to 5pm during weekdays", place: "30 Washusen Rd, Heathmont VIC 3135", category: 3, latitude: -37.837250, longitude: 145.240350, email: "(03) 9738 0456", website: "http://www.heathmonthoney.com.au/", image:UIImage(named:"Heathmont Honey")!)
+
+
+
+        let _ = addSpot(name: "Honey Paradise", desc: "They separate their honeys according to their floral type, allowing the flavours of each individual floral to be exhibited,please visit the website for more information", openhour: "9:30am to 5pm on Wed,Thu and Fri", place: "45 Huntingdale Rd, Burwood VIC 3125", category: 3, latitude: -37.858720, longitude: 145.113210, email: "(03) 9808 8828", website: "http://honeyparadise.com.au/", image:UIImage(named:"Honey Paradise")!)
+
+        let _ = addSpot(name: "Upper Beaconsfield Certified Organic Apiaries", desc: "They are a family-run boutique bee and organic honey apiary based 50km south east of Melbourne in the foothills of The Dandenongs,please visit the website for more information.", openhour: "appointment only", place: "184 Berglund Rd, Beaconsfield Upper VIC 3808", category: 3, latitude: -38.002790, longitude: 145.452810, email: "0448 916 566", website: "https://organichoney.melbourne/", image:UIImage(named:"Upper Beaconsfield Certified Organic Apiaries")!)
+
+        let _ = addSpot(name: "Beekeeping Supplies & Equipment", desc: "They are a small family business supplying and manufacturing beekeeping equipment for hobby beekeepers,please visit the website for more information.", openhour: "8am to 9am on Sat", place: "410 Andersons Rd, Mount Moriac VIC 3240", category: 3, latitude: -38.203011, longitude: 144.205292, email: "(03) 5266 1086", website: "https://www.meleebeefarm.com/", image:UIImage(named:"Beekeeping Supplies & Equipment")!)
+
+
+        let _ = addSpot(name: "Aussie Apiaries", desc: "Here at Aussie Apiaries we pride ourselves on producing everything in-house,please visit the website for more information.", openhour: "9am to 3pm on Mon,Wed,Fri and Sat", place: "11 Carrick Dr, Tullamarine VIC 3043", category: 3, latitude: -37.701958, longitude: 144.883362, email: "0408 557 719", website: "http://aussieapiaries.com.au/", image:UIImage(named:"Aussie Apiaries")!)
+
+        
     }
     
     func createDefaultFlowers(){
