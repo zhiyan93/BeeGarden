@@ -8,11 +8,13 @@
 
 import UIKit
 import CalendarHeatmap
+import SwiftEntryKit
 
 class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListener, UIViewControllerTransitioningDelegate {
     var listenerType = ListenerType.plantRecord
     weak var databaseController : DatabaseProtocol?
     
+    var recordDates = [DateComponents]()
     func onObserveListChange(change: DatabaseChange, observesDB: [ObserveEntity]) {
         
     }
@@ -122,10 +124,11 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
         }
         
       
-      
+        recordDates = [DateComponents]()
         for r in records {
            let rDate = r.time
             let rComponents = Calendar.current.dateComponents([.year, .month, .day], from: rDate ?? Date())
+            recordDates.append(rComponents)
             if dateComponents == rComponents {
                 yourColor = .systemBlue
             }
@@ -147,6 +150,18 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
                 addRVC.modalPresentationStyle = .custom
                   present(addRVC, animated: true)
                }
+        var i:Int = 0
+        while i < recordDates.count{
+            if recordDates[i] == dateComponents {
+               let title = records[i].type
+              
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                let d = formatter.string(from: records[i].time!)
+                TopNotesPush.bottomPush(message: d, title: title ?? " ", icon: UIImage(named: "drop128p")!, color: .greenGrass)
+            }
+            i = i+1
+        }
         
        }
     

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Austplant Nursery _ Gardens.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Austplant Nursery _ Gardens@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Austplant Nursery _ Gardens@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

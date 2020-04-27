@@ -17,6 +17,7 @@ target 'BeeGarden' do
   pod 'GlidingCollection'
   pod 'FloatingPanel'
   pod 'CalendarHeatmap'
+  pod 'SwiftEntryKit', '1.2.3'
   
   target 'BeeGardenTests' do
     inherit! :search_paths

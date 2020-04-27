@@ -77,7 +77,7 @@ class PlantListVC: UIViewController,DatabaseListener {
         shrubList = [Int]()
         treeList = [Int]()
             categoryEntity()
-        
+        glidingView.layer.cornerRadius = 10
          print(plants.count)
         print(herbList.count)
        
@@ -113,7 +113,7 @@ extension PlantListVC: GlidingCollectionDatasource {
   }
 
   func glidingCollection(_ collection: GlidingCollection, itemAtIndex index: Int) -> String {
-    return "– " + items[index]
+    return "–-" + items[index]
   }
 
 }
@@ -139,6 +139,7 @@ extension PlantListVC {
     private func setupGlidingConfig(){
         var config = GlidingConfig.shared
         config.cardShadowRadius = 7
+    
         config.buttonsFont = UIFont.systemFont(ofSize: 21)
         config.cardsSize = CGSize(width: round(UIScreen.main.bounds.width * 0.65), height: round(UIScreen.main.bounds.height * 0.45))
         GlidingConfig.shared = config
@@ -217,7 +218,7 @@ extension PlantListVC: UICollectionViewDataSource, UICollectionViewDelegate {
     layer.shadowColor = config.cardShadowColor.cgColor
     layer.shadowOpacity = config.cardShadowOpacity
     layer.shadowRadius = config.cardShadowRadius
-    
+   
     layer.shouldRasterize = true
     layer.rasterizationScale = UIScreen.main.scale
     

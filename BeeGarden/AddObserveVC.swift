@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SwiftEntryKit
 
 protocol AddObserveDelegate : AnyObject {
     func addObserve(newObserve : Observe) -> Bool
@@ -21,11 +22,10 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     @IBOutlet weak var observeDesc: UITextView!
     
     @IBOutlet weak var currentLoc: UITextView!
-    @IBOutlet weak var observeLat: UITextField!
+   
+    @IBOutlet weak var observeTime: UILabel!
     
-    @IBOutlet weak var observeLon: UITextField!
     
-    @IBOutlet weak var observeTime: UITextField!
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -104,7 +104,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
                  //  let _ = addSightDelegate!.addSight(newSight: sight)
             let _ = databaseController!.addObserve(name: name, desc: desc, image: image, lat: lat!, lon: lon!, weather: weather, time: date!)
             //TODO
-            
+            TopNotesPush.push(message: "obsrvation created successfully", color: .color(color: Color.LightBlue.a700))
            
                    navigationController?.popViewController(animated: true)
                    return
@@ -125,9 +125,9 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         if let currentLocation = currentLocation {
              let lat = "\(currentLocation.latitude)"
             let lon =  "\(currentLocation.longitude)"
-            observeLat.text = lat
+           // observeLat.text = lat
               
-            observeLon.text = lon
+           // observeLon.text = lon
               
             getAddressFromLatLon(pdblLatitude: lat, withLongitude: lon)
         }

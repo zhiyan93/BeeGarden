@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class PlantDetailVC: UIViewController,DatabaseListener {
     var listenerType =  ListenerType.garden
@@ -92,7 +93,13 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         let res =  databaseController?.addPlantToGarden(plant:  selectedPlant!, garden: databaseController!.defaultGarden)
         print("add plant to garden \(res ?? false)")
 //         let gardenView = storyboard?.instantiateViewController(withIdentifier: "gardenPlantHSView") as! GardenPlantHSVC
-     
+        if(res == true){
+            TopNotesPush.push(message: "add \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
+        }
+        
+        else{
+            TopNotesPush.push(message: "\(selectedPlant!.name ?? " ") has been in your garden", color: .color(color: Color.LightPink.first))
+        }
         NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
 //        let indexPath = IndexPath(item: 0, section: 0)
         

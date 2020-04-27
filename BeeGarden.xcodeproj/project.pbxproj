@@ -14,6 +14,8 @@
 		2633619424541E5F0014CD92 /* GardenPlantHSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633619324541E5F0014CD92 /* GardenPlantHSVC.swift */; };
 		263361D224549E740014CD92 /* RecordHeatMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263361D124549E740014CD92 /* RecordHeatMapVC.swift */; };
 		263361D52454B1F00014CD92 /* addRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263361D42454B1F00014CD92 /* addRecordVC.swift */; };
+		263362182455D3190014CD92 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263362172455D3190014CD92 /* UIColor+Utils.swift */; };
+		2633621A2455D4230014CD92 /* TopNotesPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263362192455D4230014CD92 /* TopNotesPush.swift */; };
 		265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6A2436E7300036F0F5 /* AppDelegate.swift */; };
 		265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */; };
 		265B1F742436E7300036F0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265B1F722436E7300036F0F5 /* Main.storyboard */; };
@@ -139,6 +141,8 @@
 		2633619324541E5F0014CD92 /* GardenPlantHSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantHSVC.swift; sourceTree = "<group>"; };
 		263361D124549E740014CD92 /* RecordHeatMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHeatMapVC.swift; sourceTree = "<group>"; };
 		263361D42454B1F00014CD92 /* addRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRecordVC.swift; sourceTree = "<group>"; };
+		263362172455D3190014CD92 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		263362192455D4230014CD92 /* TopNotesPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNotesPush.swift; sourceTree = "<group>"; };
 		265B1F672436E7300036F0F5 /* BeeGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265B1F6A2436E7300036F0F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265B1F6C2436E7300036F0F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +251,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		263362162455D2CC0014CD92 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				263362172455D3190014CD92 /* UIColor+Utils.swift */,
+				263362192455D4230014CD92 /* TopNotesPush.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		265B1F5E2436E7300036F0F5 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +285,7 @@
 		265B1F692436E7300036F0F5 /* BeeGarden */ = {
 			isa = PBXGroup;
 			children = (
+				263362162455D2CC0014CD92 /* Utils */,
 				267CAADF2449F90900A7F973 /* Assets.xcassets */,
 				26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */,
 				26C812662444AA8800FC4994 /* Animation */,
@@ -660,6 +674,7 @@
 				266220BC243891E40072CF83 /* MulticastDelegate.swift in Sources */,
 				26B006372440542200BA9187 /* HomeKnowVC.swift in Sources */,
 				267CAB33244DCCFF00A7F973 /* PlantRecordEntity+CoreDataClass.swift in Sources */,
+				263362182455D3190014CD92 /* UIColor+Utils.swift in Sources */,
 				266220B8243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
 				266220A7243843260072CF83 /* Observe.swift in Sources */,
 				267CAB442450962B00A7F973 /* GardenVC.swift in Sources */,
@@ -674,6 +689,7 @@
 				267CAB4924509AF100A7F973 /* GardenEntity+CoreDataClass.swift in Sources */,
 				26622106243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				267CAB34244DCCFF00A7F973 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
+				2633621A2455D4230014CD92 /* TopNotesPush.swift in Sources */,
 				26B0062B2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
 				26C812B024460A1900FC4994 /* PlantVC.swift in Sources */,
