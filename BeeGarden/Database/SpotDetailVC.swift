@@ -50,6 +50,7 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate {
             
             self.name.text = tapedSpot.name
             self.desc.text = tapedSpot.desc
+            desc.isScrollEnabled = false
             self.hours.text = tapedSpot.openhour
             self.address.text = tapedSpot.place
             self.contact.text = tapedSpot.email
