@@ -9,6 +9,7 @@
 import Foundation
 import SwiftEntryKit
 
+//notification on top and bottom push
 struct TopNotesPush {
     static func push(message: String,color: EKAttributes.BackgroundStyle){
         var attributes = EKAttributes()
@@ -17,6 +18,7 @@ struct TopNotesPush {
                attributes.name = "Top Note"
                attributes.hapticFeedbackType = .success
                attributes.popBehavior = .animated(animation: .translation)
+         attributes.displayDuration = 3
         attributes.entryBackground = color
                attributes.shadow = .active(
                    with: .init(

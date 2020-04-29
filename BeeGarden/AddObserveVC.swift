@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import SwiftEntryKit
+import Accelerate
+import Lottie
 
 protocol AddObserveDelegate : AnyObject {
     func addObserve(newObserve : Observe) -> Bool
@@ -26,16 +28,20 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     @IBOutlet weak var observeTime: UILabel!
     
     
+    @IBOutlet weak var useLocBtn: UIButton!
+    
+    @IBOutlet weak var createBtn: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var observeWeather: UITextView!
     
+    @IBOutlet weak var tapAniView: UIView!
     
     weak var databaseController: DatabaseProtocol?
     
     var locationManager: CLLocationManager = CLLocationManager()
-    var currentLocation: CLLocationCoordinate2D?
+    var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -37.813407, longitude: 144.969730)
     var locationFormAdd : CLLocationCoordinate2D?  //
     var imageHasSet: Bool = false
 
@@ -57,10 +63,26 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         observeWeather.delegate = self
         currentLoc.text = "Melbourne"
         imageHasSet = false
+        useLocBtn.layer.cornerRadius = 10
+        createBtn.layer.cornerRadius = 10
+        
+       let tapAni = AnimationView(name: "hand-tap")
+    
+        LotAnimation.setAnimation(logoAnimation: tapAni, size: 80, view: tapAniView)
+        tapAni.play()
+       
+          
     }
     
     @IBAction func imageClicked(_ sender: Any) {
         
+        
+    }
+    
+    
+    @IBAction func cameraBtnAct(_ sender: Any) {
+        
+        tapAniView.isHidden = true
         let imagePicker: UIImagePickerController = UIImagePickerController()
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -90,6 +112,10 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
                    let name = observeName.text!
                    let desc = observeDesc.text!
                    let image = imageView.image!
+            
+            let smallSize = CGSize(width: image.size.width/1.5,height: image.size.height/1.5)
+            let smallImage = image.resizeImageUsingVImage(size:smallSize)!
+            
             let weather = observeWeather.text!
             let time = observeTime.text!
             let df = DateFormatter()
@@ -97,12 +123,12 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
             let date = df.date(from: time)
                   // let lat = sightLat
                  //  let lon = sightLon
-            let lat = currentLocation?.latitude //lantitude!
-            let lon  = currentLocation?.longitude
+            let lat = currentLocation.latitude //lantitude!
+            let lon  = currentLocation.longitude
                  
                   // let sight = Sight(image: image, name: name, desc: desc, lat: lat, lon: lon,icon: icon)
                  //  let _ = addSightDelegate!.addSight(newSight: sight)
-            let _ = databaseController!.addObserve(name: name, desc: desc, image: image, lat: lat!, lon: lon!, weather: weather, time: date!)
+            let _ = databaseController!.addObserve(name: name, desc: desc, image: smallImage, lat: lat , lon: lon , weather: weather, time: date ?? Date())
             //TODO
             TopNotesPush.push(message: "obsrvation created successfully", color: .color(color: Color.LightBlue.a700))
            
@@ -122,7 +148,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     
     private func setLocationFields()
     {
-        if let currentLocation = currentLocation {
+       
              let lat = "\(currentLocation.latitude)"
             let lon =  "\(currentLocation.longitude)"
            // observeLat.text = lat
@@ -130,12 +156,12 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
            // observeLon.text = lon
               
             getAddressFromLatLon(pdblLatitude: lat, withLongitude: lon)
-        }
-        else {
-            let alertController = UIAlertController(title: "Location Not Found", message: "The location has not yet been determined.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-        }
+        
+//        else {
+//            let alertController = UIAlertController(title: "Location Not Found", message: "The location has not yet been determined.", preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//            present(alertController, animated: true, completion: nil)
+//        }
     }
     
     
@@ -259,4 +285,38 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     }
     
 
+}
+
+extension UIImage{
+    func resizeImageUsingVImage(size:CGSize) -> UIImage? {
+         let cgImage = self.cgImage!
+         var format = vImage_CGImageFormat(bitsPerComponent: 8, bitsPerPixel: 32, colorSpace: nil, bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.first.rawValue), version: 0, decode: nil, renderingIntent: CGColorRenderingIntent.defaultIntent)
+         var sourceBuffer = vImage_Buffer()
+         defer {
+              free(sourceBuffer.data)
+         }
+        var error = vImageBuffer_InitWithCGImage(&sourceBuffer, &format, nil, cgImage, numericCast(kvImageNoFlags))
+         guard error == kvImageNoError else { return nil }
+       // create a destination buffer
+       let scale = self.scale
+       let destWidth = Int(size.width)
+       let destHeight = Int(size.height)
+       let bytesPerPixel = self.cgImage!.bitsPerPixel/8
+       let destBytesPerRow = destWidth * bytesPerPixel
+       let destData = UnsafeMutablePointer<UInt8>.allocate(capacity: destHeight * destBytesPerRow)
+       defer {
+        destData.deallocate( )  //
+       }
+      var destBuffer = vImage_Buffer(data: destData, height: vImagePixelCount(destHeight), width: vImagePixelCount(destWidth), rowBytes: destBytesPerRow)
+    // scale the image
+     error = vImageScale_ARGB8888(&sourceBuffer, &destBuffer, nil, numericCast(kvImageHighQualityResampling))
+     guard error == kvImageNoError else { return nil }
+     // create a CGImage from vImage_Buffer
+     var destCGImage = vImageCreateCGImageFromBuffer(&destBuffer, &format, nil, nil, numericCast(kvImageNoFlags), &error)?.takeRetainedValue()
+    guard error == kvImageNoError else { return nil }
+    // create a UIImage
+     let resizedImage = destCGImage.flatMap { UIImage(cgImage: $0, scale: 0.0, orientation: self.imageOrientation) }
+     destCGImage = nil
+    return resizedImage
+    }
 }

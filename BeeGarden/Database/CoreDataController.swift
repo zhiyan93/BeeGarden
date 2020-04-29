@@ -13,7 +13,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
    
     
        
-    
+    //default garden name
     let DEFAULT_GARDEN = "my garden"
     var listeners = MulticastDelegate<DatabaseListener>()
     
@@ -63,6 +63,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         
     }
     
+    //apply database change
     func saveContext() {
         if persistantContainer.viewContext.hasChanges {
             do {

@@ -10,6 +10,7 @@
 import UIKit
 import SwiftEntryKit
 
+// colors for notications
 extension UIColor {
     static func by(r: Int, g: Int, b: Int, a: CGFloat = 1) -> UIColor {
         let d = CGFloat(255)

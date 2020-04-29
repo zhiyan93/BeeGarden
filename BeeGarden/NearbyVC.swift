@@ -53,8 +53,8 @@ class NearbyVC: UIViewController ,DatabaseListener  {
     
 
     private let locationManager = CLLocationManager()
-    private var currentCoordinate: CLLocationCoordinate2D?
-    private var currentLocation :CLLocation?
+    private var currentCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -37.813407, longitude: 144.969730)
+   // private var currentLocation :CLLocation?
     let regionRadius: Double = 12000
     var isFirstZoomedToUserLocation: Bool = true
     

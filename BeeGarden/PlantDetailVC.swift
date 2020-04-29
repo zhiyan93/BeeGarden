@@ -100,6 +100,8 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         else{
             TopNotesPush.push(message: "\(selectedPlant!.name ?? " ") has been in your garden", color: .color(color: Color.LightPink.first))
         }
+        
+        // reload the collection view
         NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
 //        let indexPath = IndexPath(item: 0, section: 0)
         

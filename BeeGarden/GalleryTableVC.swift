@@ -136,7 +136,7 @@ class GalleryTableVC: UITableViewController,UISearchResultsUpdating, DatabaseLis
             return 1
         }
     }
-
+  
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == SECTION_OBSERVE {
