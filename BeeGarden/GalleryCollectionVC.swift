@@ -66,7 +66,7 @@ class GalleryCollectionVC: UIViewController,DatabaseListener {
             }
             // Do any additional setup after loading the view.
             collectionView.reloadData()
-            print("sfdfsdfdsfsdfs")
+            //print("sfdfsdfdsfsdfs")
             deleteButton.isEnabled = false // modified
         }
         

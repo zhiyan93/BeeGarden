@@ -90,16 +90,26 @@ class PlantDetailVC: UIViewController,DatabaseListener {
     
     
     @IBAction func plantBtnAct(_ sender: Any) {
-        let res =  databaseController?.addPlantToGarden(plant:  selectedPlant!, garden: databaseController!.defaultGarden)
-        print("add plant to garden \(res ?? false)")
-//         let gardenView = storyboard?.instantiateViewController(withIdentifier: "gardenPlantHSView") as! GardenPlantHSVC
-        if(res == true){
-            TopNotesPush.push(message: "add \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
+        
+        if (showNotAdd == false){
+                   let res =  databaseController?.addPlantToGarden(plant:  selectedPlant!, garden: databaseController!.defaultGarden)
+                    print("add plant to garden \(res ?? false)")
+            //         let gardenView = storyboard?.instantiateViewController(withIdentifier: "gardenPlantHSView") as! GardenPlantHSVC
+                    if(res == true){
+                        TopNotesPush.push(message: "Add \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
+                    }
+                    
+                    else{
+                        TopNotesPush.push(message: "\(selectedPlant!.name ?? " ") has been in your garden", color: .color(color: Color.LightPink.first))
+                    }
         }
         
-        else{
-            TopNotesPush.push(message: "\(selectedPlant!.name ?? " ") has been in your garden", color: .color(color: Color.LightPink.first))
+        else {
+           databaseController?.removePlantFromGarden(plant: selectedPlant!, garden: databaseController!.defaultGarden)
+            print("remove 1 plant from garden")
+             TopNotesPush.push(message: "Remove \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
         }
+ 
         
         // reload the collection view
         NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
@@ -168,8 +178,10 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         
         self.plantBtn.layer.cornerRadius = 10
         if showNotAdd == true {
-            plantBtn.isEnabled = false
-            plantBtn.isHidden = true
+//            plantBtn.isEnabled = false
+//            plantBtn.isHidden = true
+            plantBtn.backgroundColor = .systemRed
+            plantBtn.setTitle("Remove it", for: .normal)
         }
        // self.plantBtn.backgroundColor = .systemOrange
         

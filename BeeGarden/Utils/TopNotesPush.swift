@@ -62,7 +62,282 @@ struct TopNotesPush {
                 let contentView = EKNotificationMessageView(with: notificationMessage)
                 
                 attributes.screenInteraction = .dismiss
-                attributes.displayDuration = 4
+                attributes.displayDuration = 3
                 SwiftEntryKit.display(entry: contentView, using: attributes)
+    }
+    
+    static func bottomFormPush(title:String,placeHoders:[String],buttonTitle: String,action: @escaping (String) -> ()){
+         var attributes = EKAttributes()
+         attributes = EKAttributes.toast
+        let titleLabel = EKProperty.LabelContent(text: title, style: .init(font: .systemFont(ofSize: 30), color: .white))
+        var fields = [EKProperty.TextFieldContent]()
+        for s in placeHoders{
+            let placeHoder = EKProperty.LabelContent(text: s, style: .init(font: .systemFont(ofSize: 12), color: .white))
+            let TextField = EKProperty.TextFieldContent(keyboardType: .numberPad, placeholder: placeHoder, tintColor: .amber, displayMode: .light, textStyle: .init(font: .systemFont(ofSize: 15), color: .greenGrass), isSecure: false, leadingImage: .add , bottomBorderColor: .black, accessibilityIdentifier: s)
+            fields.append(TextField)
+        }
+        let buttonLabel = EKProperty.LabelContent(text: buttonTitle, style: .init(font: .systemFont(ofSize: 20), color: .white))
+        let button = EKProperty.ButtonContent(label: buttonLabel, backgroundColor: .amber, highlightedBackgroundColor: .chatMessage)
+        {
+            action(fields[0].textContent)
+            print(fields[0].textContent)
+            
+            
+        }
+        
+         let formContentView = EKFormMessageView(with: titleLabel, textFieldsContent: fields, buttonContent: button)
+                attributes.screenInteraction = .dismiss
+                attributes.displayDuration = .infinity
+                
+                attributes.lifecycleEvents.didAppear = {
+                           formContentView.becomeFirstResponder(with: 0)
+                       }
+                
+                attributes = .toast
+                    
+                       attributes.windowLevel = .normal
+                       attributes.position = .bottom
+                       attributes.displayDuration = .infinity
+                       attributes.entranceAnimation = .init(
+                           translate: .init(
+                               duration: 0.65,
+                               spring: .init(damping: 1, initialVelocity: 0)
+                           )
+                       )
+                       attributes.exitAnimation = .init(
+                           translate: .init(
+                               duration: 0.65,
+                               spring: .init(damping: 1, initialVelocity: 0)
+                           )
+                       )
+                       attributes.popBehavior = .animated(
+                           animation: .init(
+                               translate: .init(
+                                   duration: 0.65,
+                                   spring: .init(damping: 1, initialVelocity: 0)
+                               )
+                           )
+                       )
+                       attributes.entryInteraction = .absorbTouches
+                       attributes.screenInteraction = .dismiss
+                       attributes.entryBackground = .gradient(
+                           gradient: .init(
+                               colors: [Color.Netflix.light, Color.Netflix.dark],
+                               startPoint: .zero,
+                               endPoint: CGPoint(x: 1, y: 1)
+                           )
+                       )
+                       attributes.shadow = .active(
+                           with: .init(
+                               color: .black,
+                               opacity: 0.3,
+                               radius: 3
+                           )
+                       )
+                       attributes.screenBackground = .color(color: .dimmedDarkBackground)
+                       attributes.scroll = .edgeCrossingDisabled(swipeable: true)
+                       attributes.statusBar = .light
+                       attributes.positionConstraints.keyboardRelation = .bind(
+                           offset: .init(
+                               bottom: 0,
+                               screenEdgeResistance: 0
+                           )
+                       )
+                       attributes.positionConstraints.maxSize = .init(
+                           width: .constant(value: UIScreen.main.minEdge),
+                           height: .intrinsic
+                       )
+        //        attributes.positionConstraints.maxSize = .init(
+        //            width: .constant(value: UIScreen.main.bounds.width - 20),
+        //            height: .constant(value: UIScreen.main.bounds.height / 2)
+        //        )
+                SwiftEntryKit.display(entry: formContentView, using: attributes, presentInsideKeyWindow: true)
+        
+    }
+    
+    static func ratingPush() {
+        var attributes = EKAttributes()
+                   attributes = .centerFloat
+               attributes.displayMode = .light
+                    attributes.windowLevel = .alerts
+                    attributes.displayDuration = .infinity
+                    attributes.hapticFeedbackType = .success
+                    attributes.screenInteraction = .absorbTouches
+                    attributes.entryInteraction = .absorbTouches
+                    attributes.scroll = .disabled
+                    attributes.screenBackground = .color(color: .dimmedLightBackground)
+                    attributes.entryBackground = .visualEffect(style: .standard)
+                    attributes.entranceAnimation = .init(
+                        scale: .init(
+                            from: 0.9,
+                            to: 1,
+                            duration: 0.4,
+                            spring: .init(damping: 0.8, initialVelocity: 0)
+                        ),
+                        fade: .init(
+                            from: 0,
+                            to: 1,
+                            duration: 0.3
+                        )
+                    )
+                    attributes.exitAnimation = .init(
+                        scale: .init(
+                            from: 1,
+                            to: 0.4,
+                            duration: 0.4,
+                            spring: .init(damping: 1, initialVelocity: 0)
+                        ),
+                        fade: .init(
+                            from: 1,
+                            to: 0,
+                            duration: 0.2
+                        )
+                    )
+                    attributes.positionConstraints.maxSize = .init(
+                        width: .constant(value: UIScreen.main.minEdge),
+                        height: .intrinsic
+                    )
+               
+               showRatingView(attributes: attributes)
+    }
+    
+   static private func showRatingView(attributes: EKAttributes) {
+    
+            var selectedIndex = 0
+           let unselectedImage = EKProperty.ImageContent(
+             image: UIImage(named: "emptydrop128p")!.withRenderingMode(.automatic),
+               displayMode: .light,
+               tint: .standardContent
+           )
+           let selectedImage = EKProperty.ImageContent(
+             image: UIImage(named: "onedrop128p")!.withRenderingMode(.automatic),
+               displayMode: .light,
+               tint: EKColor.ratingStar
+           )
+           let initialTitle = EKProperty.LabelContent(
+               text: "Record the watering today!",
+               style: .init(
+                 font: .systemFont(ofSize: 30),
+                   color: .standardContent,
+                   alignment: .center,
+                   displayMode: .light
+               )
+           )
+           let initialDescription = EKProperty.LabelContent(
+               text: "Select the volumn of watering per square",
+               style: .init(
+                 font: .systemFont(ofSize: 20),
+                   color: EKColor.standardContent.with(alpha: 0.5),
+                   alignment: .center,
+                   displayMode: .light
+               )
+           )
+           let items = [("Slightly", "less than 5L per square"), ("Moisture", "5-10L per square"), ("Moderate", "10-15L per square"),
+                        ("Enough", "15-20L per square"), ("Extra", "more than 20L per square")].map { texts -> EKProperty.EKRatingItemContent in
+                           let itemTitle = EKProperty.LabelContent(
+                               text: texts.0,
+                               style: .init(
+                                 font: .systemFont(ofSize: 35),
+                                   color: .standardContent,
+                                   alignment: .center,
+                                   displayMode: .light
+                               )
+                           )
+                           let itemDescription = EKProperty.LabelContent(
+                               text: texts.1,
+                               style: .init(
+                                 font: .systemFont(ofSize: 22),
+                                   color: .standardContent,
+                                   alignment: .center,
+                                   displayMode: .light
+                               )
+                           )
+                           return EKProperty.EKRatingItemContent(
+                               title: itemTitle,
+                               description: itemDescription,
+                               unselectedImage: unselectedImage,
+                               selectedImage: selectedImage
+                           )
+           }
+           
+           var message: EKRatingMessage!
+         let lightFont = UIFont.systemFont(ofSize: 24)
+           let mediumFont = UIFont.systemFont(ofSize: 20)
+           let closeButtonLabelStyle = EKProperty.LabelStyle(
+               font: mediumFont,
+               color: .standardContent,
+               displayMode: .light
+           )
+           let closeButtonLabel = EKProperty.LabelContent(
+               text: "Back",
+               style: closeButtonLabelStyle
+           )
+           let closeButton = EKProperty.ButtonContent(
+               label: closeButtonLabel,
+               backgroundColor: .clear,
+               highlightedBackgroundColor: EKColor.standardBackground.with(alpha: 0.2),
+               displayMode: .light) {
+                   SwiftEntryKit.dismiss {
+                       // Here you may perform a completion handler
+                   }
+           }
+           
+           let pinkyColor = EKColor.pinky
+           let okButtonLabelStyle = EKProperty.LabelStyle(
+               font: lightFont,
+               color: pinkyColor,
+               displayMode: .light
+           )
+           let okButtonLabel = EKProperty.LabelContent(
+               text: "Record Watering",
+               style: okButtonLabelStyle
+           )
+           let okButton = EKProperty.ButtonContent(
+               label: okButtonLabel,
+               backgroundColor: .clear,
+               highlightedBackgroundColor: pinkyColor.with(alpha: 0.05),
+               displayMode: .light)  {
+                   SwiftEntryKit.dismiss()
+                 print("ok", selectedIndex )
+                let dictionary = [1:selectedIndex]
+                 NotificationCenter.default.post(name: NSNotification.Name("addWatering"), object: nil,userInfo: dictionary)
+            
+           }
+           let buttonsBarContent = EKProperty.ButtonBarContent(
+               with: closeButton, okButton,
+               separatorColor: EKColor(light: Color.Gray.light.light, dark: Color.Gray.mid.light),
+               horizontalDistributionThreshold: 1,
+               displayMode: .light,
+               expandAnimatedly: true
+           )
+           message = EKRatingMessage(
+               initialTitle: initialTitle,
+               initialDescription: initialDescription,
+               ratingItems: items,
+               buttonBarContent: buttonsBarContent) { index in
+                   // Rating selected - do something
+             //   print("index ",index)
+                selectedIndex = index
+           }
+    
+         
+           let contentView = EKRatingMessageView(with: message)
+           SwiftEntryKit.display(entry: contentView, using: attributes)
+       }
+}
+
+
+
+
+
+extension UIScreen {
+    var minEdge: CGFloat {
+        return UIScreen.main.bounds.minEdge
+    }
+}
+
+extension CGRect {
+    var minEdge: CGFloat {
+        return min(width, height)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import CalendarHeatmap
 import SwiftEntryKit
 
-class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListener, UIViewControllerTransitioningDelegate {
+class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListener,UIViewControllerTransitioningDelegate{
     var listenerType = ListenerType.plantRecord
     weak var databaseController : DatabaseProtocol?
     
@@ -75,6 +75,8 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
            return calendar
        }()
     
+     var halfModalTransitioningDelegate: HalfModalTransitioningDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -93,7 +95,64 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
                                calendarHeatMap.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 1),
                                calendarHeatMap.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2)
                            ])
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addWatering(notification:)), name: NSNotification.Name(rawValue: "addWatering"), object: nil)
+        
+        
+      
     
+    }
+    
+    @objc func addWatering(notification: NSNotification) {
+          //  self.collectionView.reloadData()
+       let indexInfo = notification.userInfo
+      //  print("indexInfo",indexInfo)
+       print("value", indexInfo![1])
+        var waterCount = 1
+        waterCount = indexInfo![1] as! Int + 1
+        let name = "watering" + String(waterCount)
+        let nowComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        if recordDates.contains(nowComponents){
+           let index = recordDates.firstIndex(of: nowComponents)
+            databaseController?.deleteRecord(record: records[index!])
+        }
+       let _ = databaseController?.addRecord(name: name, type: "watering", time: Date(), counting: waterCount)
+        print("records: ",records.count)
+        calendarHeatMap.reload()
+        
+        
+        
+         let dictionary = [1:get4dayRecord()]
+         NotificationCenter.default.post(name: NSNotification.Name("recordChange"), object: nil,userInfo: dictionary)
+        
+          }
+    
+    private func get4dayRecord() -> Double {
+        let pnday = NSCalendar.current.date(byAdding: .day, value: -4, to: Date())
+//        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: pnday ?? Date())
+        var recordSum = 0.0
+        
+        for r in records{
+            if r.time! > pnday! {
+                switch r.counting {
+                           case 1 : recordSum = recordSum + 2.5
+                           case 2 : recordSum = recordSum + 7.5
+                           case 3 : recordSum = recordSum + 12.5
+                           case 4 : recordSum = recordSum + 17.5
+                           case 5 : recordSum = recordSum + 22.5
+                           default:
+                               recordSum = recordSum + 2.5
+                           }
+            }
+            else {
+                break
+            }
+           
+            
+        }
+    print("recordsSum",recordSum)
+    return recordSum
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +160,9 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
                  databaseController?.addListener(listener: self)
             print("garden records: ",records.count)
         
+
+        let dictionary = [1:get4dayRecord()]
+                NotificationCenter.default.post(name: NSNotification.Name("recordChange"), object: nil,userInfo: dictionary)
              }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,11 +178,11 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
                let month = dateComponents.month,
                let day = dateComponents.day else { return .clear}
            // manage your color based on date here
-       var yourColor = UIColor.gray
+        var yourColor = UIColor.systemGray
         let now = Date()
         let nowComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
         if nowComponents == dateComponents{
-            yourColor = .cyan
+            yourColor = .systemPink
         }
         
       
@@ -130,7 +192,15 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
             let rComponents = Calendar.current.dateComponents([.year, .month, .day], from: rDate ?? Date())
             recordDates.append(rComponents)
             if dateComponents == rComponents {
-                yourColor = .systemBlue
+                switch r.counting {
+                case 1 : yourColor = UIColor(named: "wateringColor1")!
+                case 2 : yourColor = UIColor(named: "wateringColor2")!
+                case 3 : yourColor = UIColor(named: "wateringColor3")!
+                case 4 : yourColor = UIColor(named: "wateringColor4")!
+                case 5 : yourColor = UIColor(named: "wateringColor5")!
+                default:
+                    yourColor =  UIColor(named: "wateringColor1")!
+                }
             }
         }
            return yourColor
@@ -144,15 +214,18 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
            // do something here
         let nowComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
                if nowComponents == dateComponents{
-                let addRVC = storyboard?.instantiateViewController(withIdentifier: "addRecordView") as! addRecordVC
-              // let addRVC = addRecordVC()
-                addRVC.transitioningDelegate = self
-                addRVC.modalPresentationStyle = .custom
-                  present(addRVC, animated: true)
+//                let addRVC = storyboard?.instantiateViewController(withIdentifier: "addRecordView") as! addRecordVC
+//                 self.halfModalTransitioningDelegate = HalfModalTransitioningDelegate(viewController: self, presentingViewController: addRVC)
+//                addRVC.modalPresentationStyle = .custom
+//                addRVC.transitioningDelegate = self.halfModalTransitioningDelegate
+
+               // addRVC.transitioningDelegate = self
+              //    present(addRVC, animated: true)
+                TopNotesPush.ratingPush()
                }
         var i:Int = 0
         while i < recordDates.count{
-            if recordDates[i] == dateComponents {
+            if recordDates[i] == dateComponents,dateComponents != nowComponents{
                let title = records[i].type
               
                 let formatter = DateFormatter()
@@ -165,38 +238,22 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
         
        }
     
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
-    }
-    
-    class HalfSizePresentationController : UIPresentationController {
-        override var frameOfPresentedViewInContainerView: CGRect {
-            get {
-                guard let theView = containerView else {
-                    return CGRect.zero
-                }
 
-                return CGRect(x: 0, y: theView.bounds.height/2, width: theView.bounds.width, height: theView.bounds.height/2)
-            }
-        }
-    }
 
        // (optional) notify finish loading the calendar
        func finishLoadCalendar() {
            // do something here
-      
-             
-              
-             
-       }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+       }
+    
+    
+//   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//           super.prepare(for: segue, sender: sender)
+//
+//           self.halfModalTransitioningDelegate = HalfModalTransitioningDelegate(viewController: self, presentingViewController: segue.destination)
+//
+//           segue.destination.modalPresentationStyle = .custom
+//           segue.destination.transitioningDelegate = self.halfModalTransitioningDelegate
+//       }
 
 }

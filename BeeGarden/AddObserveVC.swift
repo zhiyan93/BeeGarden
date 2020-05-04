@@ -11,6 +11,8 @@ import MapKit
 import SwiftEntryKit
 import Accelerate
 import Lottie
+import SwiftyJSON
+import NVActivityIndicatorView
 
 protocol AddObserveDelegate : AnyObject {
     func addObserve(newObserve : Observe) -> Bool
@@ -38,13 +40,16 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     
     @IBOutlet weak var tapAniView: UIView!
     
+    @IBOutlet weak var weatherBtn: UIButton!
+    
     weak var databaseController: DatabaseProtocol?
     
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -37.813407, longitude: 144.969730)
     var locationFormAdd : CLLocationCoordinate2D?  //
     var imageHasSet: Bool = false
-
+    var activityIndicator: NVActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,11 +70,13 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         imageHasSet = false
         useLocBtn.layer.cornerRadius = 10
         createBtn.layer.cornerRadius = 10
-        
+        weatherBtn.layer.cornerRadius = 10
        let tapAni = AnimationView(name: "hand-tap")
     
         LotAnimation.setAnimation(logoAnimation: tapAni, size: 80, view: tapAniView)
         tapAni.play()
+        
+       setIndicator()
        
           
     }
@@ -95,6 +102,23 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func weatherBtnAct(_ sender: Any) {
+        let lan = currentLocation.latitude
+        let lon = currentLocation.longitude
+        activityIndicator.startAnimating()
+      let request =  WeatherAPI.requestWeather(latitude: lan, longitude: lon)
+        request.responseJSON {
+        (data) in
+            let jsonResponse = JSON(data.value!)
+          let res =  WeatherAPI.fetchDataFromRequest(jsonResponse: jsonResponse)
+            print(res)
+            self.activityIndicator.stopAnimating()
+            self.observeWeather.text = res
+    }
+    }
+    
     
     @IBAction func getLocationBtn(_ sender: Any) {
          setLocationFields()
@@ -164,6 +188,16 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
 //        }
     }
     
+    private func setIndicator(){
+        let indicatorSize: CGFloat = 120
+        let indicatorFrame = CGRect(x: (view.frame.width-indicatorSize)/2, y: (observeWeather.frame.height-indicatorSize)/2, width: indicatorSize, height: indicatorSize)
+        activityIndicator = NVActivityIndicatorView(frame: indicatorFrame, type: .lineScale, color: .systemOrange, padding: 5.0)
+        activityIndicator.backgroundColor = .clear
+        
+        //print(view.frame.height)
+        self.observeWeather.addSubview(activityIndicator)
+    }
+    
     
     
     /*
@@ -188,7 +222,12 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
        let now =  df.string(from: Date())
         self.observeTime.text = now
-        self.observeWeather.text = "sunny"
+        self.observeWeather.text = " weather: ;\n tempetature: ;\n pressure: ;\n humidity: %;\n clouds: %;\n  wind speed: ;\n wind direction:  \n"
+        
+       
+        
+        
+        
         self.observeDesc.text = "description"
        
         

@@ -210,6 +210,7 @@ extension PlantListVC: UICollectionViewDataSource, UICollectionViewDelegate {
     let name = plants[plantIndex].name
     cell.imageView.image = UIImage(data: image!)
     cell.textLabel.text = name
+    cell.textLabel.textColor = .white
     cell.contentView.clipsToBounds = true
     
     let layer = cell.layer

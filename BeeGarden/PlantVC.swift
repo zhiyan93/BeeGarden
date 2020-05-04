@@ -154,7 +154,7 @@ class PlantVC: UIViewController,CLLocationManagerDelegate {
                     self.setChart()
                
                    
-                }
+        }
     }
     
     func getRainForecast()

@@ -116,6 +116,14 @@
 		26E266422459C827006955CB /* ObserveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E266412459C827006955CB /* ObserveDetailVC.swift */; };
 		26E266442459DA88006955CB /* LotAnimaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E266432459DA88006955CB /* LotAnimaiton.swift */; };
 		26E266462459DB4E006955CB /* hand-tap.json in Resources */ = {isa = PBXBuildFile; fileRef = 26E266452459DB4E006955CB /* hand-tap.json */; };
+		26E26648245A8D39006955CB /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E26647245A8D39006955CB /* WeatherAPI.swift */; };
+		26E5A336245BEA8500C82B98 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A335245BEA8500C82B98 /* TestViewController.swift */; };
+		26E5A339245BF31C00C82B98 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A338245BF31C00C82B98 /* HalfModalPresentationController.swift */; };
+		26E5A33D245BF33A00C82B98 /* HalfModalTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A33A245BF33900C82B98 /* HalfModalTransitionAnimator.swift */; };
+		26E5A33E245BF33A00C82B98 /* HalfModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A33B245BF33900C82B98 /* HalfModalTransitioningDelegate.swift */; };
+		26E5A33F245BF33A00C82B98 /* HalfModalInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A33C245BF33A00C82B98 /* HalfModalInteractiveTransition.swift */; };
+		26E5A342245DCE3B00C82B98 /* RainBarChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A341245DCE3B00C82B98 /* RainBarChartVC.swift */; };
+		26E5A344245EEBE500C82B98 /* GardenNotifVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5A343245EEBE500C82B98 /* GardenNotifVC.swift */; };
 		8BB2D5FD2C3029ECA74A7795 /* Pods_BeeGardenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D1BF85A93589929C7052F /* Pods_BeeGardenTests.framework */; };
 		9E8A2AFE0644832EBE11AB7C /* Pods_BeeGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D9A6FC258A9EDBD75D7BE8 /* Pods_BeeGarden.framework */; };
 		BE8F31426D48E01B9DE2E92E /* Pods_BeeGarden_BeeGardenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C5B00565AB402B02AEE770 /* Pods_BeeGarden_BeeGardenUITests.framework */; };
@@ -215,6 +223,14 @@
 		26E266412459C827006955CB /* ObserveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveDetailVC.swift; sourceTree = "<group>"; };
 		26E266432459DA88006955CB /* LotAnimaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotAnimaiton.swift; sourceTree = "<group>"; };
 		26E266452459DB4E006955CB /* hand-tap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hand-tap.json"; sourceTree = "<group>"; };
+		26E26647245A8D39006955CB /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		26E5A335245BEA8500C82B98 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		26E5A338245BF31C00C82B98 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		26E5A33A245BF33900C82B98 /* HalfModalTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitionAnimator.swift; sourceTree = "<group>"; };
+		26E5A33B245BF33900C82B98 /* HalfModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitioningDelegate.swift; sourceTree = "<group>"; };
+		26E5A33C245BF33A00C82B98 /* HalfModalInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalInteractiveTransition.swift; sourceTree = "<group>"; };
+		26E5A341245DCE3B00C82B98 /* RainBarChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainBarChartVC.swift; sourceTree = "<group>"; };
+		26E5A343245EEBE500C82B98 /* GardenNotifVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenNotifVC.swift; sourceTree = "<group>"; };
 		6A6E8BD43463A68CBCCB636D /* Pods-BeeGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden.release.xcconfig"; path = "Target Support Files/Pods-BeeGarden/Pods-BeeGarden.release.xcconfig"; sourceTree = "<group>"; };
 		74D9A6FC258A9EDBD75D7BE8 /* Pods_BeeGarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeGarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		760806CAABDE2A9C5F121834 /* Pods-BeeGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeGarden.debug.xcconfig"; path = "Target Support Files/Pods-BeeGarden/Pods-BeeGarden.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +285,7 @@
 				263362172455D3190014CD92 /* UIColor+Utils.swift */,
 				263362192455D4230014CD92 /* TopNotesPush.swift */,
 				26E266432459DA88006955CB /* LotAnimaiton.swift */,
+				26E26647245A8D39006955CB /* WeatherAPI.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,6 +315,7 @@
 		265B1F692436E7300036F0F5 /* BeeGarden */ = {
 			isa = PBXGroup;
 			children = (
+				26E5A337245BF2E800C82B98 /* HalfModelPresentation */,
 				263362162455D2CC0014CD92 /* Utils */,
 				267CAADF2449F90900A7F973 /* Assets.xcassets */,
 				26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */,
@@ -338,6 +356,9 @@
 				26E2663D24594E35006955CB /* GalleryCollectionVC.swift */,
 				26E2663F24594F2F006955CB /* CollectionPhotoCell.swift */,
 				26E266412459C827006955CB /* ObserveDetailVC.swift */,
+				26E5A335245BEA8500C82B98 /* TestViewController.swift */,
+				26E5A341245DCE3B00C82B98 /* RainBarChartVC.swift */,
+				26E5A343245EEBE500C82B98 /* GardenNotifVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -424,6 +445,17 @@
 				26C812692444AD9000FC4994 /* bee-fiying.json */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		26E5A337245BF2E800C82B98 /* HalfModelPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				26E5A338245BF31C00C82B98 /* HalfModalPresentationController.swift */,
+				26E5A33C245BF33A00C82B98 /* HalfModalInteractiveTransition.swift */,
+				26E5A33A245BF33900C82B98 /* HalfModalTransitionAnimator.swift */,
+				26E5A33B245BF33900C82B98 /* HalfModalTransitioningDelegate.swift */,
+			);
+			path = HalfModelPresentation;
 			sourceTree = "<group>";
 		};
 		472A1D3C1497656CAF22B268 /* Pods */ = {
@@ -688,6 +720,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				263361922453349D0014CD92 /* PlantDetailVC.swift in Sources */,
+				26E5A336245BEA8500C82B98 /* TestViewController.swift in Sources */,
+				26E5A339245BF31C00C82B98 /* HalfModalPresentationController.swift in Sources */,
 				267CAB24244A1F1300A7F973 /* TutorialVC.swift in Sources */,
 				267CAB4A24509AF100A7F973 /* GardenEntity+CoreDataProperties.swift in Sources */,
 				266220BC243891E40072CF83 /* MulticastDelegate.swift in Sources */,
@@ -705,6 +739,7 @@
 				267CAB4C24509AF100A7F973 /* FlowerEntity+CoreDataProperties.swift in Sources */,
 				263361D52454B1F00014CD92 /* addRecordVC.swift in Sources */,
 				26622103243B1A690072CF83 /* BeeEntity+CoreDataClass.swift in Sources */,
+				26E5A33D245BF33A00C82B98 /* HalfModalTransitionAnimator.swift in Sources */,
 				266220C82439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
 				260844FD24421FD900F59166 /* SpotDetailVC.swift in Sources */,
 				267CAB4924509AF100A7F973 /* GardenEntity+CoreDataClass.swift in Sources */,
@@ -713,11 +748,15 @@
 				2633621A2455D4230014CD92 /* TopNotesPush.swift in Sources */,
 				26B0062B2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
+				26E5A342245DCE3B00C82B98 /* RainBarChartVC.swift in Sources */,
 				26C812B024460A1900FC4994 /* PlantVC.swift in Sources */,
 				2662209F243842E20072CF83 /* Flower.swift in Sources */,
 				2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,
+				26E26648245A8D39006955CB /* WeatherAPI.swift in Sources */,
 				266220A3243843080072CF83 /* Planting.swift in Sources */,
 				26B006832442040C00BA9187 /* Model.xcdatamodeld in Sources */,
+				26E5A33E245BF33A00C82B98 /* HalfModalTransitioningDelegate.swift in Sources */,
+				26E5A344245EEBE500C82B98 /* GardenNotifVC.swift in Sources */,
 				26C812682444ACB100FC4994 /* LaunchScreenVC.swift in Sources */,
 				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 				267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */,
@@ -726,6 +765,7 @@
 				26E2664024594F2F006955CB /* CollectionPhotoCell.swift in Sources */,
 				263361D224549E740014CD92 /* RecordHeatMapVC.swift in Sources */,
 				26B006332440505000BA9187 /* KnowledgeEntity+CoreDataProperties.swift in Sources */,
+				26E5A33F245BF33A00C82B98 /* HalfModalInteractiveTransition.swift in Sources */,
 				267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */,
 				26E2663E24594E35006955CB /* GalleryCollectionVC.swift in Sources */,
 				265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */,
