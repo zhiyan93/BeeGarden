@@ -11,6 +11,7 @@ import SwiftEntryKit
 import CoreLocation
 import NVActivityIndicatorView
 import SwiftyJSON
+import UICircularProgressRing
 
 class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListener {
     var listenerType = ListenerType.plantRecord
@@ -58,7 +59,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     var rainDays = [Int:Double]()
     var watering = [-3:0,-2:10,-1:0,0:0,1:0,2:0,3:0]
     var progressDict = ["amount":30,"rain":0,"record":0]
-    
+   // var timePickerValue = Date()
     @IBOutlet weak var waterAmount: UILabel!
     
     @IBOutlet weak var setWaterAmount: UIButton!
@@ -71,13 +72,17 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     @IBOutlet weak var recordLabel: UILabel!
     
     
-    @IBOutlet weak var progressSlider: UIProgressView!
+   
+    @IBOutlet weak var progressRing: UICircularProgressRing!
     
     @IBOutlet var wholeView: UIView!
     
     
     @IBOutlet weak var notifSwitch: UISwitch!
     
+    @IBOutlet weak var timePicker: UIDatePicker!
+    
+    @IBOutlet weak var setTimeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +105,15 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
          NotificationCenter.default.addObserver(self, selector: #selector(recordChange(notification:)), name: NSNotification.Name(rawValue: "recordChange"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(progressChange(notification:)), name: NSNotification.Name(rawValue: "progressChange"), object: nil)
+        
+        self.progressRing.style = .inside
+        progressRing.innerRingColor = UIColor(named:"ButtonColor1")!
+        progressRing.outerRingColor = UIColor(named:"wateringColor1")!
+        
+        self.timePicker.backgroundColor = UIColor(named: "wateringColor1")
+        self.timePicker.timeZone = TimeZone(abbreviation: "AET")
+        setTimeBtn.layer.cornerRadius = 10
+        //self.timePicker.tintColor = .white
     }
     
     @objc func recordChange(notification: NSNotification) {
@@ -109,7 +123,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
           print("value", indexInfo![1])
         var waterCount = 0.0
            waterCount = indexInfo![1] as! Double
-        self.recordLabel.text =  "Total Watering Records: \(waterCount)"
+        self.recordLabel.text =  "Records:\(waterCount)"
         
         
         progressDict["record"] = Int(waterCount)
@@ -125,8 +139,10 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         let amount = indexInfo!["amount"] as! Int
         let record = indexInfo!["record"] as! Int
         let rain = indexInfo!["rain"] as! Int
-         
-        self.progressSlider.progress = Float(record + rain) / Float(amount)
+         let value = Float(record + rain) / Float(amount) * 100
+        
+        self.progressRing.startProgress(to: CGFloat(value), duration: 1)
+            
          // self.recordLabel.text =  "Total Watering Records: \(waterCount)"
 
                }
@@ -154,38 +170,90 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     @IBAction func notifSwitchAct(_ sender: Any) {
         if self.notifSwitch.isOn{
             UserDefaults.standard.set(true,forKey: "waterNotifSwitch")
-            
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
-                
-            }
-            
-            let content = UNMutableNotificationContent()
-            content.title = "Title"
-            content.body = "This is a test"
-            content.badge = NSNumber(value: 1)
-            content.sound = .default
-
-            let nowDate = Date().addingTimeInterval(1)
-            let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: nowDate)
-            print("notification time \(nowComponents.hour): \(nowComponents.minute)")
-            let trigger = UNCalendarNotificationTrigger(dateMatching: nowComponents, repeats: true)
-            
-            let uuidString = UUID().uuidString
-            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-                            center.add(request) { (error : Error?) in
-                                if let theError = error {
-                                    print(theError as! String)
-                                }
-                            }
+            let notifTime = UserDefaults.standard.object(forKey: "notifTime") as? Date
+            addDailyNotif(time: notifTime ?? Date(), uid: "WateringNotification", title: "Bee Mate", body: "Remember to water your garden today")
+          
         }
             
         else {
             UserDefaults.standard.set(false,forKey: "waterNotifSwitch")
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers:["WateringNotification"])
         }
         
     }
     
+    @IBAction func setNotifAct(_ sender: Any) {
+        let setTime = self.timePicker.date
+        
+        
+         UserDefaults.standard.set(setTime,forKey: "notifTime")
+        print("timeset\(setTime)")
+        let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: setTime )
+        TopNotesPush.push(message: "notification will push at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
+        
+        if self.notifSwitch.isOn {
+            addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Remember to water your garden today")
+        }
+        
+        
+        
+//        let center = UNUserNotificationCenter.current()
+//                  center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
+//
+//                  }
+                  
+//                  let content = UNMutableNotificationContent()
+//                  content.title = "Title"
+//                  content.body = "This is a test"
+//                  content.badge = NSNumber(value: 1)
+//                  content.sound = .default
+//
+//                 guard let nitifTime = UserDefaults.standard.object(forKey: "notifTime") as? Date else {
+//                  print("notif fail"); return}
+//                  //let nowDate = notifTime.addingTimeInterval(1)
+//
+//
+//                  print("notification time \(nowComponents.hour): \(nowComponents.minute)")
+//                  let trigger = UNCalendarNotificationTrigger(dateMatching: nowComponents, repeats: true)
+//
+//                  let uuidString = "WateringNotification"
+//                  let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+//                                  center.add(request) { (error : Error?) in
+//                                      if let theError = error {
+//                                          print(theError as! String)
+//                                      }
+//                                  }
+    }
+    
+    private func addDailyNotif(time: Date, uid: String, title: String, body: String){
+        
+        let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: time )
+        
+        let center = UNUserNotificationCenter.current()
+                         center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
+                             
+                         }
+        
+        let content = UNMutableNotificationContent()
+                        content.title = title
+                        content.body = body
+                        content.badge = NSNumber(value: 1)
+                        content.sound = .default
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: nowComponents, repeats: true)
+                        
+                        let uuidString = uid
+                        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+                                        center.add(request) { (error : Error?) in
+                                            if let theError = error {
+                                                print(theError as! String)
+                                            }
+                                        }
+        
+        
+    }
+    
+   
     
     func amountShouldReturn(input: String) {
         if let num : Int = Int(input) {
@@ -230,6 +298,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     progressDict["amount"] = waterAmountInput
     NotificationCenter.default.post(name: NSNotification.Name("progressChange"), object: nil,userInfo: progressDict)
         
+        
         let waterNotifSwitch = UserDefaults.standard.object(forKey: "waterNotifSwitch") as? Bool
         
         if waterNotifSwitch == nil {
@@ -242,6 +311,17 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         else if waterNotifSwitch == true {
             self.notifSwitch.setOn(true, animated: true)
         }
+        
+        
+         let notifTime = UserDefaults.standard.object(forKey: "notifTime") as? Date
+        if notifTime == nil {
+            UserDefaults.standard.set(Date(),forKey: "notifTime")
+            self.timePicker.date = Date()
+        }
+        else {
+            self.timePicker.date = notifTime ?? Date()
+        }
+        
 }
     
     override func viewWillDisappear(_ animated: Bool) {

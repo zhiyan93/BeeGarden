@@ -18,6 +18,7 @@ target 'BeeGarden' do
   pod 'FloatingPanel'
   pod 'CalendarHeatmap'
   pod 'SwiftEntryKit', '1.2.3'
+  pod 'UICircularProgressRing'
   
   target 'BeeGardenTests' do
     inherit! :search_paths
