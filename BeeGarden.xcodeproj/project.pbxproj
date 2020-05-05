@@ -64,6 +64,11 @@
 		2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		2662210D243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
 		2662210E243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */; };
+		2674A7F82461949F0042A089 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2674A7F42461949F0042A089 /* Nunito-Light.ttf */; };
+		2674A7F92461949F0042A089 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2674A7F52461949F0042A089 /* Nunito-Regular.ttf */; };
+		2674A7FA2461949F0042A089 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2674A7F62461949F0042A089 /* Nunito-Bold.ttf */; };
+		2674A7FB2461949F0042A089 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2674A7F72461949F0042A089 /* OpenSans-Regular.ttf */; };
+		2674A7FD2461B2960042A089 /* AcknowledgeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674A7FC2461B2960042A089 /* AcknowledgeVC.swift */; };
 		267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAADD2449F34D00A7F973 /* TabBarVC.swift */; };
 		267CAAE02449F90900A7F973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267CAADF2449F90900A7F973 /* Assets.xcassets */; };
 		267CAB22244A1EE800A7F973 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CAB21244A1EE800A7F973 /* PageVC.swift */; };
@@ -183,6 +188,11 @@
 		266220F4243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		266220F5243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		266220F6243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2674A7F42461949F0042A089 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		2674A7F52461949F0042A089 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		2674A7F62461949F0042A089 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		2674A7F72461949F0042A089 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		2674A7FC2461B2960042A089 /* AcknowledgeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgeVC.swift; sourceTree = "<group>"; };
 		267CAADD2449F34D00A7F973 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		267CAADF2449F90900A7F973 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		267CAB21244A1EE800A7F973 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
@@ -315,6 +325,7 @@
 		265B1F692436E7300036F0F5 /* BeeGarden */ = {
 			isa = PBXGroup;
 			children = (
+				2674A7F32461949F0042A089 /* Fonts */,
 				26E5A337245BF2E800C82B98 /* HalfModelPresentation */,
 				263362162455D2CC0014CD92 /* Utils */,
 				267CAADF2449F90900A7F973 /* Assets.xcassets */,
@@ -359,6 +370,7 @@
 				26E5A335245BEA8500C82B98 /* TestViewController.swift */,
 				26E5A341245DCE3B00C82B98 /* RainBarChartVC.swift */,
 				26E5A343245EEBE500C82B98 /* GardenNotifVC.swift */,
+				2674A7FC2461B2960042A089 /* AcknowledgeVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -422,6 +434,17 @@
 				266220BB243891E40072CF83 /* MulticastDelegate.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		2674A7F32461949F0042A089 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2674A7F42461949F0042A089 /* Nunito-Light.ttf */,
+				2674A7F52461949F0042A089 /* Nunito-Regular.ttf */,
+				2674A7F62461949F0042A089 /* Nunito-Bold.ttf */,
+				2674A7F72461949F0042A089 /* OpenSans-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		267CACC82451C57800A7F973 /* CollectionCell */ = {
@@ -581,14 +604,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				265B1F7C2436E7340036F0F5 /* LaunchScreen.storyboard in Resources */,
+				2674A7FA2461949F0042A089 /* Nunito-Bold.ttf in Resources */,
 				26C812EE2448A9F200FC4994 /* MelbourneCBD.gpx in Resources */,
 				267CAB3E244F1C6E00A7F973 /* travel-camera.json in Resources */,
 				26C812AE2444D8C800FC4994 /* book-animation.json in Resources */,
+				2674A7F92461949F0042A089 /* Nunito-Regular.ttf in Resources */,
+				2674A7FB2461949F0042A089 /* OpenSans-Regular.ttf in Resources */,
 				267CAB38244EF45600A7F973 /* gardening.json in Resources */,
 				26C8126A2444AD9000FC4994 /* bee-fiying.json in Resources */,
 				267CAAE02449F90900A7F973 /* Assets.xcassets in Resources */,
 				267CAB3A244EF6FF00A7F973 /* travelers.json in Resources */,
 				267CACCC2451C57800A7F973 /* CollectionCell.xib in Resources */,
+				2674A7F82461949F0042A089 /* Nunito-Light.ttf in Resources */,
 				267CAB3C244F164000A7F973 /* camera.json in Resources */,
 				26E266462459DB4E006955CB /* hand-tap.json in Resources */,
 				265B1F742436E7300036F0F5 /* Main.storyboard in Resources */,
@@ -757,6 +784,7 @@
 				26B006832442040C00BA9187 /* Model.xcdatamodeld in Sources */,
 				26E5A33E245BF33A00C82B98 /* HalfModalTransitioningDelegate.swift in Sources */,
 				26E5A344245EEBE500C82B98 /* GardenNotifVC.swift in Sources */,
+				2674A7FD2461B2960042A089 /* AcknowledgeVC.swift in Sources */,
 				26C812682444ACB100FC4994 /* LaunchScreenVC.swift in Sources */,
 				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 				267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */,

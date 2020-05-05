@@ -9,7 +9,7 @@
 import UIKit
 import Lottie
 
-class NavTabVC: UIViewController,DatabaseListener  {
+class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelegate & UINavigationControllerDelegate  {
     func onGardenChange(change: DatabaseChange, gardenPlants: [FlowerEntity]) {
         flowers = gardenPlants
     }
@@ -115,6 +115,39 @@ class NavTabVC: UIViewController,DatabaseListener  {
         
     }
     
+ 
+//
+   @IBAction func imageViewTapped(_ sender: Any) {
+        let imagePicker: UIImagePickerController = UIImagePickerController()
+         
+         if UIImagePickerController.isSourceTypeAvailable(.camera) {
+             imagePicker.sourceType = .camera
+         } else {
+             imagePicker.sourceType = .savedPhotosAlbum
+         }
+         
+         imagePicker.allowsEditing = true
+         imagePicker.delegate = self
+         present(imagePicker, animated: true, completion: nil)
+     }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        avatarView.image = pickedImage
+        
+        UserDefaults.standard.set(pickedImage.jpegData(compressionQuality: 0.1),forKey: "avatarImage")
+       // imageHasSet = true
+    }
+
+    
+    
     override func viewWillAppear(_ animated: Bool) {
               super.viewWillAppear(animated)
            databaseController?.addListener(listener: self)
@@ -128,6 +161,10 @@ class NavTabVC: UIViewController,DatabaseListener  {
         spotAni?.play()
         
         setDaysDiff()
+        
+        guard let avatarImage = UserDefaults.standard.object(forKey: "avatarImage") as? Data else {return}
+               
+        self.avatarView.image = UIImage(data: avatarImage)
            
        }
     

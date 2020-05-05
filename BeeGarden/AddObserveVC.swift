@@ -228,7 +228,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         
         
         
-        self.observeDesc.text = "description"
+        self.observeDesc.text = " "
        
         
       }

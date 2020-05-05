@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import UIGradient
+import SafariServices
 
-class SpotDetailVC: UIViewController,MKMapViewDelegate {
+class SpotDetailVC: UIViewController,MKMapViewDelegate,SFSafariViewControllerDelegate {
    
     
 
@@ -64,6 +65,23 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate {
         
     }
     }
+    
+    @IBAction func urlTapedAct(_ sender: Any) {
+        let urlString = self.website.text
+
+        if let url = URL(string: urlString ?? "https://www.google.com.au/") {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+
+            present(vc, animated: true)
+        }
+        
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        //dismiss(animated: true)
+    }
+    
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
                 

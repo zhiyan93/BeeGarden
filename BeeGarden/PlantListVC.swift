@@ -69,6 +69,11 @@ class PlantListVC: UIViewController,DatabaseListener {
        //setFloatPanel()
     }
     
+    
+    @IBAction func backBtnAct(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
               super.viewWillAppear(animated)
            databaseController?.addListener(listener: self)
@@ -135,6 +140,7 @@ extension PlantListVC {
     collectionView.delegate = self
     collectionView.dataSource = self
     collectionView.backgroundColor = glidingView.backgroundColor
+    //collectionView.showsVerticalScrollIndicator = true
   }
     private func setupGlidingConfig(){
         var config = GlidingConfig.shared
