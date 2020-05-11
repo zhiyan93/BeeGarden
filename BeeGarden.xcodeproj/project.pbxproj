@@ -88,6 +88,7 @@
 		267CACC72451BC9700A7F973 /* PlantListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CACC62451BC9700A7F973 /* PlantListVC.swift */; };
 		267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CACC92451C57800A7F973 /* CollectionCell.swift */; };
 		267CACCC2451C57800A7F973 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267CACCA2451C57800A7F973 /* CollectionCell.xib */; };
+		268748BA2469A1E70064A76C /* InaturalistActVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748B92469A1E70064A76C /* InaturalistActVC.swift */; };
 		26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00625243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
@@ -212,6 +213,7 @@
 		267CACC62451BC9700A7F973 /* PlantListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListVC.swift; sourceTree = "<group>"; };
 		267CACC92451C57800A7F973 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		267CACCA2451C57800A7F973 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		268748B92469A1E70064A76C /* InaturalistActVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InaturalistActVC.swift; sourceTree = "<group>"; };
 		26B00622243E1D8D00BA9187 /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
 		26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeeDetailVC.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				26E5A341245DCE3B00C82B98 /* RainBarChartVC.swift */,
 				26E5A343245EEBE500C82B98 /* GardenNotifVC.swift */,
 				2674A7FC2461B2960042A089 /* AcknowledgeVC.swift */,
+				268748B92469A1E70064A76C /* InaturalistActVC.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				26E5A344245EEBE500C82B98 /* GardenNotifVC.swift in Sources */,
 				2674A7FD2461B2960042A089 /* AcknowledgeVC.swift in Sources */,
 				26C812682444ACB100FC4994 /* LaunchScreenVC.swift in Sources */,
+				268748BA2469A1E70064A76C /* InaturalistActVC.swift in Sources */,
 				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 				267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */,
 				265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */,

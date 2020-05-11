@@ -28,6 +28,9 @@ class ObserveDetailVC: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var backBtn: UIButton!
     
+    
+    @IBOutlet weak var accountBtn: UIButton!
+    
     var selectObserve = ObserveEntity()
     
     var locationManager: CLLocationManager = CLLocationManager()
@@ -42,6 +45,7 @@ class ObserveDetailVC: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 10
         locationManager.delegate = self
         backBtn.layer.cornerRadius = 10
+        accountBtn.layer.cornerRadius = 10
        
     }
     
@@ -52,6 +56,14 @@ class ObserveDetailVC: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func backBtnAct(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func accountBtnAct(_ sender: Any) {
+        
+         let loginView = storyboard?.instantiateViewController(withIdentifier: "logInView") as! InaturalistActVC
+        present(loginView,animated: true)
+        print("login")
     }
     /*
     // MARK: - Navigation
