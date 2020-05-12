@@ -218,12 +218,12 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
         // Show the intro collectionView
         if sday == nil {
             UserDefaults.standard.set(Date(), forKey: "startDay")
-            self.daysTV.text = "Contribute to native bees for 0 days"
+            self.daysTV.text = "I have used this app for 0 days"
         }
         else{
             let daysDiff = Calendar.current.dateComponents([.day], from: sday ?? Date(), to: Date()).day!
             print(daysDiff)
-            self.daysTV.text = "Contribute to native bees for \(String(daysDiff)) days"
+            self.daysTV.text = "I have used this app for \(String(daysDiff)) days"
            self.daysTV.reloadInputViews()
         }
     }

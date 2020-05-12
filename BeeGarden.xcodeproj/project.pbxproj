@@ -89,6 +89,9 @@
 		267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CACC92451C57800A7F973 /* CollectionCell.swift */; };
 		267CACCC2451C57800A7F973 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267CACCA2451C57800A7F973 /* CollectionCell.xib */; };
 		268748BA2469A1E70064A76C /* InaturalistActVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748B92469A1E70064A76C /* InaturalistActVC.swift */; };
+		268748BF246B0D6B0064A76C /* ImageClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748BE246B0D6B0064A76C /* ImageClassificationViewController.swift */; };
+		268748C3246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 268748C2246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel */; };
+		268748C5246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748C4246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00625243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
@@ -214,6 +217,9 @@
 		267CACC92451C57800A7F973 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		267CACCA2451C57800A7F973 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		268748B92469A1E70064A76C /* InaturalistActVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InaturalistActVC.swift; sourceTree = "<group>"; };
+		268748BE246B0D6B0064A76C /* ImageClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClassificationViewController.swift; sourceTree = "<group>"; };
+		268748C2246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FiveBeesImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		268748C4246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		26B00622243E1D8D00BA9187 /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
 		26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		26B0062A2440296400BA9187 /* HomeBeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeeDetailVC.swift; sourceTree = "<group>"; };
@@ -327,6 +333,7 @@
 		265B1F692436E7300036F0F5 /* BeeGarden */ = {
 			isa = PBXGroup;
 			children = (
+				268748BD246B0D470064A76C /* ML */,
 				2674A7F32461949F0042A089 /* Fonts */,
 				26E5A337245BF2E800C82B98 /* HalfModelPresentation */,
 				263362162455D2CC0014CD92 /* Utils */,
@@ -457,6 +464,16 @@
 				267CACCA2451C57800A7F973 /* CollectionCell.xib */,
 			);
 			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		268748BD246B0D470064A76C /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				268748C2246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel */,
+				268748C4246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				268748BE246B0D6B0064A76C /* ImageClassificationViewController.swift */,
+			);
+			path = ML;
 			sourceTree = "<group>";
 		};
 		26C812662444AA8800FC4994 /* Animation */ = {
@@ -793,6 +810,7 @@
 				26622109243B1A690072CF83 /* ObserveEntity+CoreDataClass.swift in Sources */,
 				267CAADE2449F34D00A7F973 /* TabBarVC.swift in Sources */,
 				265B1F6B2436E7300036F0F5 /* AppDelegate.swift in Sources */,
+				268748BF246B0D6B0064A76C /* ImageClassificationViewController.swift in Sources */,
 				26B0067E2440B8F400BA9187 /* HomeViewController.swift in Sources */,
 				26E2664024594F2F006955CB /* CollectionPhotoCell.swift in Sources */,
 				263361D224549E740014CD92 /* RecordHeatMapVC.swift in Sources */,
@@ -800,10 +818,12 @@
 				26E5A33F245BF33A00C82B98 /* HalfModalInteractiveTransition.swift in Sources */,
 				267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */,
 				26E2663E24594E35006955CB /* GalleryCollectionVC.swift in Sources */,
+				268748C5246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */,
 				2662209B243842BC0072CF83 /* Bee.swift in Sources */,
 				26B0068024417D7000BA9187 /* NearbyVC.swift in Sources */,
 				2633619424541E5F0014CD92 /* GardenPlantHSVC.swift in Sources */,
+				268748C3246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel in Sources */,
 				267CACC72451BC9700A7F973 /* PlantListVC.swift in Sources */,
 				267CAB36244DFB7400A7F973 /* NavTabVC.swift in Sources */,
 				260844FA24420EBF00F59166 /* SpotEntity+CoreDataClass.swift in Sources */,
