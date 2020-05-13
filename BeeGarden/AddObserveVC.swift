@@ -13,13 +13,17 @@ import Accelerate
 import Lottie
 import SwiftyJSON
 import NVActivityIndicatorView
+import CoreML
+import Vision
+import ImageIO
+import CropViewController
 
 protocol AddObserveDelegate : AnyObject {
     func addObserve(newObserve : Observe) -> Bool
 }
 
 
-class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate,UITextViewDelegate,CLLocationManagerDelegate {
+class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate,UITextViewDelegate,CLLocationManagerDelegate, CropViewControllerDelegate  {
     
     @IBOutlet weak var observeName: UITextField!
     
@@ -42,6 +46,13 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     
     @IBOutlet weak var weatherBtn: UIButton!
     
+    
+    @IBOutlet weak var classResLab: UILabel!
+    
+    @IBOutlet weak var classResView: UIView!
+    
+    @IBOutlet weak var classResVE: UIVisualEffectView!
+    
     weak var databaseController: DatabaseProtocol?
     
     var locationManager: CLLocationManager = CLLocationManager()
@@ -49,6 +60,25 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     var locationFormAdd : CLLocationCoordinate2D?  //
     var imageHasSet: Bool = false
     var activityIndicator: NVActivityIndicatorView!
+    
+    lazy var classificationRequest: VNCoreMLRequest = {
+        do {
+            /*
+             Use the Swift class `MobileNet` Core ML generates from the model.
+             To use a different Core ML classifier model, add it to the project
+             and replace `MobileNet` with that model's generated Swift class.
+             */
+            let model = try VNCoreMLModel(for: FiveBeesImageClassifier_1().model)
+            
+            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                self?.processClassifications(for: request, error: error)
+            })
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        } catch {
+            fatalError("Failed to load Vision ML model: \(error)")
+        }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +107,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         tapAni.play()
         
        setIndicator()
+        self.classResVE.isHidden = true
        
           
     }
@@ -90,18 +121,103 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     @IBAction func cameraBtnAct(_ sender: Any) {
         
         tapAniView.isHidden = true
-        let imagePicker: UIImagePickerController = UIImagePickerController()
+      //  let imagePicker: UIImagePickerController = UIImagePickerController()
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .savedPhotosAlbum
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            imagePicker.sourceType = .camera
+//        } else {
+//            imagePicker.sourceType = .savedPhotosAlbum
+//        }
+        // Show options for the source picker only if the camera is available.
+               guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                   presentPhotoPicker(sourceType: .photoLibrary)
+                   return
+               }
+               
+               let photoSourcePicker = UIAlertController()
+               let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+                   self.presentPhotoPicker(sourceType: .camera)
+               }
+               let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+                   self.presentPhotoPicker(sourceType: .photoLibrary)
+               }
+               
+               photoSourcePicker.addAction(takePhoto)
+               photoSourcePicker.addAction(choosePhoto)
+               photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+               
+               present(photoSourcePicker, animated: true)
         
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+      //  imagePicker.allowsEditing = true
+     //   imagePicker.delegate = self
+    //    present(imagePicker, animated: true, completion: nil)
     }
+    
+    func presentPhotoPicker(sourceType: UIImagePickerController.SourceType) {
+           let picker = UIImagePickerController()
+           picker.delegate = self
+       // picker.allowsEditing = true
+           picker.sourceType = sourceType
+           present(picker, animated: true)
+       }
+    
+//    func presentCropViewController(image: UIImage) {
+//         //let image: UIImage = #imageLiteral(resourceName: "lavender") //Load an image
+//
+//         let cropViewController = CropViewController(image: image)
+//         cropViewController.delegate = self
+//         present(cropViewController, animated: true, completion: nil)
+//       }
+
+      
+    
+    func updateClassifications(for image: UIImage) {
+        classResLab.text = "Classifying..."
+        
+        let orientation = CGImagePropertyOrientation(image.imageOrientation)
+        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+            do {
+                try handler.perform([self.classificationRequest])
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
+            }
+        }
+    }
+    
+    /// Updates the UI with the results of the classification.
+      /// - Tag: ProcessClassifications
+      func processClassifications(for request: VNRequest, error: Error?) {
+          DispatchQueue.main.async {
+              guard let results = request.results else {
+                  self.classResLab.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                  return
+              }
+              // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+              let classifications = results as! [VNClassificationObservation]
+          
+              if classifications.isEmpty {
+                  self.classResLab.text = "Nothing recognized."
+              } else {
+                  // Display top classifications ranked by confidence in the UI.
+                  let topClassifications = classifications.prefix(2)
+                  let descriptions = topClassifications.map { classification in
+                      // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
+                     return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                  }
+                  self.classResLab.text = "Classification:\n" + descriptions.joined(separator: "\n")
+              }
+          }
+      }
+    
+    
     
     
     @IBAction func weatherBtnAct(_ sender: Any) {
@@ -230,7 +346,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         
         self.observeDesc.text = " "
        
-        
+       
       }
     
       override func viewDidDisappear(_ animated: Bool) {
@@ -311,17 +427,56 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+      //  self.classResVE.isHidden = true
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
         
-        let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        guard let pickedImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) else {return}
+        let cropController = CropViewController(image: pickedImage)
+        cropController.delegate = self
         
-        imageView.image = pickedImage
-        imageHasSet = true
+    picker.dismiss(animated: false, completion: {
+                     self.present(cropController, animated: true, completion: nil)
+       // cropController.hidesBottomBarWhenPushed = true
+               //      self.navigationController!.pushViewController(cropController, animated: true)
+      //  self.tabBarController?.hidesBottomBarWhenPushed = true
+                 })
+       // imageView.image = pickedImage
+        
+//        self.classResVE.isHidden = false
+//      //  self.classResView.isHidden = false
+//
+//        updateClassifications(for: pickedImage)
+//        imageHasSet = true
     }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+                  // 'image' is the newly cropped version of the original image
+              self.imageView.image = image
+        
+        self.classResVE.isHidden = false
+        updateClassifications(for: image)
+        imageHasSet = true
+        
+              dismiss(animated: true, completion: nil)
+              }
+    
+   
+    
+    // MARK: - Handling Image Picker Selection
+
+//      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//         picker.dismiss(animated: true)
+//
+//         // We always expect `imagePickerController(:didFinishPickingMediaWithInfo:)` to supply the original image.
+//
+//         let image = info[.originalImage] as! UIImage
+//         imageView.image = image
+//         updateClassifications(for: image)
+//    }
     
 
 }
@@ -359,3 +514,5 @@ extension UIImage{
     return resizedImage
     }
 }
+
+

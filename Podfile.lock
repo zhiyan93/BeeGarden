@@ -4,6 +4,7 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
+  - CropViewController (2.5.2)
   - FloatingPanel (1.7.4)
   - GlidingCollection (2.1.0)
   - lottie-ios (3.1.6)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Alamofire
   - CalendarHeatmap
   - Charts
+  - CropViewController
   - FloatingPanel
   - GlidingCollection
   - lottie-ios
@@ -39,6 +41,7 @@ SPEC REPOS:
     - Alamofire
     - CalendarHeatmap
     - Charts
+    - CropViewController
     - FloatingPanel
     - GlidingCollection
     - lottie-ios
@@ -55,6 +58,7 @@ SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   CalendarHeatmap: 91034b0eead341a8a8d29b4a460b8b3a176fa36c
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
   FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
   GlidingCollection: a15dbd9ec1775c781453bc36e6104d0c9dec20fb
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
@@ -67,6 +71,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
   UIGradient: 2364e9ebac232686db220713b4d42a68222fffb2
 
-PODFILE CHECKSUM: bf5b8c9573817c1b3a7fb0b3fcfcbf6ea573cce3
+PODFILE CHECKSUM: 7bc9c01a8da9c0d656bebc4122dc608d7503b78b
 
 COCOAPODS: 1.9.1

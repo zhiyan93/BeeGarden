@@ -20,6 +20,7 @@ target 'BeeGarden' do
   pod 'SwiftEntryKit', '1.2.3'
   pod 'UICircularProgressRing'
   pod 'paper-onboarding'
+  pod 'CropViewController'
   
   target 'BeeGardenTests' do
     inherit! :search_paths
