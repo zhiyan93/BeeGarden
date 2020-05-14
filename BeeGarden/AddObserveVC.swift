@@ -109,7 +109,11 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
        setIndicator()
         self.classResVE.isHidden = true
        
-          
+         
+        let borderGray = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        self.observeDesc.layer.borderColor = borderGray.cgColor
+        self.observeDesc.layer.borderWidth = 0.5
+        self.observeDesc.layer.cornerRadius = 5
     }
     
     @IBAction func imageClicked(_ sender: Any) {

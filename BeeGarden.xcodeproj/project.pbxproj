@@ -119,6 +119,9 @@
 		26C812AE2444D8C800FC4994 /* book-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C812AD2444D8C800FC4994 /* book-animation.json */; };
 		26C812B024460A1900FC4994 /* PlantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C812AF24460A1900FC4994 /* PlantVC.swift */; };
 		26C812EE2448A9F200FC4994 /* MelbourneCBD.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */; };
+		26C88A6B246D24DC005BEC5B /* PlantListBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C88A6A246D24DC005BEC5B /* PlantListBVC.swift */; };
+		26C88A6D246D52DD005BEC5B /* PlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C88A6C246D52DD005BEC5B /* PlantsTableViewCell.swift */; };
+		26C88A6F246D730D005BEC5B /* UIFonts+BestFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C88A6E246D730D005BEC5B /* UIFonts+BestFit.swift */; };
 		26E2663C24594C09006955CB /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2663B24594C09006955CB /* PinterestLayout.swift */; };
 		26E2663E24594E35006955CB /* GalleryCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2663D24594E35006955CB /* GalleryCollectionVC.swift */; };
 		26E2664024594F2F006955CB /* CollectionPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2663F24594F2F006955CB /* CollectionPhotoCell.swift */; };
@@ -235,6 +238,9 @@
 		26C812AD2444D8C800FC4994 /* book-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "book-animation.json"; sourceTree = "<group>"; };
 		26C812AF24460A1900FC4994 /* PlantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantVC.swift; sourceTree = "<group>"; };
 		26C812ED2448A9F200FC4994 /* MelbourneCBD.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MelbourneCBD.gpx; sourceTree = SOURCE_ROOT; };
+		26C88A6A246D24DC005BEC5B /* PlantListBVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListBVC.swift; sourceTree = "<group>"; };
+		26C88A6C246D52DD005BEC5B /* PlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewCell.swift; sourceTree = "<group>"; };
+		26C88A6E246D730D005BEC5B /* UIFonts+BestFit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFonts+BestFit.swift"; sourceTree = "<group>"; };
 		26E2663B24594C09006955CB /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		26E2663D24594E35006955CB /* GalleryCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionVC.swift; sourceTree = "<group>"; };
 		26E2663F24594F2F006955CB /* CollectionPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPhotoCell.swift; sourceTree = "<group>"; };
@@ -304,6 +310,7 @@
 				263362192455D4230014CD92 /* TopNotesPush.swift */,
 				26E266432459DA88006955CB /* LotAnimaiton.swift */,
 				26E26647245A8D39006955CB /* WeatherAPI.swift */,
+				26C88A6E246D730D005BEC5B /* UIFonts+BestFit.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,6 +388,8 @@
 				26E5A343245EEBE500C82B98 /* GardenNotifVC.swift */,
 				2674A7FC2461B2960042A089 /* AcknowledgeVC.swift */,
 				268748B92469A1E70064A76C /* InaturalistActVC.swift */,
+				26C88A6A246D24DC005BEC5B /* PlantListBVC.swift */,
+				26C88A6C246D52DD005BEC5B /* PlantsTableViewCell.swift */,
 			);
 			path = BeeGarden;
 			sourceTree = "<group>";
@@ -779,6 +788,7 @@
 				266220B8243891C10072CF83 /* DatabaseProtocol.swift in Sources */,
 				266220A7243843260072CF83 /* Observe.swift in Sources */,
 				267CAB442450962B00A7F973 /* GardenVC.swift in Sources */,
+				26C88A6F246D730D005BEC5B /* UIFonts+BestFit.swift in Sources */,
 				26E266422459C827006955CB /* ObserveDetailVC.swift in Sources */,
 				267CAB4B24509AF100A7F973 /* FlowerEntity+CoreDataClass.swift in Sources */,
 				266220CC2439FE450072CF83 /* AddObserveVC.swift in Sources */,
@@ -789,6 +799,7 @@
 				26E5A33D245BF33A00C82B98 /* HalfModalTransitionAnimator.swift in Sources */,
 				266220C82439E2DE0072CF83 /* GalleryTableViewCell.swift in Sources */,
 				260844FD24421FD900F59166 /* SpotDetailVC.swift in Sources */,
+				26C88A6D246D52DD005BEC5B /* PlantsTableViewCell.swift in Sources */,
 				267CAB4924509AF100A7F973 /* GardenEntity+CoreDataClass.swift in Sources */,
 				26622106243B1A690072CF83 /* BeeEntity+CoreDataProperties.swift in Sources */,
 				267CAB34244DCCFF00A7F973 /* PlantRecordEntity+CoreDataProperties.swift in Sources */,
@@ -796,6 +807,7 @@
 				26B0062B2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
 				26E5A342245DCE3B00C82B98 /* RainBarChartVC.swift in Sources */,
+				26C88A6B246D24DC005BEC5B /* PlantListBVC.swift in Sources */,
 				26C812B024460A1900FC4994 /* PlantVC.swift in Sources */,
 				2662209F243842E20072CF83 /* Flower.swift in Sources */,
 				2662210C243B1A690072CF83 /* ObserveEntity+CoreDataProperties.swift in Sources */,

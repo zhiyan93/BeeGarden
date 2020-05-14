@@ -256,7 +256,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
    
     
     func amountShouldReturn(input: String) {
-        if let num : Int = Int(input) {
+        if let num : Int = Int(input), num < 1000  {
             print(num)
             SwiftEntryKit.dismiss()
            UserDefaults.standard.set(num, forKey: "waterAmount")

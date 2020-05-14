@@ -222,7 +222,7 @@ extension GardenPlantHSVC: UICollectionViewDataSource, UICollectionViewDelegate 
           
             
             if indexPath.item == 0 {
-                let plantList = storyboard?.instantiateViewController(withIdentifier: "plantListView") as! PlantListVC
+                let plantList = storyboard?.instantiateViewController(withIdentifier: "plantListBView") as! PlantListBVC
                  present(plantList, animated: true)
             }
             else {
