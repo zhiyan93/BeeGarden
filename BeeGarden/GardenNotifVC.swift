@@ -191,7 +191,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
          UserDefaults.standard.set(setTime,forKey: "notifTime")
         print("timeset\(setTime)")
         let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: setTime )
-        TopNotesPush.push(message: "notification will push at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
+        TopNotesPush.push(message: "notification will be sent at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
         
         if self.notifSwitch.isOn {
             addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Remember to water your garden today")
@@ -396,7 +396,8 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         for r in rainDays.values{
             rainSum = rainSum + r
         }
-        self.rainSumLabel.text = "Total Rainfall in 7 days: \(rainSum)"
+       
+        self.rainSumLabel.text = "Total Rainfall in 7 days: \(rainSum.round(to: 2))"
         
         progressDict["rain"] = Int(rainSum)
            NotificationCenter.default.post(name: NSNotification.Name("progressChange"), object: nil,userInfo: progressDict)

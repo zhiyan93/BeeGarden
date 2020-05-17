@@ -78,6 +78,13 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate,SFSafariViewControllerDel
         
     }
     
+    
+    @IBAction func phoneCallAct(_ sender: Any) {
+        
+        PhoneNumber(extractFrom: self.contact.text ?? " ")?.makeACall()
+    }
+    
+    
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         //dismiss(animated: true)
     }

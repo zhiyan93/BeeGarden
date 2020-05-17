@@ -224,8 +224,10 @@ extension PlantListBVC : UITableViewDelegate, UITableViewDataSource {
         let originImage = UIImage(data:  plants[plantIndex].image! )
         plantListCell.plantImage.image = originImage
             
-        plantListCell.plantName.text = plants[plantIndex].name ?? " "
-        plantListCell.plantName.fitTextToBounds() 
+        plantListCell.plantName.text = " " + (plants[plantIndex].name ?? " ") + " "
+        
+     
+        plantListCell.plantName.fitTextToBounds()
         
         
         return plantListCell

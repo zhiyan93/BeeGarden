@@ -27,7 +27,7 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
     var rainDays = [Int:Double]()
     var watering = [-3:0,-2:10,-1:0,0:0,1:0,2:0,3:0]
     
-    @IBOutlet var barChartView: BarChartView!
+    @IBOutlet var barChartView: CombinedChartView!
     
     @IBOutlet var wholeView: UIView!
     override func viewDidLoad() {
@@ -37,12 +37,16 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
         barChartView.drawValueAboveBarEnabled = true
            barChartView.setScaleEnabled(false)
            barChartView.pinchZoomEnabled = false
-               barChartView.leftAxis.enabled = false
-               barChartView.rightAxis.enabled = false
+               barChartView.leftAxis.enabled = true
+               barChartView.rightAxis.enabled = true
             barChartView.xAxis.enabled =  true
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.rightAxis.drawAxisLineEnabled = false
+        barChartView.leftAxis.drawAxisLineEnabled = false
               barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        barChartView.xAxis.drawGridLinesEnabled = false
         
-              barChartView.legend.enabled = false
+              barChartView.legend.enabled = true
                
                // Do any additional setup after loading the view.
                let indicatorSize: CGFloat = 150
@@ -146,16 +150,40 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
     func setChart(){
             let items = rainDays
             var entries = [BarChartDataEntry]()
+           var entrySums = [ChartDataEntry]()
           //  var values = [Double]()
             for (key,value) in items{
                let entry = BarChartDataEntry(x: Double(key), y: value)
                 entries.append(entry)
+                
+                var s = 0.0
+                for (k,v) in items {
+                    if k <= key {
+                        s = s + v
+                    }
+                }
+                
+                let entrySum = ChartDataEntry(x: Double(key), y: s)
+                entrySums.append(entrySum)
                 //values.append(value)
             }
             let set1 = BarChartDataSet(entries: entries,label: "rain fall")
         set1.setColor(UIColor(named:"wateringColor4")!)
-            let data = BarChartData(dataSet: set1)
-            barChartView.data = data
+           // let data = BarChartData(dataSet: set1)
+           // barChartView.data = data
+        
+        entrySums.sort(by: { $0.x < $1.x })   //must sort before set dataset
+        let lineSet = LineChartDataSet(entries: entrySums, label: "total rain fall")
+        lineSet.setColor(UIColor.systemOrange.withAlphaComponent(0.6))
+        lineSet.drawCirclesEnabled = false
+        lineSet.drawValuesEnabled = false
+        lineSet.lineWidth = 3
+        let data: CombinedChartData = CombinedChartData()
+        data.barData = BarChartData(dataSets: [set1])
+        data.lineData = LineChartData( dataSets: [lineSet])
+
+        barChartView.data = data
+        
         
     //        let meanValue = values.reduce(0,+)/Double(values.count)
     //        let ll = ChartLimitLine(limit: meanValue, label: "mean rainfall")

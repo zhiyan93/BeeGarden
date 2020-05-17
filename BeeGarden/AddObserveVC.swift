@@ -263,7 +263,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
             let weather = observeWeather.text!
             let time = observeTime.text!
             let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            df.dateFormat = "yyyy-MM-dd , HH:mm:ss"
             let date = df.date(from: time)
                   // let lat = sightLat
                  //  let lon = sightLon
@@ -339,7 +339,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
           super.viewWillAppear(animated)
           locationManager.startUpdatingLocation()
         let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        df.dateFormat = "yyyy-MM-dd , HH:mm:ss"
        let now =  df.string(from: Date())
         self.observeTime.text = now
         self.observeWeather.text = " weather: ;\n tempetature: ;\n pressure: ;\n humidity: %;\n clouds: %;\n  wind speed: ;\n wind direction:  \n"

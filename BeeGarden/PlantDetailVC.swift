@@ -125,7 +125,7 @@ class PlantDetailVC: UIViewController,DatabaseListener {
                     print("add plant to garden \(res ?? false)")
             //         let gardenView = storyboard?.instantiateViewController(withIdentifier: "gardenPlantHSView") as! GardenPlantHSVC
                     if(res == true){
-                        TopNotesPush.push(message: "Add \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
+                        TopNotesPush.push(message: "Added \(selectedPlant!.name ?? " ") to your garden", color: .color(color: Color.LightBlue.a700))
                     }
                     
                     else{
