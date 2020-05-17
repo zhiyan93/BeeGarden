@@ -23,6 +23,9 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var signUpBtn: UIButton!
     
     @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var contentWView: UIView!
+    
     let site = "https://www.inaturalist.org/oauth/token"
     let userDetailUrl = "https://www.inaturalist.org/users/edit.json"
        let app_id = "9281c3348ede35fe42cd237d17d5671dc16fa5b969acec35a53ef93bc156102b"
@@ -35,6 +38,7 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
         // Do any additional setup after loading the view.
         profileImage.makeRounded()
         loginBtn.layer.cornerRadius = 10
+        contentWView.setMyBorderColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -52,6 +52,14 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
     @IBOutlet weak var daysTV: UILabel!
     
     
+    @IBOutlet weak var plantSView: UIView!
+    
+    @IBOutlet weak var observeSView: UIView!
+    
+    
+    @IBOutlet weak var nearBySView: UIView!
+    
+    
     @IBOutlet weak var plantAniView: UIView!
   
     @IBOutlet weak var PlantCount: UILabel!
@@ -111,25 +119,57 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
         observeBtn.setImage(btnImage, for: .normal)
         nearbyBtn.setImage(btnImage, for: .normal)
         
-        
+        plantSView.setMyBorderColor()
+        observeSView.setMyBorderColor()
+        nearBySView.setMyBorderColor()
+      //  plantSView.layer.backgroundColor = UIColor.systemOrange.cgColor
+      //  observeSView.layer.backgroundColor = UIColor.systemOrange.cgColor
+       // nearBySView.layer.backgroundColor = UIColor.systemOrange.cgColor
         
     }
     
  
 //
    @IBAction func imageViewTapped(_ sender: Any) {
-        let imagePicker: UIImagePickerController = UIImagePickerController()
-         
-         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-             imagePicker.sourceType = .camera
-         } else {
-             imagePicker.sourceType = .savedPhotosAlbum
-         }
-         
-         imagePicker.allowsEditing = true
-         imagePicker.delegate = self
-         present(imagePicker, animated: true, completion: nil)
+//        let imagePicker: UIImagePickerController = UIImagePickerController()
+//
+//         if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//             imagePicker.sourceType = .camera
+//         } else {
+//             imagePicker.sourceType = .savedPhotosAlbum
+//         }
+//
+//         imagePicker.allowsEditing = true
+//         imagePicker.delegate = self
+//         present(imagePicker, animated: true, completion: nil)
+    
+    guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                   presentPhotoPicker(sourceType: .photoLibrary)
+                   return
+               }
+               
+               let photoSourcePicker = UIAlertController()
+               let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+                   self.presentPhotoPicker(sourceType: .camera)
+               }
+               let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+                   self.presentPhotoPicker(sourceType: .photoLibrary)
+               }
+               
+               photoSourcePicker.addAction(takePhoto)
+               photoSourcePicker.addAction(choosePhoto)
+               photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+               
+               present(photoSourcePicker, animated: true)
      }
+    
+    func presentPhotoPicker(sourceType: UIImagePickerController.SourceType) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+    // picker.allowsEditing = true
+        picker.sourceType = sourceType
+        present(picker, animated: true)
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -177,7 +217,7 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
           }
     
     override func viewDidAppear(_ animated: Bool) {
-     
+       
     }
     
     @IBAction func addPlantBtn(_ sender: Any) {
@@ -218,15 +258,18 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
         // Show the intro collectionView
         if sday == nil {
             UserDefaults.standard.set(Date(), forKey: "startDay")
-            self.daysTV.text = "I have used this app for 0 days"
+            self.daysTV.text = "Being Bee Mate for 0 days"
         }
         else{
             let daysDiff = Calendar.current.dateComponents([.day], from: sday ?? Date(), to: Date()).day!
             print(daysDiff)
-            self.daysTV.text = "I have used this app for \(String(daysDiff)) days"
+            self.daysTV.text = "Being Bee Mate for \(String(daysDiff)) days"
            self.daysTV.reloadInputViews()
         }
     }
+    
+    
+   
     
     /*
     // MARK: - Navigation
@@ -246,7 +289,7 @@ extension UIImageView {
 
         self.layer.borderWidth = 1
         self.layer.masksToBounds = true
-        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderColor = UIColor.systemOrange.cgColor
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
     }

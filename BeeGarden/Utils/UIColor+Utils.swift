@@ -214,3 +214,15 @@ struct Color {
     }
 }
 
+extension UIView {
+    func setMyBorderColor() {
+//        self.layer.borderColor = UIColor.systemGray3.cgColor
+//        self.layer.borderWidth = 1
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 2
+    }
+}
+

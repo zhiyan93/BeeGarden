@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class TabBarVC: UITabBarController {
 
     let itemImages = [ "icons8-home-100","icons8-sprout-100","icons8-camera-100","icons8-museum-100" ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,6 +48,11 @@ class TabBarVC: UITabBarController {
              present(view, animated: false)
              UserDefaults.standard.set(false, forKey: "isFirstTime")
          }
+        
+   
+                             
+                            
+                          
      }
     
 

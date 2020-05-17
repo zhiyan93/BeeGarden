@@ -48,6 +48,7 @@ class GardenPlantHSVC: UIViewController, DatabaseListener {
     // MARK: - Constants
      
      let cellWidth = (0.7) * UIScreen.main.bounds.width
+   // let cellHeigth =
      let sectionSpacing = (1 / 16) * UIScreen.main.bounds.width
      let cellSpacing = (1 / 16) * UIScreen.main.bounds.width
      
@@ -62,7 +63,7 @@ class GardenPlantHSVC: UIViewController, DatabaseListener {
          let layout =  PagingCollectionViewLayout()
          layout.scrollDirection = .horizontal
          layout.sectionInset = UIEdgeInsets(top: 0, left: sectionSpacing, bottom: 0, right: sectionSpacing)
-         layout.itemSize = CGSize(width: cellWidth * 0.9, height: cellWidth * 0.65)
+         layout.itemSize = CGSize(width: cellWidth * 0.6, height: cellWidth * 0.65)  //0.9
          layout.minimumLineSpacing = cellSpacing
          
         
@@ -167,7 +168,7 @@ extension GardenPlantHSVC: UICollectionViewDataSource, UICollectionViewDelegate 
                         //    imageview.image = img
                             
                         let myImageView:UIImageView = UIImageView()
-                            myImageView.frame.size.width = cellWidth * 0.9
+                myImageView.frame.size.width = cellWidth * 0.6   //0.9
                             myImageView.frame.size.height = cellWidth * 0.65
                           //  myImageView.frame.offsetBy(dx: -40, dy: 20)
                             myImageView.frame = myImageView.frame.offsetBy(dx: 0, dy: 0)
@@ -175,7 +176,7 @@ extension GardenPlantHSVC: UICollectionViewDataSource, UICollectionViewDelegate 
                             myImageView.image = img
                              myImageView.layer.cornerRadius = 20 // change this number to get the corners you want
                              myImageView.layer.masksToBounds = true
-                                
+                myImageView.contentMode = .scaleAspectFill
                             cell.contentView.addSubview(myImageView)
                        return cell
             }
@@ -250,7 +251,7 @@ extension GardenPlantHSVC: UICollectionViewDelegateFlowLayout {
         if indexPath.item == 0 {
             return CGSize(width: cellWidth * 0.3, height: cellWidth * 0.65)
         }
-          return CGSize(width: cellWidth * 0.9, height: cellWidth * 0.65)
+          return CGSize(width: cellWidth * 0.6, height: cellWidth * 0.65)  //0.9
     }
 
 

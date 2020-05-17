@@ -73,7 +73,7 @@ struct TopNotesPush {
         var fields = [EKProperty.TextFieldContent]()
         for s in placeHoders{
             let placeHoder = EKProperty.LabelContent(text: s, style: .init(font: .systemFont(ofSize: 12), color: .white))
-            let TextField = EKProperty.TextFieldContent(keyboardType: .numberPad, placeholder: placeHoder, tintColor: .amber, displayMode: .light, textStyle: .init(font: .systemFont(ofSize: 15), color: .greenGrass), isSecure: false, leadingImage: .add , bottomBorderColor: .black, accessibilityIdentifier: s)
+            let TextField = EKProperty.TextFieldContent(keyboardType: .numberPad, placeholder: placeHoder, tintColor: .amber, displayMode: .light, textStyle: .init(font: .systemFont(ofSize: 15), color: .satCyan), isSecure: false, leadingImage: .add , bottomBorderColor: .black, accessibilityIdentifier: s)
             fields.append(TextField)
         }
         let buttonLabel = EKProperty.LabelContent(text: buttonTitle, style: .init(font: .systemFont(ofSize: 20), color: .white))
@@ -324,6 +324,132 @@ struct TopNotesPush {
            let contentView = EKRatingMessageView(with: message)
            SwiftEntryKit.display(entry: contentView, using: attributes)
        }
+    
+    
+    static func centreFloatPush(title: String,desc: String,image: UIImage?) {
+        var attributes = EKAttributes()
+        attributes = EKAttributes.centerFloat
+               attributes.hapticFeedbackType = .success
+               attributes.displayDuration = .infinity
+               attributes.entryBackground = .gradient(
+                   gradient: .init(
+                       colors: [EKColor(rgb: 0xfffbd5), EKColor(rgb: 0xf39c12)],// [EKColor(rgb: 0xfffbd5), EKColor(rgb: 0xb20a2c)],
+                       startPoint: .zero,
+                       endPoint: CGPoint(x: 1, y: 1)
+                   )
+               )
+               attributes.screenBackground = .color(color: .dimmedDarkBackground)
+               attributes.shadow = .active(
+                   with: .init(
+                       color: .black,
+                       opacity: 0.3,
+                       radius: 10
+                   )
+               )
+               attributes.screenInteraction = .dismiss
+               attributes.entryInteraction = .absorbTouches
+               attributes.scroll = .enabled(
+                   swipeable: true,
+                   pullbackAnimation: .jolt
+               )
+               attributes.roundCorners = .all(radius: 8)
+               attributes.entranceAnimation = .init(
+                   translate: .init(
+                       duration: 0.7,
+                       spring: .init(damping: 0.7, initialVelocity: 0)
+                   ),
+                   scale: .init(
+                       from: 0.7,
+                       to: 1,
+                       duration: 0.4,
+                       spring: .init(damping: 1, initialVelocity: 0)
+                   )
+               )
+               attributes.exitAnimation = .init(
+                   translate: .init(duration: 0.2)
+               )
+               attributes.popBehavior = .animated(
+                   animation: .init(
+                       translate: .init(duration: 0.35)
+                   )
+               )
+               attributes.positionConstraints.size = .init(
+                   width: .offset(value: 20),
+                   height: .intrinsic
+               )
+               attributes.positionConstraints.maxSize = .init(
+                width: .constant(value: UIScreen.main.bounds.width - 50),
+                   height: .intrinsic
+               )
+               attributes.statusBar = .dark
+//               descriptionString = "Centeralized floating popup with dimmed background"
+//               descriptionThumb = ThumbDesc.bottomPopup.rawValue
+//               description = .init(
+//                   with: attributes,
+//                   title: "Pop Up II",
+//                   description: descriptionString,
+//                   thumb: descriptionThumb
+//               )
+       var themeImage: EKPopUpMessage.ThemeImage?
+                
+                if let image = image {
+                    themeImage = EKPopUpMessage.ThemeImage(
+                        image: EKProperty.ImageContent(
+                            image: image,
+                            displayMode: .light,
+                            size: CGSize(width: 40, height: 40),
+                            tint: .black,
+                            contentMode: .scaleAspectFit
+                        )
+                    )
+                }
+                let title = EKProperty.LabelContent(
+                    text: title,
+                    style: .init(
+                      font: .boldSystemFont(ofSize: 24) ,
+                      color: .satCyan,
+                        alignment: .center,
+                        displayMode: .light
+                    )
+                )
+                let description = EKProperty.LabelContent(
+                    text: desc,
+                    style: .init(
+                      font: .systemFont(ofSize: 16),
+                      color: .black,
+                        alignment: .natural,
+                        displayMode: .light
+                    )
+                )
+                let button = EKProperty.ButtonContent(
+                    label: .init(
+                        text: "Got it!",
+                        style: .init(
+                          font: .systemFont(ofSize: 16),
+                          color: .white,
+                          displayMode: .light
+                        )
+                    ),
+                    backgroundColor: .satCyan,
+                    highlightedBackgroundColor: .amber
+            
+                   // displayMode: .greatestFiniteMagnitude
+                )
+                let message = EKPopUpMessage(
+                    themeImage: themeImage,
+                    title: title,
+                    description: description,
+                    button: button) {
+                        SwiftEntryKit.dismiss()
+                      
+                }
+                let contentView = EKPopUpMessageView(with: message)
+                SwiftEntryKit.display(entry: contentView, using: attributes)
+        
+    }
+    
+  
+
 }
 
 

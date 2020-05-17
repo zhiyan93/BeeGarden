@@ -48,18 +48,37 @@ class PlantDetailVC: UIViewController,DatabaseListener {
     
     @IBOutlet weak var descField: UITextView!
     
-    @IBOutlet weak var climateSegment: UISegmentedControl!
     
     @IBOutlet weak var monthSegment: UISegmentedControl!
     
-    @IBOutlet weak var nectarSegment: UISegmentedControl!
+   
+    @IBOutlet weak var borderView: UIView!
     
-    @IBOutlet weak var pollenSegment: UISegmentedControl!
+   
     
     
-    @IBOutlet weak var recommandSegment: UISegmentedControl!
     
     @IBOutlet weak var plantBtn: UIButton!
+    
+    @IBOutlet weak var climateView: UIView!
+    
+    @IBOutlet weak var climateImage: UIImageView!
+    
+    @IBOutlet weak var climateLab: UILabel!
+    
+    
+    @IBOutlet weak var nectarView: UIView!
+    
+    @IBOutlet weak var nectarImage: UIImageView!
+    
+    @IBOutlet weak var nectarLab: UILabel!
+    
+    
+    @IBOutlet weak var pollenView: UIView!
+    
+    @IBOutlet weak var pollenImage: UIImageView!
+    
+    @IBOutlet weak var pollenLab: UILabel!
     
     var selectedPlant: FlowerEntity?
     let climateColors :[UIColor] = [.systemOrange ,.systemOrange,.systemOrange,.systemOrange]
@@ -74,6 +93,16 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController   //coredata
         changeValue()
+        borderView.setMyBorderColor()
+        borderView.layer.cornerRadius = 15
+        
+        climateView.layer.cornerRadius = 10
+              climateView.setMyBorderColor()
+        pollenView.layer.cornerRadius = 10
+              pollenView.setMyBorderColor()
+        nectarView.layer.cornerRadius = 10
+              nectarView.setMyBorderColor()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,18 +154,20 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         self.nameLabel.text = selectedPlant?.name
         self.imageView.image = UIImage(data:  (selectedPlant?.image)!)
         self.descField.text = selectedPlant?.desc
-        var climate = 0
-        var climateColor = UIColor.green
+       
+        var cImageName = "sun-cool"
+        let cName = selectedPlant!.gclimate ?? ""
         switch selectedPlant?.gclimate {
-        case "Cool": climate = 0;  climateColor = climateColors[0]
-        case "Temperate": climate = 1 ; climateColor = climateColors[1]
-        case "Warm": climate = 2 ; climateColor = climateColors[2]
-        case "Hot": climate = 3 ; climateColor = climateColors[3]
+        case "Cool":   cImageName = "sun-cool"
+        case "Temperate":  cImageName = "sun-temp"
+        case "Warm": cImageName = "sun-warm"
+        case "Hot":  cImageName = "sun-hot"
         default:
-            climate = 0 ; climateColor = climateColors[0]
+            cImageName = "sun-cool"
         }
-        self.climateSegment.selectedSegmentIndex = climate
-        self.climateSegment.selectedSegmentTintColor = climateColor
+       //
+        climateImage.image = UIImage(named: cImageName)
+        climateLab.text = cName
         
         let calendar = Calendar.current
        let currentMonth = calendar.component(.month, from: Date())
@@ -160,20 +191,24 @@ class PlantDetailVC: UIViewController,DatabaseListener {
               
            
         if selectedPlant?.nectar == "low"{
-            self.nectarSegment.selectedSegmentIndex = 0
+            self.nectarImage.image = UIImage(named: "nectar-low")
+            self.nectarLab.text = "low nectar"
         }
         else {
-            self.nectarSegment.selectedSegmentIndex = 1
+             self.nectarImage.image = UIImage(named: "nectar-high")
+                       self.nectarLab.text = "high nectar"
         }
-        nectarSegment.selectedSegmentTintColor = .systemOrange
+        
         
         if selectedPlant?.pollen == "low"{
-            self.pollenSegment.selectedSegmentIndex = 0
+            pollenImage.image = UIImage(named: "pollen-low")
+            pollenLab.text = "low pollen"
         }
         else{
-            self.pollenSegment.selectedSegmentIndex = 1
+           pollenImage.image = UIImage(named: "pollen-high")
+                       pollenLab.text = "high pollen"
         }
-        pollenSegment.selectedSegmentTintColor = .systemOrange
+       
         
         
         self.plantBtn.layer.cornerRadius = 10

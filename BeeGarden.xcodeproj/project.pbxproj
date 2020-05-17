@@ -88,9 +88,10 @@
 		267CACC72451BC9700A7F973 /* PlantListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CACC62451BC9700A7F973 /* PlantListVC.swift */; };
 		267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CACC92451C57800A7F973 /* CollectionCell.swift */; };
 		267CACCC2451C57800A7F973 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267CACCA2451C57800A7F973 /* CollectionCell.xib */; };
+		267F40C824712FE3003DBBAF /* BeeImageClassifierAll 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 267F40C724712FE3003DBBAF /* BeeImageClassifierAll 2.mlmodel */; };
+		267F40CA24713B32003DBBAF /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 267F40C924713B32003DBBAF /* MobileNet.mlmodel */; };
 		268748BA2469A1E70064A76C /* InaturalistActVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748B92469A1E70064A76C /* InaturalistActVC.swift */; };
 		268748BF246B0D6B0064A76C /* ImageClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748BE246B0D6B0064A76C /* ImageClassificationViewController.swift */; };
-		268748C3246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 268748C2246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel */; };
 		268748C5246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268748C4246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		26B00623243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
 		26B00624243E1D8D00BA9187 /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00622243E1D8D00BA9187 /* HomeTabVC.swift */; };
@@ -219,9 +220,10 @@
 		267CACC62451BC9700A7F973 /* PlantListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListVC.swift; sourceTree = "<group>"; };
 		267CACC92451C57800A7F973 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		267CACCA2451C57800A7F973 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		267F40C724712FE3003DBBAF /* BeeImageClassifierAll 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BeeImageClassifierAll 2.mlmodel"; sourceTree = "<group>"; };
+		267F40C924713B32003DBBAF /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		268748B92469A1E70064A76C /* InaturalistActVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InaturalistActVC.swift; sourceTree = "<group>"; };
 		268748BE246B0D6B0064A76C /* ImageClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClassificationViewController.swift; sourceTree = "<group>"; };
-		268748C2246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FiveBeesImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		268748C4246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		26B00622243E1D8D00BA9187 /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
 		26B00626243E1FEF00BA9187 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -478,8 +480,9 @@
 		268748BD246B0D470064A76C /* ML */ = {
 			isa = PBXGroup;
 			children = (
-				268748C2246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel */,
 				268748C4246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				267F40C924713B32003DBBAF /* MobileNet.mlmodel */,
+				267F40C724712FE3003DBBAF /* BeeImageClassifierAll 2.mlmodel */,
 				268748BE246B0D6B0064A76C /* ImageClassificationViewController.swift */,
 			);
 			path = ML;
@@ -807,6 +810,7 @@
 				26B0062B2440296400BA9187 /* HomeBeeDetailVC.swift in Sources */,
 				266220C02439D7E60072CF83 /* GalleryTableVC.swift in Sources */,
 				26E5A342245DCE3B00C82B98 /* RainBarChartVC.swift in Sources */,
+				267F40C824712FE3003DBBAF /* BeeImageClassifierAll 2.mlmodel in Sources */,
 				26C88A6B246D24DC005BEC5B /* PlantListBVC.swift in Sources */,
 				26C812B024460A1900FC4994 /* PlantVC.swift in Sources */,
 				2662209F243842E20072CF83 /* Flower.swift in Sources */,
@@ -830,12 +834,12 @@
 				26E5A33F245BF33A00C82B98 /* HalfModalInteractiveTransition.swift in Sources */,
 				267CACCB2451C57800A7F973 /* CollectionCell.swift in Sources */,
 				26E2663E24594E35006955CB /* GalleryCollectionVC.swift in Sources */,
+				267F40CA24713B32003DBBAF /* MobileNet.mlmodel in Sources */,
 				268748C5246B113F0064A76C /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				265B1F6D2436E7300036F0F5 /* SceneDelegate.swift in Sources */,
 				2662209B243842BC0072CF83 /* Bee.swift in Sources */,
 				26B0068024417D7000BA9187 /* NearbyVC.swift in Sources */,
 				2633619424541E5F0014CD92 /* GardenPlantHSVC.swift in Sources */,
-				268748C3246B0E750064A76C /* FiveBeesImageClassifier 1.mlmodel in Sources */,
 				267CACC72451BC9700A7F973 /* PlantListVC.swift in Sources */,
 				267CAB36244DFB7400A7F973 /* NavTabVC.swift in Sources */,
 				260844FA24420EBF00F59166 /* SpotEntity+CoreDataClass.swift in Sources */,

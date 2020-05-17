@@ -58,12 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                }
                //modified from lecture resource
                let uiNavbarProxy = UINavigationBar.appearance()
-        uiNavbarProxy.barTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
+        uiNavbarProxy.barTintColor = .systemOrange //UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
                uiNavbarProxy.tintColor = UIColor.white
                uiNavbarProxy.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         let uiTabbarProxy = UITabBar.appearance()
-        uiTabbarProxy.barTintColor = UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
+        uiTabbarProxy.barTintColor = .systemOrange//UIColor(displayP3Red: 244/255, green: 189/255, blue: 32/255, alpha: 0.8)
         uiTabbarProxy.tintColor = UIColor.black
       // uiTabbarProxy.isTranslucent = false
         

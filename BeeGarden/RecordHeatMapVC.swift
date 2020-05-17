@@ -91,15 +91,17 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
                            calendarHeatMap.translatesAutoresizingMaskIntoConstraints = false
                            
                            NSLayoutConstraint.activate([
-                               calendarHeatMap.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 1),
-                               calendarHeatMap.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 1),
-                               calendarHeatMap.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2)
+                               calendarHeatMap.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 2),
+                               calendarHeatMap.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 2),
+                               calendarHeatMap.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+                            calendarHeatMap.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 2)
                            ])
         
         NotificationCenter.default.addObserver(self, selector: #selector(addWatering(notification:)), name: NSNotification.Name(rawValue: "addWatering"), object: nil)
         
         
-      
+        view.setMyBorderColor()
+        view.layer.cornerRadius = 15
     
     }
     
@@ -178,11 +180,11 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
                let month = dateComponents.month,
                let day = dateComponents.day else { return .clear}
            // manage your color based on date here
-        var yourColor = UIColor.systemGray
+        var yourColor = UIColor.systemGray3.withAlphaComponent(0.6)
         let now = Date()
         let nowComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
         if nowComponents == dateComponents{
-            yourColor = .systemPink
+            yourColor = .systemOrange
         }
         
       

@@ -59,6 +59,7 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
 //        let ll = ChartLimitLine(limit: 30.0, label: "total water need")
 //        barChartView.rightAxis.addLimitLine(ll)
          configureLocationServices()
+        barChartView.setMyBorderColor()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

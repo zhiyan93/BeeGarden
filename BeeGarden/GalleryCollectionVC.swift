@@ -68,6 +68,9 @@ class GalleryCollectionVC: UIViewController,DatabaseListener {
             collectionView.reloadData()
             //print("sfdfsdfdsfsdfs")
             deleteButton.isEnabled = false // modified
+            
+            collectionView.setMyBorderColor()
+            collectionView.layer.cornerRadius = 15
         }
         
       

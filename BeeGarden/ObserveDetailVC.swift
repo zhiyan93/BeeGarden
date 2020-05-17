@@ -78,9 +78,10 @@ class ObserveDetailVC: UIViewController, CLLocationManagerDelegate {
     @IBAction func postBtnAct(_ sender: Any) {
            self.uploadIndicate.isHidden = false
         self.uploadIndicate.startAnimating()
-        guard let accessToken : String = UserDefaults.standard.object(forKey: "iNaturalistACTK") as! String
+        guard let accessToken : String = UserDefaults.standard.object(forKey: "iNaturalistACTK") as? String
             else {
                 TopNotesPush.push(message: "Please login your iNaturalist account", color: .color(color: Color.LightPink.first))
+                self.uploadIndicate.isHidden = true
             return }
         
      
