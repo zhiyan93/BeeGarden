@@ -17,24 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lu-eT-zlD">
-                                <rect key="frame" x="49" y="677" width="315" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lu-eT-zlD">
+                                <rect key="frame" x="49.5" y="680" width="315" height="45"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Zq1-cU-3Pu"/>
+                                    <constraint firstAttribute="width" constant="315" id="kH5-oy-IhG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Begin my Bee Mate Journey!">
                                     <color key="titleColor" name="ButtonColor1"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="skipBtnAct:" destination="I9f-Vl-unu" eventType="touchUpInside" id="tRX-0b-gOG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mWL-d9-clY" firstAttribute="bottom" secondItem="1Lu-eT-zlD" secondAttribute="bottom" constant="137" id="bPp-rp-FcU"/>
+                            <constraint firstItem="1Lu-eT-zlD" firstAttribute="centerX" secondItem="n9L-9z-npa" secondAttribute="centerX" id="wLQ-b0-Oaw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mWL-d9-clY"/>
                     </view>
                     <connections>
