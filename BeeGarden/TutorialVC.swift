@@ -54,21 +54,21 @@ class TutorialVC: UIViewController {
     fileprivate let items = [
     OnboardingItemInfo(informationImage: UIImage(named: "watering-can-altered")!,
                        title: "My Garden",
-                       description: "  Manage the plants in your garden and record my watering activities based on the rainfall conditions. Gardening will be easier for you",
+                       description: "  Get recommendations for bee-friendly plants for your backyard and track how much you water your plants. We utilise rainfall records to give you results for your water tracking",
                        pageIcon: #imageLiteral(resourceName: "icons8-sprout-100"),
                        color: UIColor(red: 0.40, green: 0.56, blue: 0.71, alpha: 1.00),
                        titleColor: UIColor.white, descriptionColor:  UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
     OnboardingItemInfo(informationImage: UIImage(named: "flowerred5-altered")!,
                        title: "My Observations",
-                       description: "  When you find a bee in your garden, just create a new observation, and share it to researchers. It is really helpful for protecting the bees        ",
+                       description: "  When you find a bee in your backyard, you can capture the image and store it in the app's gallery. If you like you can also contribute to the researchers by uploading the bee image to the Inaturalist website.",
                        pageIcon: #imageLiteral(resourceName: "icons8-camera-100"),
                        color: UIColor(red: 0.40, green: 0.69, blue: 0.71, alpha: 1.00),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
     OnboardingItemInfo(informationImage: UIImage(named: "naturesprut-altered")!,
-                       title: "Explore nearby",
-                       description: "  Explore the nearby Bee-keeping Clubs, Museums and Bee Farms, meet people and learn more about current situations of bees.        ",
+                       title: "Explore bee-world around you",
+                       description: "  Explore the bee-keeping clubs, museums, bee-farms and nurseries. They are just a tap away. ",
                        pageIcon: #imageLiteral(resourceName: "icons8-museum-100"),
                        color: UIColor(red: 0.61, green: 0.56, blue: 0.74, alpha: 1.00),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
@@ -215,7 +215,7 @@ extension TutorialVC: PaperOnboardingDelegate {
         //item.titleLabel?.backgroundColor = .redColor()
         //item.descriptionLabel?.backgroundColor = .redColor()
         //item.imageView = ...
-        item.descriptionLabel?.textAlignment = .center
+        item.descriptionLabel?.textAlignment = .natural
        
     }
 }
