@@ -47,7 +47,7 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
 
     lazy var calendarHeatMap: CalendarHeatmap = {
            var config = CalendarHeatmapConfig()
-           config.backgroundColor = UIColor.white
+           config.backgroundColor = UIColor.systemBackground
            // config item
            config.selectedItemBorderColor = .orange
            config.allowItemSelection = true
@@ -55,11 +55,11 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
            config.monthHeight = 30
            config.monthStrings = DateFormatter().shortMonthSymbols
            config.monthFont = UIFont.systemFont(ofSize: 18)
-           config.monthColor = UIColor.black
+           config.monthColor = UIColor.label
            // config weekday label on left
            config.weekDayFont = UIFont.systemFont(ofSize: 13)
            config.weekDayWidth = 30
-           config.weekDayColor = UIColor.black
+           config.weekDayColor = UIColor.label
            
          //  let dateFormatter = DateFormatter()
           // dateFormatter.dateFormat = "yyyy-MM-dd"

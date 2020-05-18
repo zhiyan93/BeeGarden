@@ -110,8 +110,8 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         self.classResVE.isHidden = true
        
          
-        let borderGray = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-        self.observeDesc.layer.borderColor = borderGray.cgColor
+       // let borderGray = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+        self.observeDesc.layer.borderColor = UIColor.label.withAlphaComponent(0.6).cgColor
         self.observeDesc.layer.borderWidth = 0.5
         self.observeDesc.layer.cornerRadius = 5
     }

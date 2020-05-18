@@ -128,7 +128,7 @@ class GardenPlantHSVC: UIViewController, DatabaseListener {
     */
 
     private func design() {
-               view.backgroundColor = .white
+               view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 10
        
            }

@@ -45,8 +45,15 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
         barChartView.leftAxis.drawAxisLineEnabled = false
               barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
         barChartView.xAxis.drawGridLinesEnabled = false
-        
+        barChartView.xAxis.labelTextColor = UIColor.label
+        barChartView.rightAxis.labelTextColor = UIColor.label
+        barChartView.leftAxis.labelTextColor = UIColor.label
+        barChartView.tintColor = UIColor.label
+        barChartView.legend.textColor = UIColor.label
+     
               barChartView.legend.enabled = true
+        
+        barChartView.backgroundColor = .systemGray6
                
                // Do any additional setup after loading the view.
                let indicatorSize: CGFloat = 150
@@ -55,7 +62,7 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
         activityIndicator.backgroundColor = .clear
                view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        barChartView.backgroundColor  = .white
+       // barChartView.backgroundColor  = .white
        barChartView.xAxis.valueFormatter = XAxisNameFormater()
        barChartView.xAxis.granularity = 1.0
         wholeView.layer.cornerRadius = 20
@@ -168,7 +175,8 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
                 //values.append(value)
             }
             let set1 = BarChartDataSet(entries: entries,label: "rain fall")
-        set1.setColor(UIColor(named:"wateringColor4")!)
+        set1.setColor(UIColor.systemBlue)
+        set1.valueTextColor = UIColor.label
            // let data = BarChartData(dataSet: set1)
            // barChartView.data = data
         

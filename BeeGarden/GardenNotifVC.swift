@@ -108,9 +108,9 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         
         self.progressRing.style = .inside
         progressRing.innerRingColor = UIColor(named:"ButtonColor1")!
-        progressRing.outerRingColor = UIColor.systemOrange.withAlphaComponent(0.5)
+        progressRing.outerRingColor = UIColor.systemOrange.withAlphaComponent(0.8)
         
-        self.timePicker.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.5)
+        self.timePicker.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.8)
         self.timePicker.timeZone = TimeZone(abbreviation: "AET")
         setTimeBtn.layer.cornerRadius = 10
         //self.timePicker.tintColor = .white

@@ -16,15 +16,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0xH-7e-Gnk">
-                                <rect key="frame" x="20" y="236" width="374" height="279"/>
+                                <rect key="frame" x="82" y="146" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="0BS-ab-O5i"/>
+                                    <constraint firstAttribute="width" constant="250" id="ALI-4T-KYK"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0xH-7e-Gnk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="192" id="5Fg-QL-2TZ"/>
-                            <constraint firstItem="0xH-7e-Gnk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Ah-PP-KCd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0xH-7e-Gnk" secondAttribute="bottom" constant="347" id="JCh-YT-DsL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0xH-7e-Gnk" secondAttribute="trailing" constant="20" id="POB-rm-5b2"/>
+                            <constraint firstItem="0xH-7e-Gnk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="Qfy-eh-fqM"/>
+                            <constraint firstItem="0xH-7e-Gnk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="upi-Np-oRd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
