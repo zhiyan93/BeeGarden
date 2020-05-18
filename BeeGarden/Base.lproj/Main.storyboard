@@ -81,7 +81,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8s0-6V-j5n" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1022"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1032"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-i9-Lfz">
                                                 <rect key="frame" x="10" y="58" width="394" height="200"/>
@@ -123,9 +123,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfc-mQ-Tty">
-                                                <rect key="frame" x="10" y="617" width="394" height="330"/>
+                                                <rect key="frame" x="10" y="617" width="394" height="340"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="330" id="kWb-xF-cyi"/>
+                                                    <constraint firstAttribute="height" constant="340" id="kWb-xF-cyi"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="EnX-Ju-t8X" kind="embed" id="GnP-ho-c4R"/>
@@ -2981,7 +2981,7 @@ limit: keep it to 60 requests per minute or lower, and to keep under 10,000 requ
             <objects>
                 <viewController storyboardIdentifier="gardenNotifView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EnX-Ju-t8X" customClass="GardenNotifVC" customModule="BeeGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4bx-a7-Esp">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="340"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water amount 7 days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-t7-ioM">
@@ -3122,10 +3122,21 @@ limit: keep it to 60 requests per minute or lower, and to keep under 10,000 requ
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbu-2Z-dfl">
+                                <rect key="frame" x="90" y="280" width="7" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="7" id="QcY-8h-9Kr"/>
+                                    <constraint firstAttribute="height" constant="21" id="SX9-WJ-VNf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="JIM-mX-02e" firstAttribute="trailing" secondItem="2LK-Xx-N3l" secondAttribute="trailing" constant="48" id="00a-Ji-AaB"/>
+                            <constraint firstItem="Jbu-2Z-dfl" firstAttribute="top" secondItem="Fug-Bn-Tw3" secondAttribute="bottom" constant="21" id="10y-63-0Gq"/>
                             <constraint firstItem="JIM-mX-02e" firstAttribute="trailing" secondItem="cd5-y2-mhG" secondAttribute="trailing" constant="18" id="1uV-bU-1vc"/>
                             <constraint firstItem="fL8-zd-xzU" firstAttribute="leading" secondItem="JIM-mX-02e" secondAttribute="leading" id="5dY-sO-RVj"/>
                             <constraint firstItem="X3R-t7-ioM" firstAttribute="leading" secondItem="4bx-a7-Esp" secondAttribute="leading" constant="18" id="9UO-iL-DqL"/>
@@ -3145,6 +3156,7 @@ limit: keep it to 60 requests per minute or lower, and to keep under 10,000 requ
                             <constraint firstItem="JIM-mX-02e" firstAttribute="trailing" secondItem="iSq-8T-8Ur" secondAttribute="trailing" constant="18" id="fb8-oA-cyo"/>
                             <constraint firstItem="X3R-t7-ioM" firstAttribute="top" secondItem="4bx-a7-Esp" secondAttribute="top" constant="23" id="iV9-Rf-8ka"/>
                             <constraint firstItem="2LK-Xx-N3l" firstAttribute="top" secondItem="cd5-y2-mhG" secondAttribute="bottom" constant="177" id="jJ0-qi-t29"/>
+                            <constraint firstItem="Jbu-2Z-dfl" firstAttribute="leading" secondItem="JIM-mX-02e" secondAttribute="leading" constant="90" id="vU9-W6-zmB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JIM-mX-02e"/>
                     </view>
