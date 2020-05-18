@@ -214,7 +214,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
                   let topClassifications = classifications.prefix(2)
                   let descriptions = topClassifications.map { classification in
                       // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                     return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                     return String(format: " detected: %@; confidence: %.2f", classification.identifier,classification.confidence )
                   }
                   self.classResLab.text = "Classification:\n" + descriptions.joined(separator: "\n")
               }

@@ -73,7 +73,7 @@ struct TopNotesPush {
         var fields = [EKProperty.TextFieldContent]()
         for s in placeHoders{
             let placeHoder = EKProperty.LabelContent(text: s, style: .init(font: .systemFont(ofSize: 12), color: .white))
-            let TextField = EKProperty.TextFieldContent(keyboardType: .numberPad, placeholder: placeHoder, tintColor: .amber, displayMode: .light, textStyle: .init(font: .systemFont(ofSize: 15), color: .satCyan), isSecure: false, leadingImage: .add , bottomBorderColor: .black, accessibilityIdentifier: s)
+            let TextField = EKProperty.TextFieldContent(keyboardType: .numberPad, placeholder: placeHoder, tintColor: .amber, displayMode: .light, textStyle: .init(font: .systemFont(ofSize: 15), color: .satCyan), isSecure: false, leadingImage:.none , bottomBorderColor: .black, accessibilityIdentifier: s)
             fields.append(TextField)
         }
         let buttonLabel = EKProperty.LabelContent(text: buttonTitle, style: .init(font: .systemFont(ofSize: 20), color: .white))

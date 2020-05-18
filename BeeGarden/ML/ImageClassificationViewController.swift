@@ -79,7 +79,7 @@ class ImageClassificationViewController: UIViewController {
                 let topClassifications = classifications.prefix(2)
                 let descriptions = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                   return String(format: "  confidence: %.2f, prediction: %@", classification.confidence, classification.identifier)
                 }
                 self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
             }
