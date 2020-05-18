@@ -181,7 +181,7 @@ class RainBarChartVC: UIViewController,CLLocationManagerDelegate ,HalfModalPrese
            // barChartView.data = data
         
         entrySums.sort(by: { $0.x < $1.x })   //must sort before set dataset
-        let lineSet = LineChartDataSet(entries: entrySums, label: "total rain fall")
+        let lineSet = LineChartDataSet(entries: entrySums, label: "accumulated rain fall")
         lineSet.setColor(UIColor.systemOrange.withAlphaComponent(0.6))
         lineSet.drawCirclesEnabled = false
         lineSet.drawValuesEnabled = false
