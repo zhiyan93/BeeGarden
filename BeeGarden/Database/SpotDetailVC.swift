@@ -29,6 +29,9 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate,SFSafariViewControllerDel
     @IBOutlet weak var contact: UILabel!
     
     @IBOutlet weak var website: UILabel!
+    
+    
+    @IBOutlet weak var showMapBtn: UIButton!
     var selectedSpot : SpotEntity?
     
     override func viewDidLoad() {
@@ -36,7 +39,15 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate,SFSafariViewControllerDel
 
         // Do any additional setup after loading the view.
         mapView.delegate = self
+        showMapBtn.layer.cornerRadius = 10
       
+    }
+    
+    
+    @IBAction func showMapAct(_ sender: Any) {
+        
+        guard let url = URL(string:"http://maps.apple.com/?daddr=\( selectedSpot!.latitude ),\( selectedSpot!.longitude)") else { return }
+        UIApplication.shared.open(url)
     }
     override func viewWillAppear(_ animated: Bool) {
         changeValue()
