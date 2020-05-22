@@ -114,6 +114,8 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         self.observeDesc.layer.borderColor = UIColor.label.withAlphaComponent(0.6).cgColor
         self.observeDesc.layer.borderWidth = 0.5
         self.observeDesc.layer.cornerRadius = 5
+        self.observeWeather.text = " weather: ;\n tempetature: ;\n pressure: ;\n humidity: %;\n clouds: %;\n  wind speed: ;\n wind direction:  \n"
+               self.observeDesc.text = " "
     }
     
     @IBAction func imageClicked(_ sender: Any) {
@@ -342,13 +344,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         df.dateFormat = "yyyy-MM-dd , HH:mm:ss"
        let now =  df.string(from: Date())
         self.observeTime.text = now
-        self.observeWeather.text = " weather: ;\n tempetature: ;\n pressure: ;\n humidity: %;\n clouds: %;\n  wind speed: ;\n wind direction:  \n"
-        
        
-        
-        
-        
-        self.observeDesc.text = " "
        
        
       }

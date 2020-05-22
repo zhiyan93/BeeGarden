@@ -94,6 +94,8 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
                                 self.NKPlaceholderImage(image: UIImage(named: "account128p"), imageView: self.profileImage, imgUrl: userImageUrl) { (image) in
                                     
                                     UserDefaults.standard.set(image?.jpegData(compressionQuality: 0.8), forKey: "NatAccountAvatar" )
+                                    
+                                    self.dismiss(animated: true, completion: nil)
                                 }
                                                        }
                             

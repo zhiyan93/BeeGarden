@@ -80,6 +80,13 @@ class PlantDetailVC: UIViewController,DatabaseListener {
     
     @IBOutlet weak var pollenLab: UILabel!
     
+    
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    @IBOutlet weak var monthBlock: UILabel!
+    
+    @IBOutlet weak var monthView: UIView!
+    
     var selectedPlant: FlowerEntity?
     let climateColors :[UIColor] = [.systemOrange ,.systemOrange,.systemOrange,.systemOrange]
      var gPlants = [FlowerEntity]()
@@ -102,6 +109,9 @@ class PlantDetailVC: UIViewController,DatabaseListener {
               pollenView.setMyBorderColor()
         nectarView.layer.cornerRadius = 10
               nectarView.setMyBorderColor()
+        
+        monthView.layer.cornerRadius = 10
+        monthView.setMyBorderColor()
         
     }
     
@@ -175,6 +185,7 @@ class PlantDetailVC: UIViewController,DatabaseListener {
     
         let months = selectedPlant?.gmonth!.split(separator: ",")
       
+        var monthString = ""
         for m in months! {
             print(m)
             guard let indexm = Int(m)  else {return}
@@ -184,8 +195,16 @@ class PlantDetailVC: UIViewController,DatabaseListener {
                 subViewOfSegment.backgroundColor = .systemOrange
             
           
-            
+            monthString.append(switchMonth(monthIndex:indexm))
         }
+        
+     
+        
+        self.monthLabel.text = monthString
+        self.monthLabel.fitTextToBounds()
+        
+        self.monthBlock.text = monthString
+        self.monthBlock.fitTextToBounds()
         
            self.monthSegment.selectedSegmentIndex = currentMonth - 1
               
@@ -220,6 +239,28 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         }
        // self.plantBtn.backgroundColor = .systemOrange
         
+    }
+    
+    func switchMonth(monthIndex :Int) -> String {
+        var monthString = ""
+        switch monthIndex {
+                  case 1: monthString.append("  January\n")
+                  case 2: monthString.append("  February\n")
+                  case 3: monthString.append("  March\n")
+                  case 4: monthString.append("  April\n")
+                  case 5: monthString.append("  May\n")
+                  case 6: monthString.append("  June\n")
+                  case 7: monthString.append("  July\n")
+                  case 8: monthString.append("  August\n")
+                  case 9: monthString.append("  September\n")
+                  case 10: monthString.append("  October\n")
+                  case 11: monthString.append("  November\n")
+                  case 12: monthString.append("  December\n")
+                  default:
+                      monthString.append("  Jan.")
+                  }
+        
+        return monthString
     }
     /*
     // MARK: - Navigation

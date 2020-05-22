@@ -82,7 +82,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
-    @IBOutlet weak var setTimeBtn: UIButton!
+  //  @IBOutlet weak var setTimeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +113,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         
         self.timePicker.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.8)
         self.timePicker.timeZone = TimeZone(abbreviation: "AET")
-        setTimeBtn.layer.cornerRadius = 10
+     //   setTimeBtn.layer.cornerRadius = 10
         //self.timePicker.tintColor = .white
         view.setMyBorderColor()
        // view.layer.cornerRadius = 10
@@ -171,7 +171,11 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     
     
     @IBAction func notifSwitchAct(_ sender: Any) {
+        
+      
+        
         if self.notifSwitch.isOn{
+            setNotiTime()
             UserDefaults.standard.set(true,forKey: "waterNotifSwitch")
             let notifTime = UserDefaults.standard.object(forKey: "notifTime") as? Date
             addDailyNotif(time: notifTime ?? Date(), uid: "WateringNotification", title: "Bee Mate", body: "Remember to water your garden today")
@@ -185,48 +189,37 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         
     }
     
-    @IBAction func setNotifAct(_ sender: Any) {
+//    @IBAction func setNotifAct(_ sender: Any) {
+//        let setTime = self.timePicker.date
+//
+//
+//         UserDefaults.standard.set(setTime,forKey: "notifTime")
+//        print("timeset\(setTime)")
+//        let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: setTime )
+//        TopNotesPush.push(message: "notification will be sent at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
+//
+//
+//
+//        if self.notifSwitch.isOn {
+//            addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Remember to water your garden today")
+//        }
+//
+//    }
+    
+    func setNotiTime() {
         let setTime = self.timePicker.date
+            
+            
+             UserDefaults.standard.set(setTime,forKey: "notifTime")
+            print("timeset\(setTime)")
+            let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: setTime )
+            TopNotesPush.push(message: "notification will be sent at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
+
+                addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Remember to water your garden today")
+            
         
-        
-         UserDefaults.standard.set(setTime,forKey: "notifTime")
-        print("timeset\(setTime)")
-        let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: setTime )
-        TopNotesPush.push(message: "notification will be sent at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
-        
-        if self.notifSwitch.isOn {
-            addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Remember to water your garden today")
-        }
-        
-        
-        
-//        let center = UNUserNotificationCenter.current()
-//                  center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
-//
-//                  }
-                  
-//                  let content = UNMutableNotificationContent()
-//                  content.title = "Title"
-//                  content.body = "This is a test"
-//                  content.badge = NSNumber(value: 1)
-//                  content.sound = .default
-//
-//                 guard let nitifTime = UserDefaults.standard.object(forKey: "notifTime") as? Date else {
-//                  print("notif fail"); return}
-//                  //let nowDate = notifTime.addingTimeInterval(1)
-//
-//
-//                  print("notification time \(nowComponents.hour): \(nowComponents.minute)")
-//                  let trigger = UNCalendarNotificationTrigger(dateMatching: nowComponents, repeats: true)
-//
-//                  let uuidString = "WateringNotification"
-//                  let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-//                                  center.add(request) { (error : Error?) in
-//                                      if let theError = error {
-//                                          print(theError as! String)
-//                                      }
-//                                  }
     }
+    
     
     private func addDailyNotif(time: Date, uid: String, title: String, body: String){
         
@@ -372,7 +365,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
     private func configureLocationServices() {
                    locationManager.delegate = self
                    let status = CLLocationManager.authorizationStatus()
-                   if  status == .notDetermined {
+        if  status == .notDetermined || status == .denied {
                        locationManager.requestAlwaysAuthorization()
                    } else if status == .authorizedAlways || status == .authorizedWhenInUse {
                        beginLocationUpdates(locationManager: locationManager)
