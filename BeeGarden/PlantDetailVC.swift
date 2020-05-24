@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftEntryKit
+import SafariServices
 
-class PlantDetailVC: UIViewController,DatabaseListener {
+class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDelegate {
     var listenerType =  ListenerType.garden
      weak var databaseController : DatabaseProtocol?
     
@@ -87,6 +88,8 @@ class PlantDetailVC: UIViewController,DatabaseListener {
     
     @IBOutlet weak var monthView: UIView!
     
+    
+    
     var selectedPlant: FlowerEntity?
     let climateColors :[UIColor] = [.systemOrange ,.systemOrange,.systemOrange,.systemOrange]
      var gPlants = [FlowerEntity]()
@@ -148,8 +151,8 @@ class PlantDetailVC: UIViewController,DatabaseListener {
             print("remove 1 plant from garden")
              TopNotesPush.push(message: "Remove \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
         }
- 
         
+
         // reload the collection view
         NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
 //        let indexPath = IndexPath(item: 0, section: 0)
@@ -158,6 +161,44 @@ class PlantDetailVC: UIViewController,DatabaseListener {
         dismiss(animated: true )
     }
     
+    
+    
+    @IBAction func climateInfoAct(_ sender: Any) {
+        let urlString = "https://www.abcb.gov.au/Resources/Tools-Calculators/Climate-Zone-Map-Victoria"
+
+               if let url = URL(string: urlString) {
+                          let vc = SFSafariViewController(url: url)
+                          vc.delegate = self
+
+                          present(vc, animated: true)
+                      }
+    }
+    
+    
+    @IBAction func nectarInfoAct(_ sender: Any) {
+        let urlString = "https://en.wikipedia.org/wiki/Nectar"
+
+                      if let url = URL(string: urlString) {
+                                 let vc = SFSafariViewController(url: url)
+                                 vc.delegate = self
+
+                                 present(vc, animated: true)
+                             }
+        
+    }
+    
+    
+    @IBAction func pollenInfoAct(_ sender: Any) {
+        
+        let urlString = "https://en.wikipedia.org/wiki/Pollen"
+
+                             if let url = URL(string: urlString) {
+                                        let vc = SFSafariViewController(url: url)
+                                        vc.delegate = self
+
+                                        present(vc, animated: true)
+                                    }
+    }
     
     
     private func changeValue(){
@@ -211,21 +252,21 @@ class PlantDetailVC: UIViewController,DatabaseListener {
            
         if selectedPlant?.nectar == "low"{
             self.nectarImage.image = UIImage(named: "nectar-low")
-            self.nectarLab.text = "low nectar"
+            self.nectarLab.text = "Low nectar"
         }
         else {
              self.nectarImage.image = UIImage(named: "nectar-high")
-                       self.nectarLab.text = "high nectar"
+                       self.nectarLab.text = "High nectar"
         }
         
         
         if selectedPlant?.pollen == "low"{
             pollenImage.image = UIImage(named: "pollen-low")
-            pollenLab.text = "low pollen"
+            pollenLab.text = "Low pollen"
         }
         else{
            pollenImage.image = UIImage(named: "pollen-high")
-                       pollenLab.text = "high pollen"
+                       pollenLab.text = "High pollen"
         }
        
         
