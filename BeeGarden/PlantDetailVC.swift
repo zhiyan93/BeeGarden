@@ -176,14 +176,16 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
     
     
     @IBAction func nectarInfoAct(_ sender: Any) {
-        let urlString = "https://en.wikipedia.org/wiki/Nectar"
-
-                      if let url = URL(string: urlString) {
-                                 let vc = SFSafariViewController(url: url)
-                                 vc.delegate = self
-
-                                 present(vc, animated: true)
-                             }
+        if self.nectarLab.text == "Low nectar" {
+           TopNotesPush.centreFloatPush(title: "Low nectar", desc: "Nectar is an attracting agent for bees. It is sweetened liquid produced by the plant as a compensation for pollination. As plants being immobile need pollinating animals (bees, butterflies, ants, moths) for transferring their pollens from flower to flower to reproduce. The nectar is produced as a reward for those animals as a gift. It not only consists of sugar but also of amino acids, vitamins and essential oils. Different plants have varied levels of nectar in them varying from 8-50%. The production of nectar depends on the size of the flower, time of the year and the ambient temperature. Tip: Plant more flowers of these kind to attract greater number of bees to your backyard garden.", image: UIImage(named: "nectar-low"))
+        }
+        
+        else {
+             TopNotesPush.centreFloatPush(title: "High nectar", desc: "Nectar is an attracting agent for bees and is a source of energy for all the day-to-day activities. It is sweetened liquid produced by the plant as a compensation for pollination. As plants being immobile need pollinating animals (bees, butterflies, ants, moths) for transferring their pollens from flower to flower to reproduce. Different plants have varied levels of nectar in them varying from 8-50%. The production of nectar depends on the size of the flower, time of the year and the ambient temperature. Bees prefer plants with high nectar as the amino acids present in the nectar might assist the bees as a fuel for their flight. The higher the quantity of nectar the greater number of bees might visit the plants. Additionally, at high levels of nectar, other things such as visual cues and physical clues (keeping display of varied colours of plants) and periodic availability of plants", image: UIImage(named: "nectar-high"))
+        }
+        
+        
+        
         
     }
     
@@ -199,6 +201,12 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
                                         present(vc, animated: true)
                                     }
     }
+    
+    
+    @IBAction func monthInfoBtn(_ sender: Any) {
+        TopNotesPush.centreFloatPush(title: "Flowering Months" , desc: "Flowering of any plant is heavily dependent on the temperature and time of the year.These are the onset months for when the flowering of the plant starts.", image: UIImage(named: "flowerinfo"))
+    }
+    
     
     
     private func changeValue(){

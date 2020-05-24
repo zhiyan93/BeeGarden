@@ -707,9 +707,21 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-S8-VAl">
+                                                        <rect key="frame" x="87" y="137" width="23" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="23" id="Y7E-th-n5E"/>
+                                                            <constraint firstAttribute="height" constant="23" id="xDV-yZ-gWA"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="monthInfoBtn:" destination="qNU-de-wxi" eventType="touchUpInside" id="fUp-aX-CNW"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="zAB-S8-VAl" secondAttribute="trailing" id="3AO-Fi-2Fg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zAB-S8-VAl" secondAttribute="bottom" id="D6m-E7-sqM"/>
                                                     <constraint firstAttribute="height" constant="160" id="Tlx-kJ-jfI"/>
                                                     <constraint firstAttribute="trailing" secondItem="iQb-m1-UnT" secondAttribute="trailing" constant="4" id="ZOO-Um-iLN"/>
                                                     <constraint firstItem="iQb-m1-UnT" firstAttribute="top" secondItem="tCo-co-Yoy" secondAttribute="top" constant="4" id="gLc-2j-Mnj"/>
@@ -1488,7 +1500,7 @@
                                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1s-fW-IFQ">
                                                 <rect key="frame" x="16" y="777" width="382" height="80.5"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W0Y-In-sdw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="80.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1u-Gy-sbo">
