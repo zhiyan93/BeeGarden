@@ -49,6 +49,9 @@ class GardenVC: UIViewController ,DatabaseListener{
     
     @IBOutlet weak var contentView: UIView!
     
+    
+    @IBOutlet weak var addRecordBtn: UIButton!
+    
     let tips = [
         ("Don’t use pesticides","Most pesticides are not selective. By using pesticides, one risks killing off the beneficial insects along with the pests. If you must use a pesticide, start with the least toxic one and follow the label instructions to the letter."),
         ("Use local native plants" , "Many native plants are very attractive to honeybees. They are also usually well adapted to your growing conditions and can thrive with minimum attention. In gardens, heirloom varieties of herbs and perennials should be used. Single-flower varieties may also provide good foraging."),
@@ -86,6 +89,7 @@ class GardenVC: UIViewController ,DatabaseListener{
                                     print("tip diff")
                                //     if lastTipDayDiff > 0 {
                              //           UserDefaults.standard.set(Date(), forKey: "lastTipDay")
+        addRecordBtn.layer.cornerRadius = 10
         
     }
    
@@ -124,7 +128,14 @@ class GardenVC: UIViewController ,DatabaseListener{
               
              
                 }
-
+    
+    
+    
+    @IBAction func addRecordAct(_ sender: Any) {
+       // NotificationCenter.default.post(name: NSNotification.Name("addMyWateringRecord"), object: nil)
+        TopNotesPush.ratingPush()
+    }
+    
     /*
     // MARK: - Navigation
 

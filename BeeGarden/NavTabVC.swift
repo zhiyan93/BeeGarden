@@ -80,6 +80,10 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
     @IBOutlet weak var observeSection: UIView!
     @IBOutlet weak var nearbySection: UIView!
     
+    @IBOutlet weak var plantTitleLab: UILabel!
+    
+    @IBOutlet weak var observeTitleLab: UILabel!
+    
     var plantAni : AnimationView?
     var observeAni : AnimationView?
     var spotAni : AnimationView?
@@ -125,7 +129,8 @@ class NavTabVC: UIViewController,DatabaseListener, UIImagePickerControllerDelega
       //  plantSView.layer.backgroundColor = UIColor.systemOrange.cgColor
       //  observeSView.layer.backgroundColor = UIColor.systemOrange.cgColor
        // nearBySView.layer.backgroundColor = UIColor.systemOrange.cgColor
-        
+        plantTitleLab.fitTextToBounds()
+        observeTitleLab.fitTextToBounds()
     }
     
  

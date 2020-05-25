@@ -102,6 +102,8 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
         
         view.setMyBorderColor()
         view.layer.cornerRadius = 15
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(addWateringRecord(notification:)), name: NSNotification.Name(rawValue: "addMyWateringRecord"), object: nil)
     
     }
     
@@ -128,6 +130,10 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
          NotificationCenter.default.post(name: NSNotification.Name("recordChange"), object: nil,userInfo: dictionary)
         
           }
+    
+//    @objc func addWateringRecord(notification: NSNotification){
+//        TopNotesPush.ratingPush()
+//    }
     
     private func get4dayRecord() -> Double {
         let pnday = NSCalendar.current.date(byAdding: .day, value: -4, to: Date())
@@ -228,12 +234,21 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
         var i:Int = 0
         while i < recordDates.count{
             if recordDates[i] == dateComponents,dateComponents != nowComponents{
-               let title = records[i].type
+                let waterCountValue = records[i].counting
+                var title:String = ""
+                switch waterCountValue {
+                case 1 : title = "Slightly watering"
+                case 2 : title = "Moisture watering"
+                case 3 : title = "Moderate watering"
+                case 4 : title = "Enough watering"
+                case 5 : title = "Extra watering"
+                default : title = "Slightly watering"
+                }
               
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 let d = formatter.string(from: records[i].time!)
-                TopNotesPush.bottomPush(message: d, title: title ?? " ", icon: UIImage(named: "drop128p")!, color: .greenGrass)
+                TopNotesPush.bottomPush(message: d, title: title , icon: UIImage(named: "drop128p")!, color: .greenGrass)
             }
             i = i+1
         }

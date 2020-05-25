@@ -158,7 +158,7 @@ class ObserveDetailVC: UIViewController, CLLocationManagerDelegate {
             self.uploadProgress.isHidden = true
             self.uploadIndicate.isHidden = true
             switch resp.result {
-            case .success :  TopNotesPush.push(message: "upload successfully", color:  .color(color: Color.LightBlue.a700))
+            case .success :  TopNotesPush.push(message: "Upload successfully on iNaturalist", color:  .color(color: Color.LightBlue.a700))
                 
                 
             case .failure(_):

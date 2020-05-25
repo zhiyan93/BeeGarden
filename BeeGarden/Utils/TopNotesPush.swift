@@ -54,7 +54,7 @@ struct TopNotesPush {
                 attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
 
         let title = EKProperty.LabelContent(text: title, style: .init(font: .systemFont(ofSize: 22), color: color))
-        let description = EKProperty.LabelContent(text: message, style: .init(font: .systemFont(ofSize: 18), color: .black))
+        let description = EKProperty.LabelContent(text: message, style: .init(font: .systemFont(ofSize: 18), color: .text))
                 let image = EKProperty.ImageContent(image: icon, size: CGSize(width: 40, height: 40))
                 let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
                 let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)

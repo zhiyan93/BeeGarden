@@ -334,7 +334,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
               let request = WeatherAPI.requestHistoryWeather(lat: lat, lon: lon, daybefore: i)
                request.responseJSON {
                    data in
-                    let jsonResponse = JSON(data.value!)
+                let jsonResponse = JSON(data.value ?? "")
                     let dayRain =  WeatherAPI.calculateHisRainSum(jsonResponse: jsonResponse)
                     self.rainLastDays[-i] = dayRain
                    

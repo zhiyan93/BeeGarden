@@ -51,7 +51,7 @@ struct WeatherAPI {
     
     static func calculateHisRainSum(jsonResponse: JSON) -> Double {
         var rainSum = 0.0
-        let jsonArr = jsonResponse["hourly"].array!
+        guard let jsonArr = jsonResponse["hourly"].array else { return 0.0}
           
           for h in jsonArr {
               let hourRain = h["rain"]["1h"].doubleValue
@@ -64,7 +64,7 @@ struct WeatherAPI {
     
     static func calculateForeRainSum(jsonResponse: JSON) -> [Int:Double] {
         var rainForecast = [0:0.0,1:0.0,2:0.0,3:0.0]
-        let jsonArr = jsonResponse["daily"].array!
+        guard let jsonArr = jsonResponse["daily"].array else {return rainForecast }
           
         for d in 0...3 {
             let dayRain = jsonArr[d]["rain"].doubleValue

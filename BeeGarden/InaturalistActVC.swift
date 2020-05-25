@@ -80,7 +80,7 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
                   print("response: ",response)
                 switch response.result {
                 case .success : if let json = response.value as? [String: Any] {
-                     TopNotesPush.push(message: "\(self.userName.text!) successfully login", color: .color(color: Color.LightBlue.a700))
+                     TopNotesPush.push(message: "\(self.userName.text!) logged in successfully", color: .color(color: Color.LightBlue.a700))
                     let accessToken : String = json["access_token"] as! String
                     print(accessToken)
                     UserDefaults.standard.set("Bearer "+accessToken, forKey: "iNaturalistACTK")
