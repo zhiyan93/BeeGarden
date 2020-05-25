@@ -192,14 +192,12 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
     
     @IBAction func pollenInfoAct(_ sender: Any) {
         
-        let urlString = "https://en.wikipedia.org/wiki/Pollen"
-
-                             if let url = URL(string: urlString) {
-                                        let vc = SFSafariViewController(url: url)
-                                        vc.delegate = self
-
-                                        present(vc, animated: true)
-                                    }
+        if self.pollenLab.text == "Low pollen" {
+            TopNotesPush.centreFloatPush(title: "Low pollen", desc: "Pollination problems include reduced production and small or misshapen fruit. Assessing the degree of pollination and identifying problems can be difficult because other factors can also cause these symptoms. For example, lower than expected yield can be due to low flower numbers, disease, nutrition, or water. Likewise, misshapen fruit might be a sign of poor pollination or of a disease affecting the ovary. Coming to the wrong conclusion about a pollination problem can be both expensive and frustrating.\n Poor pollination results in deformed fruits that often drop off before maturing.", image: UIImage(named: "pollen-low"))
+        }
+        else {
+            TopNotesPush.centreFloatPush(title: "High pollen", desc: "Assessing the amount of pollination a crop is receiving can be a very valuable management tool to indicate whether pollination is optimized or can be improved. It is common for growers to know the production they receive from their crop in terms of kg, trays, or boxes per hectare. Although this will be related to the amount of pollination, it is also heavily influenced by the numbers of plants, flowers, and the numbers of fruit or seeds lost through thinning, damage or disease.\n Good pollination results in large, healthy fruits with viable seeds.", image: UIImage(named: "pollen-high"))
+        }
     }
     
     

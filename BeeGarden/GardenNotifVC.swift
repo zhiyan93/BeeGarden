@@ -257,7 +257,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
             SwiftEntryKit.dismiss()
            UserDefaults.standard.set(num, forKey: "waterAmount")
             waterAmountInput = num
-            self.waterAmount.text = "Water amount 7days: \(num)"
+            self.waterAmount.text = "Water amount 7 days: \(num)"
             
             progressDict["amount"] = waterAmountInput
             NotificationCenter.default.post(name: NSNotification.Name("progressChange"), object: nil,userInfo: progressDict)
