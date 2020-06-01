@@ -55,12 +55,12 @@ class GardenVC: UIViewController ,DatabaseListener{
     let tips = [
         ("Don’t use pesticides","Most pesticides are not selective. By using pesticides, one risks killing off the beneficial insects along with the pests. If you must use a pesticide, start with the least toxic one and follow the label instructions to the letter."),
         ("Use local native plants" , "Many native plants are very attractive to honeybees. They are also usually well adapted to your growing conditions and can thrive with minimum attention. In gardens, heirloom varieties of herbs and perennials should be used. Single-flower varieties may also provide good foraging."),
-        ( "Use a range of colours","Bees have good colour vision to help them find flowers and the nectar and pollen they offer. Flower colours that particularly attract bees are blue, purple, violet, white and yellow."),
-        ("Plant flowers in clumps","Flowers clustered into clumps of one species will attract more pollinators than individual plants scattered through the habitat patch. Where space allows, make the clumps 1 m or more in diameter."),
+        ( "Use a range of colours","Bees have good colour vision to help them find flowers which have good amount of nectar and pollen. Flower colours that particularly attract bees are blue, purple, violet, white and yellow. So,please use varied coloured plants in your backyard."),
+        ("Plant flowers in clumps","Flowers clustered into clumps will attract more bees than individual plants scattered through the habitat patch. Where space allows, please make the clumps of 1 m or more in diameter."),
         ("Include flowers of different shapes","Open or cup-shaped flowers provide the easiest access and shorter floral tubes are important for honeybees. Other pollinators, including native bees, butterflies and birds, benefit from differing flower shapes."),
-        ("Have a diversity of plants, flowering all season","A varied diet is essential for the well- being of honeybees and other pollinators."),
+        ("Have a diversity of plants, flowering all season","A varied diet is essential for the well-being of bees as the nectar and pollen differs in each plant. The nectar and pollen helps the bees carry out their day-to-day activities."),
         ("Plant where bees will visit","Bees favour sunny spots over shade and need some shelter from strong winds."),
-        ("Provide accessible water","Bees need access to water. Provide easy access, either through wet sand or pebbles; do not drown the bees.")
+        ("Provide accessible water","Bees need access to water. Please provide easy access, either through wet sand or pebbles making sure that bees do not drown.")
     ]
     
     override func viewDidLoad() {

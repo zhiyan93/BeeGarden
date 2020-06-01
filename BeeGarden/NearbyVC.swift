@@ -244,7 +244,7 @@ class NearbyVC: UIViewController ,DatabaseListener  {
     private func configureDetailView(annotationView: MKAnnotationView, image : UIImage) {
             
             let detailView = UIImageView( image: image)
-            
+        detailView.contentMode = .scaleToFill
     //        let descView = UITextView.init()
     //        descView.text = "sfjsklfjdslfjdlsfkjdslfjdkls"
     //        detailView.addSubview(descView)

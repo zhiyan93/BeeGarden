@@ -22,7 +22,8 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate,SFSafariViewControllerDel
     @IBOutlet weak var desc: UITextView!
     @IBOutlet weak var address: UILabel!
     
-    @IBOutlet weak var hours: UILabel!
+    @IBOutlet weak var hoursView: UITextView!
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -63,7 +64,9 @@ class SpotDetailVC: UIViewController,MKMapViewDelegate,SFSafariViewControllerDel
             self.name.text = tapedSpot.name
             self.desc.text = tapedSpot.desc
             desc.isScrollEnabled = false
-            self.hours.text = tapedSpot.openhour
+            let hourText =  tapedSpot.openhour
+            let hourArr = hourText?.replacingOccurrences(of: ",", with: "\n").replacingOccurrences(of: ";", with: "\n")
+            self.hoursView.text =  hourArr
             self.address.text = tapedSpot.place
             self.contact.text = tapedSpot.email
             self.website.text = tapedSpot.website

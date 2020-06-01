@@ -37,7 +37,7 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
 
         // Do any additional setup after loading the view.
         profileImage.makeRounded()
-        loginBtn.layer.cornerRadius = 10
+       // loginBtn.layer.cornerRadius = 10
         contentWView.setMyBorderColor()
     }
     

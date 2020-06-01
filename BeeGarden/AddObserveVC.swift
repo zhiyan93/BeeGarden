@@ -53,6 +53,9 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     
     @IBOutlet weak var classResVE: UIVisualEffectView!
     
+    
+    @IBOutlet weak var cautionLab: UILabel!
+    
     weak var databaseController: DatabaseProtocol?
     
     var locationManager: CLLocationManager = CLLocationManager()
@@ -114,7 +117,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         self.observeDesc.layer.borderColor = UIColor.label.withAlphaComponent(0.6).cgColor
         self.observeDesc.layer.borderWidth = 0.5
         self.observeDesc.layer.cornerRadius = 5
-        self.observeWeather.text = " weather: ;\n tempetature: ;\n pressure: ;\n humidity: %;\n clouds: %;\n  wind speed: ;\n wind direction:  \n"
+        self.observeWeather.text = " Weather: \n Tempetature: \n Pressure: \n Humidity: %\n Clouds: %\n  Wind speed: \n Wind direction:  \n"
                self.observeDesc.text = " "
     }
     
@@ -153,6 +156,8 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
                photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                
                present(photoSourcePicker, animated: true)
+        
+        
         
       //  imagePicker.allowsEditing = true
      //   imagePicker.delegate = self
@@ -219,6 +224,8 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
                      return String(format: " detected: %@; confidence: %.2f", classification.identifier,classification.confidence )
                   }
                   self.classResLab.text = "Classification:\n" + descriptions.joined(separator: "\n")
+                
+                self.cautionLab.isHidden = true
               }
           }
       }
@@ -233,7 +240,7 @@ class AddObserveVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
       let request =  WeatherAPI.requestWeather(latitude: lan, longitude: lon)
         request.responseJSON {
         (data) in
-            let jsonResponse = JSON(data.value!)
+            let jsonResponse = JSON(data.value ?? "{}")
           let res =  WeatherAPI.fetchDataFromRequest(jsonResponse: jsonResponse)
             print(res)
             self.activityIndicator.stopAnimating()

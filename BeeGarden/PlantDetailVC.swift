@@ -149,7 +149,7 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
         else {
            databaseController?.removePlantFromGarden(plant: selectedPlant!, garden: databaseController!.defaultGarden)
             print("remove 1 plant from garden")
-             TopNotesPush.push(message: "Remove \(selectedPlant!.name ?? " ") successfully", color: .color(color: Color.LightBlue.a700))
+             TopNotesPush.push(message: "Removed \(selectedPlant!.name ?? " ") from your garden", color: .color(color: Color.LightBlue.a700))
         }
         
 
@@ -164,14 +164,7 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
     
     
     @IBAction func climateInfoAct(_ sender: Any) {
-        let urlString = "https://www.abcb.gov.au/Resources/Tools-Calculators/Climate-Zone-Map-Victoria"
-
-               if let url = URL(string: urlString) {
-                          let vc = SFSafariViewController(url: url)
-                          vc.delegate = self
-
-                          present(vc, animated: true)
-                      }
+       TopNotesPush.centreFloatPush(title: "Growing climate", desc: "This is the climate in which the plant has higher probability of growth.", image: UIImage(named: "sun-climate"))
     }
     
     
@@ -181,7 +174,7 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
         }
         
         else {
-             TopNotesPush.centreFloatPush(title: "High nectar", desc: "Nectar is an attracting agent for bees and is a source of energy for all the day-to-day activities. It is sweetened liquid produced by the plant as a compensation for pollination. As plants being immobile need pollinating animals (bees, butterflies, ants, moths) for transferring their pollens from flower to flower to reproduce. Different plants have varied levels of nectar in them varying from 8-50%. The production of nectar depends on the size of the flower, time of the year and the ambient temperature. Bees prefer plants with high nectar as the amino acids present in the nectar might assist the bees as a fuel for their flight. The higher the quantity of nectar the greater number of bees might visit the plants. Additionally, at high levels of nectar, other things such as visual cues and physical clues (keeping display of varied colours of plants) and periodic availability of plants", image: UIImage(named: "nectar-high"))
+             TopNotesPush.centreFloatPush(title: "High nectar", desc: "Nectar is an attracting agent for bees and is a source of energy for all the day-to-day activities. It is sweetened liquid produced by the plant as a compensation for pollination. As plants being immobile need pollinating animals (bees, butterflies, ants, moths) for transferring their pollens from flower to flower to reproduce. Different plants have varied levels of nectar in them varying from 8-50%. The production of nectar depends on the size of the flower, time of the year and the ambient temperature. Bees prefer plants with high nectar as the amino acids present in the nectar might assist the bees as a fuel for their flight. The higher the quantity of nectar the greater number of bees might visit the plants. Additionally, at high levels of nectar, other things such as visual cues and physical clues (keeping display of varied colours of plants) and periodic availability of plants.", image: UIImage(named: "nectar-high"))
         }
         
         
@@ -193,16 +186,16 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
     @IBAction func pollenInfoAct(_ sender: Any) {
         
         if self.pollenLab.text == "Low pollen" {
-            TopNotesPush.centreFloatPush(title: "Low pollen", desc: "Pollination problems include reduced production and small or misshapen fruit. Assessing the degree of pollination and identifying problems can be difficult because other factors can also cause these symptoms. For example, lower than expected yield can be due to low flower numbers, disease, nutrition, or water. Likewise, misshapen fruit might be a sign of poor pollination or of a disease affecting the ovary. Coming to the wrong conclusion about a pollination problem can be both expensive and frustrating.\n Poor pollination results in deformed fruits that often drop off before maturing.", image: UIImage(named: "pollen-low"))
+            TopNotesPush.centreFloatPush(title: "Low pollen", desc: "Different plants have varied categories of pollen present in them. Some have a huge amount of pollen present while some have comparatively less. If planting the plants with less pollen please be sure to plant these plants in higher quantities to balance out the effect.Because poor pollination  can result in deformed fruits that often drop off before maturing.", image: UIImage(named: "pollen-low"))
         }
         else {
-            TopNotesPush.centreFloatPush(title: "High pollen", desc: "Assessing the amount of pollination a crop is receiving can be a very valuable management tool to indicate whether pollination is optimized or can be improved. It is common for growers to know the production they receive from their crop in terms of kg, trays, or boxes per hectare. Although this will be related to the amount of pollination, it is also heavily influenced by the numbers of plants, flowers, and the numbers of fruit or seeds lost through thinning, damage or disease.\n Good pollination results in large, healthy fruits with viable seeds.", image: UIImage(named: "pollen-high"))
+            TopNotesPush.centreFloatPush(title: "High pollen", desc: "Pollens are the male reproductive parts of the plant. In order to produce fruits and seeds the pollen needs to be transferred from one plant to another. Moreover, the pollen of each plant has different characteristics. As plants cannot do that themselves they need the help of pollinators to do that. These pollinators like bees pollinate the plants to get nectar and pollen to get the energy to carry on their daily activities and feed their off-springs. Flowers with a high amount of pollen are very attractive to bees as they can provide them with all the Good pollination results in large, healthy fruits with viable seeds.", image: UIImage(named: "pollen-high"))
         }
     }
     
     
     @IBAction func monthInfoBtn(_ sender: Any) {
-        TopNotesPush.centreFloatPush(title: "Flowering Months" , desc: "Flowering of any plant is heavily dependent on the temperature and time of the year.These are the onset months for when the flowering of the plant starts.", image: UIImage(named: "flowerinfo"))
+        TopNotesPush.centreFloatPush(title: "Flowering Months" , desc: "Flowering of any plant is heavily dependent on the temperature and time of the year. These are the onset months for when the flowering of the plant starts.", image: UIImage(named: "flowerinfo"))
     }
     
     
@@ -261,7 +254,7 @@ class PlantDetailVC: UIViewController,DatabaseListener, SFSafariViewControllerDe
             self.nectarLab.text = "Low nectar"
         }
         else {
-             self.nectarImage.image = UIImage(named: "nectar-high")
+             self.nectarImage.image = UIImage(named: "nectar-high2")
                        self.nectarLab.text = "High nectar"
         }
         

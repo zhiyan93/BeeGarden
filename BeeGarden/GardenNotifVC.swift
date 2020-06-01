@@ -153,7 +153,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
 
     
     @IBAction func setAmountAct(_ sender: Any) {
-        TopNotesPush.bottomFormPush(title: "Set water amount in 7 days", placeHoders: ["(most plants needs 30 Litres per square)"], buttonTitle: " SET ", action: amountShouldReturn )
+        TopNotesPush.bottomFormPush(title: "Set water amount in 7 days", placeHoders: ["(most plants needs 30 Litres per square meter)"], buttonTitle: " SET ", action: amountShouldReturn )
         
         
         
@@ -189,6 +189,15 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
         
     }
     
+    
+    @IBAction func timePickerChanged(_ sender: Any) {
+        
+        if self.notifSwitch.isOn {
+            self.notifSwitch.setOn(false, animated: true)
+        }
+    }
+    
+    
 //    @IBAction func setNotifAct(_ sender: Any) {
 //        let setTime = self.timePicker.date
 //
@@ -213,9 +222,22 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
              UserDefaults.standard.set(setTime,forKey: "notifTime")
             print("timeset\(setTime)")
             let nowComponents = Calendar.current.dateComponents([.hour,.minute], from: setTime )
-            TopNotesPush.push(message: "notification will be sent at \(nowComponents.hour ?? 0) : \(nowComponents.minute ?? 0) each day", color: .color(color: Color.LightBlue.a700) )
+         let hourten = nowComponents.hour ?? 0
+        let minten = nowComponents.minute ?? 0
+        var hourstring = "\(hourten)"
+        var minstring = "\(minten)"
+        
+        if hourten < 10 {
+            hourstring = "0" + hourstring
+            
+        }
+        if minten < 10 {
+            minstring = "0" + minstring
+        }
+        
+            TopNotesPush.push(message: "Notification will be sent at \(hourstring) : \(minstring) each day", color: .color(color: Color.LightBlue.a700) )
 
-                addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Remember to water your garden today")
+                addDailyNotif(time: setTime, uid: "WateringNotification", title: "Bee Mate", body: " Please remember to water your garden today.")
             
         
     }
@@ -257,7 +279,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
             SwiftEntryKit.dismiss()
            UserDefaults.standard.set(num, forKey: "waterAmount")
             waterAmountInput = num
-            self.waterAmount.text = "Water amount 7 days: \(num)"
+            self.waterAmount.text = "Water amount 7 days \(num) ltr/sq.m"
             
             progressDict["amount"] = waterAmountInput
             NotificationCenter.default.post(name: NSNotification.Name("progressChange"), object: nil,userInfo: progressDict)
@@ -286,7 +308,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
                else {
                 res = waterAmount ?? 30
     }
-        self.waterAmount.text = "Water amount 7 days: \(res)"
+        self.waterAmount.text = "Water amount 7 days \(res) ltr/sq.m"
         waterAmountInput = res
        // databaseController?.addListener(listener: self)
         
@@ -391,7 +413,7 @@ class GardenNotifVC: UIViewController,CLLocationManagerDelegate, DatabaseListene
             rainSum = rainSum + r
         }
        
-        self.rainSumLabel.text = "Total Rainfall in 7 days: \(rainSum.round(to: 2))"
+        self.rainSumLabel.text = "Total rainfall in 7 days \(rainSum.round(to: 2)) mm"
         
         progressDict["rain"] = Int(rainSum)
            NotificationCenter.default.post(name: NSNotification.Name("progressChange"), object: nil,userInfo: progressDict)

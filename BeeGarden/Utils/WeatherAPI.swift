@@ -37,7 +37,7 @@ struct WeatherAPI {
         //  let icon = wDesc["icon"].stringValue
 
       
-      return " weather: \(weatherDesc);\n tempetature: \(tempRound);\n pressure: \(pressure); \n humidity: \(humidity)%;\n clouds: \(clouds)%;\n wind speed: \(windSpeed);\n wind direction: \(windDeg)"
+      return " Weather: \(weatherDesc) \n Tempetature: \(tempRound)°C \n Pressure: \(pressure)hpa \n Humidity: \(humidity)% \n Clouds: \(clouds)% \n Wind speed: \(windSpeed)m/s \n Wind direction: \(windDeg)"
                                   
     }
     

@@ -417,7 +417,7 @@ struct TopNotesPush {
                     style: .init(
                       font: .systemFont(ofSize: 16),
                       color: .black,
-                        alignment: .natural,
+                      alignment: .justified,
                         displayMode: .light
                     )
                 )
