@@ -141,7 +141,7 @@ class RecordHeatMapVC: UIViewController, CalendarHeatmapDelegate,DatabaseListene
         var recordSum = 0.0
         
         for r in records{
-            if r.time! > pnday! {
+            if r.time! > pnday ?? Date() {
                 switch r.counting {
                            case 1 : recordSum = recordSum + 2.5
                            case 2 : recordSum = recordSum + 7.5
