@@ -42,6 +42,15 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        let name = UserDefaults.standard.object(forKey: "NatAccountName")
+        if userName != nil {
+            self.userName.text = name as? String
+        }
+        let psw = UserDefaults.standard.object(forKey: "NatAccountPsw")
+        if psw != nil {
+            self.password.text = psw as? String
+        }
           let avatarImage = UserDefaults.standard.object(forKey: "NatAccountAvatar") as? Data
         if avatarImage != nil {
             profileImage.image = UIImage(data: avatarImage!)
@@ -63,6 +72,8 @@ class InaturalistActVC: UIViewController, SFSafariViewControllerDelegate {
             return
         }
         
+        UserDefaults.standard.set(userName.text, forKey: "NatAccountName")
+         UserDefaults.standard.set(password.text, forKey: "NatAccountPsw")
         let payload: [String: String] = [
                   "client_id" : app_id,
                   "client_secret" : app_secret,
